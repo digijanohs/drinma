@@ -32,9 +32,9 @@ interface ProductDetailProps {
 }
 
 const sizes = [
-  { value: "S" as const, label: "Nhỏ", modifier: 0.85 },
-  { value: "M" as const, label: "Vừa", modifier: 1 },
-  { value: "L" as const, label: "Lớn", modifier: 1.2 },
+  { value: "S" as const, label: "Small", modifier: 0.85 },
+  { value: "M" as const, label: "Medium", modifier: 1 },
+  { value: "L" as const, label: "Large", modifier: 1.2 },
 ];
 
 const sugarLevels = [0, 30, 50, 70, 100];
@@ -82,7 +82,7 @@ export default function ProductDetail({ product, toppings }: ProductDetailProps)
       basePrice: product.basePrice,
       toppingPrice: toppingTotal,
     });
-    toast.success(`Đã thêm ${product.name} vào giỏ hàng!`);
+    toast.success(`Added to your cart!`);
     openCart();
   };
 
@@ -93,7 +93,7 @@ export default function ProductDetail({ product, toppings }: ProductDetailProps)
         className="inline-flex items-center gap-2 text-gray-500 dark:text-gray-400 hover:text-brand-600 mb-8 transition-colors"
       >
         <ArrowLeft className="w-4 h-4" />
-        Quay lại menu
+        Back to menu
       </Link>
 
       <div className="grid lg:grid-cols-2 gap-12">
@@ -113,7 +113,7 @@ export default function ProductDetail({ product, toppings }: ProductDetailProps)
           <div className="absolute top-4 left-4 flex gap-2">
             {product.isNew && (
               <span className="px-3 py-1 bg-green-500 text-white text-sm font-medium rounded-full">
-                Mới
+                New
               </span>
             )}
             {product.isBestSeller && (
@@ -142,7 +142,7 @@ export default function ProductDetail({ product, toppings }: ProductDetailProps)
 
           {/* Size */}
           <div>
-            <h3 className="font-semibold text-gray-900 dark:text-gray-50 mb-3">Kích cỡ</h3>
+            <h3 className="font-semibold text-gray-900 dark:text-gray-50 mb-3">Size</h3>
             <div className="flex gap-3">
               {sizes.map((s) => (
                 <button
@@ -164,7 +164,7 @@ export default function ProductDetail({ product, toppings }: ProductDetailProps)
           {/* Sugar level */}
           <div>
             <h3 className="font-semibold text-gray-900 dark:text-gray-50 mb-3">
-              Độ ngọt: {sugar}%
+              Sweetness: {sugar}%
             </h3>
             <div className="flex gap-2">
               {sugarLevels.map((level) => (
@@ -186,7 +186,7 @@ export default function ProductDetail({ product, toppings }: ProductDetailProps)
           {/* Ice level */}
           <div>
             <h3 className="font-semibold text-gray-900 dark:text-gray-50 mb-3">
-              Đá: {ice}%
+              Ice: {ice}%
             </h3>
             <div className="flex gap-2">
               {iceLevels.map((level) => (
@@ -251,7 +251,7 @@ export default function ProductDetail({ product, toppings }: ProductDetailProps)
               className="flex-1 flex items-center justify-center gap-2 py-4 bg-brand-600 text-white rounded-full font-semibold hover:bg-brand-700 transition-all hover:shadow-lg hover:shadow-brand-500/25"
             >
               <ShoppingBag className="w-5 h-5" />
-              Thêm vào giỏ — {formatPrice(totalPrice)}
+              Add to cart — {formatPrice(totalPrice)}
             </button>
           </div>
         </motion.div>

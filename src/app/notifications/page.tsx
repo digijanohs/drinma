@@ -20,43 +20,43 @@ export default function NotificationsPage() {
     {
       id: "promo",
       icon: Tag,
-      title: "Khuyến mãi",
-      description: "Nhận thông báo về chương trình giảm giá và ưu đãi",
+      title: "Promotions",
+      description: "Get notified about discounts and special offers",
       enabled: true,
     },
     {
       id: "order",
       icon: Bell,
-      title: "Đơn hàng",
-      description: "Thông báo khi đơn hàng thay đổi trạng thái",
+      title: "Order",
+      description: "Get notified when your order status changes",
       enabled: true,
     },
     {
       id: "new",
       icon: Megaphone,
-      title: "Sản phẩm mới",
-      description: "Thông báo khi có menu mới ra mắt",
+      title: "New Arrivals",
+      description: "Be the first to know when a new menu drops",
       enabled: false,
     },
     {
       id: "newsletter",
       icon: Mail,
       title: "Newsletter",
-      description: "Nhận email về tin tức, công thức và ưu đãi hàng tuần",
+      description: "Get weekly news, recipes and offers by email",
       enabled: false,
     },
     {
       id: "loyalty",
       icon: Gift,
-      title: "Iku Stars",
-      description: "Cập nhật điểm thưởng và quà tặng",
+      title: "Drinma Stars",
+      description: "Track your reward points and gifts",
       enabled: true,
     },
     {
       id: "sms",
       icon: Smartphone,
       title: "SMS",
-      description: "Nhận tin nhắn SMS về đơn hàng",
+      description: "Get SMS updates about your order",
       enabled: true,
     },
   ]);
@@ -79,7 +79,7 @@ export default function NotificationsPage() {
               animate={{ opacity: 1, y: 0 }}
               className="text-4xl font-display font-bold text-gray-900 dark:text-white mb-4"
             >
-              Cài đặt thông báo
+              Notification settings
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -87,7 +87,7 @@ export default function NotificationsPage() {
               transition={{ delay: 0.1 }}
               className="text-gray-500 dark:text-gray-400 text-lg"
             >
-              Tùy chỉnh thông báo theo sở thích của bạn
+              Customize notifications to match your taste
             </motion.p>
           </div>
         </section>

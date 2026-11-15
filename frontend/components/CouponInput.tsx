@@ -24,14 +24,14 @@ export default function CouponInput({ onApply }: CouponInputProps) {
       const data = await res.json();
 
       if (!res.ok || !data.valid) {
-        setError(data.error || "Mã không hợp lệ");
+        setError(data.error || "Invalid code");
         return;
       }
 
       setApplied(true);
       onApply(code, { type: data.coupon.discountType, value: data.coupon.discountValue });
     } catch {
-      setError("Không thể kiểm tra mã giảm giá");
+      setError("Unable to check the discount code");
     } finally {
       setLoading(false);
     }
@@ -46,13 +46,13 @@ export default function CouponInput({ onApply }: CouponInputProps) {
       >
         <CheckCircle2 className="w-4 h-4 text-green-600" />
         <span className="text-sm font-medium text-green-700">
-          Mã <strong>{code.toUpperCase()}</strong> đã được áp dụng
+          Code <strong>{code.toUpperCase()}</strong> has been applied
         </span>
         <button
           onClick={() => { setApplied(false); setCode(""); }}
           className="ml-auto text-xs text-green-600 hover:text-green-800 font-medium"
         >
-          Hủy
+          Remove
         </button>
       </motion.div>
     );
@@ -67,7 +67,7 @@ export default function CouponInput({ onApply }: CouponInputProps) {
             type="text"
             value={code}
             onChange={(e) => { setCode(e.target.value.toUpperCase()); setError(""); }}
-            placeholder="Nhập mã giảm giá"
+            placeholder="Enter discount code"
             className="w-full pl-9 pr-4 py-2.5 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-50 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent uppercase"
           />
         </div>
@@ -76,7 +76,7 @@ export default function CouponInput({ onApply }: CouponInputProps) {
           disabled={loading || !code.trim()}
           className="px-5 py-2.5 bg-brand-600 hover:bg-brand-700 disabled:bg-gray-300 text-white text-sm font-medium rounded-xl transition-colors disabled:cursor-not-allowed"
         >
-          {loading ? "..." : "Áp dụng"}
+          {loading ? "..." : "Apply"}
         </button>
       </div>
       {error && (

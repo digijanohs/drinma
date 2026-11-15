@@ -75,7 +75,7 @@ export async function GET(request: NextRequest) {
   } catch (error) {
     console.error("[GET /api/products]", error);
     return NextResponse.json(
-      { error: "Không thể tải danh sách sản phẩm" },
+      { error: "Couldn't load the product list" },
       { status: 500 }
     );
   }

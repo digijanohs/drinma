@@ -4,7 +4,7 @@ import { z } from "zod";
 import { limiter } from "@/lib/rate-limit";
 
 const newsletterSchema = z.object({
-  email: z.string().email("Email không hợp lệ"),
+  email: z.string().email("Invalid email"),
 });
 
 export async function POST(request: NextRequest) {
@@ -14,7 +14,7 @@ export async function POST(request: NextRequest) {
       await limiter.check(5, ip);
     } catch {
       return NextResponse.json(
-        { error: "Quá nhiều yêu cầu, vui lòng thử lại sau" },
+        { error: "Too many requests, please try again later" },
         { status: 429 }
       );
     }
@@ -28,7 +28,7 @@ export async function POST(request: NextRequest) {
 
     if (existing) {
       return NextResponse.json(
-        { message: "Email này đã đăng ký nhận tin rồi!" },
+        { message: "This email is already subscribed!" },
         { status: 200 }
       );
     }
@@ -38,18 +38,18 @@ export async function POST(request: NextRequest) {
     });
 
     return NextResponse.json(
-      { message: "Đăng ký thành công! Cảm ơn bạn đã quan tâm." },
+      { message: "You're subscribed! Thanks for your interest." },
       { status: 201 }
     );
   } catch (error) {
     if (error instanceof z.ZodError) {
       return NextResponse.json(
-        { error: "Email không hợp lệ" },
+        { error: "Invalid email" },
         { status: 400 }
       );
     }
     return NextResponse.json(
-      { error: "Không thể đăng ký. Vui lòng thử lại sau." },
+      { error: "We couldn't sign you up. Please try again later." },
       { status: 500 }
     );
   }

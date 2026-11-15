@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 import { TrendingUp, ShoppingBag, Users, Star } from "lucide-react";
 
 const stats = [
-  { icon: ShoppingBag, value: "50,000+", label: "Đơn hàng mỗi tháng", color: "text-brand-600 bg-brand-50" },
-  { icon: Users, value: "10,000+", label: "Khách hàng thân thiết", color: "text-blue-600 bg-blue-50" },
-  { icon: Star, value: "4.9/5", label: "Đánh giá trung bình", color: "text-yellow-600 bg-yellow-50" },
-  { icon: TrendingUp, value: "15+", label: "Chi nhánh toàn quốc", color: "text-green-600 bg-green-50" },
+  { icon: ShoppingBag, value: "50,000+", label: "Orders per month", color: "text-brand-600 bg-brand-50" },
+  { icon: Users, value: "10,000+", label: "Loyal customers", color: "text-blue-600 bg-blue-50" },
+  { icon: Star, value: "4.9/5", label: "Average Rating", color: "text-yellow-600 bg-yellow-50" },
+  { icon: TrendingUp, value: "15+", label: "Locations Nationwide", color: "text-green-600 bg-green-50" },
 ];
 
 export default function StatsBar() {

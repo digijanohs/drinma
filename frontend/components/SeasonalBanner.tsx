@@ -27,14 +27,13 @@ export default function SeasonalBanner() {
             <div className="text-center md:text-left">
               <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1 rounded-full mb-4">
                 <Sparkles className="w-3.5 h-3.5" />
-                Giới hạn mùa hè 2024
+                Summer 2024 Limited Edition
               </div>
               <h2 className="text-3xl sm:text-4xl font-display font-bold text-white mb-3 leading-tight">
-                Menu Mùa Hè
+                Summer Menu
               </h2>
               <p className="text-white/85 text-base max-w-md leading-relaxed">
-                Bộ sưu tập thức uống mới — mát lạnh, tươi trái cây, và đầy màu
-                sắc. Chỉ có trong mùa hè này, đừng bỏ lỡ!
+                Our new drink collection — ice-cold, fruit-forward and full of color. Available this summer only, don't miss it!
               </p>
             </div>
 
@@ -45,7 +44,7 @@ export default function SeasonalBanner() {
                   href="/menu?season=summer"
                   className="inline-flex items-center gap-2 bg-white text-orange-500 font-semibold px-7 py-3.5 rounded-full shadow-lg hover:shadow-xl transition-shadow text-sm"
                 >
-                  Khám phá ngay
+                  Discover now
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </motion.div>

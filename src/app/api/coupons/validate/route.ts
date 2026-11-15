@@ -14,7 +14,7 @@ export async function GET(request: NextRequest) {
     await limiter.check(15, ip);
   } catch {
     return NextResponse.json(
-      { error: "Quá nhiều yêu cầu, vui lòng thử lại sau." },
+      { error: "Too many requests, please try again later." },
       { status: 429 }
     );
   }
@@ -24,7 +24,7 @@ export async function GET(request: NextRequest) {
 
   if (!code) {
     return NextResponse.json(
-      { error: "Thiếu mã giảm giá" },
+      { error: "Discount code is missing" },
       { status: 400 }
     );
   }
@@ -36,28 +36,28 @@ export async function GET(request: NextRequest) {
 
     if (!coupon) {
       return NextResponse.json(
-        { valid: false, error: "Mã giảm giá không tồn tại" },
+        { valid: false, error: "That discount code doesn't exist" },
         { status: 404 }
       );
     }
 
     if (!coupon.isActive) {
       return NextResponse.json(
-        { valid: false, error: "Mã giảm giá đã hết hạn" },
+        { valid: false, error: "Discount code has expired" },
         { status: 400 }
       );
     }
 
     if (coupon.expiresAt && new Date(coupon.expiresAt) < new Date()) {
       return NextResponse.json(
-        { valid: false, error: "Mã giảm giá đã hết hạn" },
+        { valid: false, error: "Discount code has expired" },
         { status: 400 }
       );
     }
 
     if (coupon.usageLimit && coupon.usageCount >= coupon.usageLimit) {
       return NextResponse.json(
-        { valid: false, error: "Mã giảm giá đã hết lượt sử dụng" },
+        { valid: false, error: "This discount code has been fully redeemed" },
         { status: 400 }
       );
     }
@@ -74,7 +74,7 @@ export async function GET(request: NextRequest) {
     });
   } catch {
     return NextResponse.json(
-      { error: "Không thể kiểm tra mã giảm giá" },
+      { error: "Unable to check the discount code" },
       { status: 500 }
     );
   }

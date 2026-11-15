@@ -14,7 +14,7 @@ const popularItems: PopularItem[] = [
   { rank: 1, name: "Brown Sugar Boba", orders: "2,340", trend: "up" },
   { rank: 2, name: "Matcha Latte", orders: "1,890", trend: "up" },
   { rank: 3, name: "Taro Milk Tea", orders: "1,650", trend: "stable" },
-  { rank: 4, name: "Trà Đào Cam Sả", orders: "1,420", trend: "up" },
+  { rank: 4, name: "Peach Lemongrass Tea", orders: "1,420", trend: "up" },
   { rank: 5, name: "Oolong Milk Tea", orders: "1,200", trend: "stable" },
 ];
 
@@ -28,9 +28,9 @@ export default function PopularRanking() {
           </div>
           <div>
             <h2 className="text-2xl font-display font-bold text-gray-900 dark:text-gray-50">
-              Bảng xếp hạng tuần
+              Weekly leaderboard
             </h2>
-            <p className="text-sm text-gray-500 dark:text-gray-400">Được đặt nhiều nhất tuần này</p>
+            <p className="text-sm text-gray-500 dark:text-gray-400">Most ordered this week</p>
           </div>
         </div>
 
@@ -55,7 +55,7 @@ export default function PopularRanking() {
                 <h4 className="font-medium text-gray-900 dark:text-gray-50 text-sm">{item.name}</h4>
               </div>
               <div className="flex items-center gap-2">
-                <span className="text-xs text-gray-500 dark:text-gray-400">{item.orders} đơn</span>
+                <span className="text-xs text-gray-500 dark:text-gray-400">{item.orders} orders</span>
                 {item.trend === "up" && (
                   <TrendingUp className="w-3.5 h-3.5 text-green-500" />
                 )}

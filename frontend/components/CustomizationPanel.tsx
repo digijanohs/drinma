@@ -28,11 +28,11 @@ const sugarOptions = [
 ];
 
 const iceOptions = [
-  { value: 0, label: "Không đá" },
-  { value: 30, label: "Ít" },
+  { value: 0, label: "No ice" },
+  { value: 30, label: "Less" },
   { value: 50, label: "50%" },
   { value: 70, label: "70%" },
-  { value: 100, label: "Bình thường" },
+  { value: 100, label: "Regular" },
 ];
 
 export default function CustomizationPanel({
@@ -47,7 +47,7 @@ export default function CustomizationPanel({
       <div>
         <h4 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3 flex items-center gap-2">
           <Timer className="w-4 h-4 text-brand-500" />
-          Kích cỡ
+          Size
         </h4>
         <div className="grid grid-cols-3 gap-2">
           {sizes.map((size) => (
@@ -70,7 +70,7 @@ export default function CustomizationPanel({
       <div>
         <h4 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3 flex items-center gap-2">
           <Droplets className="w-4 h-4 text-brand-500" />
-          Độ ngọt
+          Sweetness
         </h4>
         <div className="flex gap-1.5">
           {sugarOptions.map((option) => (
@@ -92,7 +92,7 @@ export default function CustomizationPanel({
       <div>
         <h4 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3 flex items-center gap-2">
           <Snowflake className="w-4 h-4 text-brand-500" />
-          Đá
+          Ice
         </h4>
         <div className="flex gap-1.5">
           {iceOptions.map((option) => (

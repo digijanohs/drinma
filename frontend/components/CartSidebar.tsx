@@ -30,12 +30,12 @@ export default function CartSidebar() {
             <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100 dark:border-gray-700">
               <div className="flex items-center gap-2">
                 <ShoppingBag className="w-5 h-5 text-brand-600" />
-                <h2 className="font-semibold text-gray-900 dark:text-gray-50">Giỏ hàng ({items.length})</h2>
+                <h2 className="font-semibold text-gray-900 dark:text-gray-50">Cart ({items.length})</h2>
               </div>
               <button
                 onClick={toggleCart}
                 className="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
-                aria-label="Đóng giỏ hàng"
+                aria-label="Close cart"
               >
                 <X className="w-4 h-4 dark:text-gray-300" />
               </button>
@@ -47,8 +47,8 @@ export default function CartSidebar() {
                   <div className="w-16 h-16 rounded-full bg-cream-100 dark:bg-gray-800 flex items-center justify-center mb-4">
                     <ShoppingBag className="w-7 h-7 text-gray-300 dark:text-gray-500" />
                   </div>
-                  <p className="text-gray-600 dark:text-gray-400 font-medium">Giỏ hàng trống</p>
-                  <p className="text-sm text-gray-500 dark:text-gray-500 mt-1">Thêm sản phẩm yêu thích nhé!</p>
+                  <p className="text-gray-600 dark:text-gray-400 font-medium">Your cart is empty</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-500 mt-1">Add your favorite drinks!</p>
                 </div>
               ) : (
                 <div className="space-y-4">
@@ -77,7 +77,7 @@ export default function CartSidebar() {
                             <button
                               onClick={() => updateQuantity(item.id, Math.max(1, item.quantity - 1))}
                               className="w-6 h-6 rounded-md bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 flex items-center justify-center"
-                              aria-label="Giảm số lượng"
+                              aria-label="Decrease quantity"
                             >
                               <Minus className="w-3 h-3" />
                             </button>
@@ -85,14 +85,14 @@ export default function CartSidebar() {
                             <button
                               onClick={() => updateQuantity(item.id, item.quantity + 1)}
                               className="w-6 h-6 rounded-md bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 flex items-center justify-center"
-                              aria-label="Tăng số lượng"
+                              aria-label="Increase quantity"
                             >
                               <Plus className="w-3 h-3" />
                             </button>
                             <button
                               onClick={() => removeItem(item.id)}
                               className="w-6 h-6 rounded-md bg-red-50 dark:bg-red-900/20 flex items-center justify-center ml-1"
-                              aria-label="Xóa sản phẩm"
+                              aria-label="Remove item"
                             >
                               <Trash2 className="w-3 h-3 text-red-500" />
                             </button>
@@ -108,7 +108,7 @@ export default function CartSidebar() {
             {items.length > 0 && (
               <div className="px-6 py-4 border-t border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-900">
                 <div className="flex items-center justify-between mb-4">
-                  <span className="text-sm text-gray-600 dark:text-gray-400">Tổng cộng</span>
+                  <span className="text-sm text-gray-600 dark:text-gray-400">Total</span>
                   <span className="text-lg font-bold text-gray-900 dark:text-gray-50">
                     {total().toLocaleString("vi-VN")}đ
                   </span>
@@ -118,7 +118,7 @@ export default function CartSidebar() {
                   onClick={toggleCart}
                   className="block w-full py-3 bg-brand-600 text-white text-center rounded-xl font-medium hover:bg-brand-700 transition-colors"
                 >
-                  Thanh toán
+                  Checkout
                 </Link>
               </div>
             )}

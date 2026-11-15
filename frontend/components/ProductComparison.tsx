@@ -18,11 +18,11 @@ interface ProductComparisonProps {
 }
 
 const defaultA: Product = {
-  name: "Trà Sữa Truyền Thống",
+  name: "Traditional Milk Tea",
   price: 45000,
   sizes: ["S", "M", "L"],
   sugarLevels: ["0%", "30%", "50%", "70%", "100%"],
-  toppings: ["Trân châu đen", "Thạch dừa", "Pudding"],
+  toppings: ["Black Tapioca Pearls", "Coconut jelly", "Pudding"],
   calories: 280,
 };
 
@@ -31,7 +31,7 @@ const defaultB: Product = {
   price: 65000,
   sizes: ["M", "L"],
   sugarLevels: ["0%", "50%", "100%"],
-  toppings: ["Trân châu trắng", "Thạch matcha", "Kem cheese"],
+  toppings: ["White boba", "Matcha jelly", "Kem cheese"],
   calories: 320,
   isNew: true,
 };
@@ -80,7 +80,7 @@ export default function ProductComparison({
 }: Partial<ProductComparisonProps>) {
   const rows = [
     {
-      label: "Giá",
+      label: "Price",
       a: formatPrice(productA.price),
       b: formatPrice(productB.price),
       diff: productA.price !== productB.price,
@@ -92,13 +92,13 @@ export default function ProductComparison({
       diff: productA.calories !== productB.calories,
     },
     {
-      label: "Kích cỡ",
+      label: "Size",
       a: <TagList items={productA.sizes} />,
       b: <TagList items={productB.sizes} />,
       diff: JSON.stringify(productA.sizes) !== JSON.stringify(productB.sizes),
     },
     {
-      label: "Độ ngọt",
+      label: "Sweetness",
       a: <TagList items={productA.sugarLevels} />,
       b: <TagList items={productB.sugarLevels} />,
       diff:
@@ -129,7 +129,7 @@ export default function ProductComparison({
           >
             {p.isNew && (
               <span className="inline-block text-[10px] font-bold bg-brand-500 text-white px-2 py-0.5 rounded-full mb-1">
-                MỚI
+                NEW
               </span>
             )}
             <p className="font-display font-bold text-gray-900 dark:text-white text-sm leading-tight">
@@ -174,9 +174,9 @@ export default function ProductComparison({
         <p className="text-xs text-gray-400 dark:text-gray-500 text-center">
           <span className="inline-flex items-center gap-1 text-brand-500 font-medium">
             <span className="w-2 h-2 rounded-full bg-brand-500 inline-block" />
-            Màu xanh
+            Green
           </span>{" "}
-          đánh dấu điểm khác biệt giữa hai sản phẩm
+          highlight the differences between both products
         </p>
       </div>
     </div>

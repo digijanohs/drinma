@@ -152,7 +152,7 @@ export default function SearchModal() {
         id="search-trigger"
         onClick={() => setOpen(true)}
         className="hidden"
-        aria-label="Mở tìm kiếm"
+        aria-label="Open search"
       />
 
       <AnimatePresence>
@@ -180,7 +180,7 @@ export default function SearchModal() {
               className="fixed inset-x-0 top-[10vh] z-50 mx-auto w-full max-w-xl px-4"
               role="dialog"
               aria-modal="true"
-              aria-label="Tìm kiếm sản phẩm"
+              aria-label="Search products"
             >
               <div className="rounded-2xl bg-white dark:bg-gray-800 shadow-2xl shadow-brand-900/20 border border-brand-100 dark:border-gray-700 overflow-hidden">
                 {/* Search input row */}
@@ -192,7 +192,7 @@ export default function SearchModal() {
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
                     onKeyDown={onKeyDown}
-                    placeholder="Tìm kiếm trà sữa, topping..."
+                    placeholder="Search milk tea, toppings..."
                     className="flex-1 bg-transparent text-gray-900 dark:text-gray-50 placeholder:text-gray-400 dark:placeholder:text-gray-500 text-base outline-none"
                     autoComplete="off"
                     spellCheck={false}
@@ -201,7 +201,7 @@ export default function SearchModal() {
                     <button
                       onClick={() => setQuery("")}
                       className="min-w-9 min-h-9 w-9 h-9 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors shrink-0"
-                      aria-label="Xóa tìm kiếm"
+                      aria-label="Clear search"
                     >
                       <X className="w-4 h-4 text-gray-500 dark:text-gray-300" />
                     </button>
@@ -235,7 +235,7 @@ export default function SearchModal() {
                   {!loading && showResults && results.length > 0 && (
                     <div className="py-2">
                       <p className="px-4 py-1.5 text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wide">
-                        Kết quả tìm kiếm
+                        Search results
                       </p>
                       {results.map((item, idx) => (
                         <button
@@ -275,13 +275,13 @@ export default function SearchModal() {
                   {noResults && (
                     <div className="px-4 py-8 text-center">
                       <p className="text-gray-600 dark:text-gray-300 text-sm">
-                        Không tìm thấy sản phẩm nào cho{" "}
+                        No products found for{" "}
                         <span className="font-medium text-gray-800 dark:text-gray-100">
                           &ldquo;{query}&rdquo;
                         </span>
                       </p>
                       <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
-                        Thử tìm với từ khóa khác nhé
+                        Try a different keyword
                       </p>
                     </div>
                   )}
@@ -290,7 +290,7 @@ export default function SearchModal() {
                   {showRecent && (
                     <div className="py-2">
                       <p className="px-4 py-1.5 text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wide">
-                        Tìm kiếm gần đây
+                        Recent searches
                       </p>
                       {recent.map((q) => (
                         <button
@@ -306,7 +306,7 @@ export default function SearchModal() {
                             type="button"
                             onClick={(e) => deleteRecent(q, e)}
                             className="opacity-0 group-hover:opacity-100 focus:opacity-100 min-w-9 min-h-9 w-9 h-9 sm:w-7 sm:h-7 sm:min-w-7 sm:min-h-7 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center hover:bg-gray-200 dark:hover:bg-gray-600 transition-all shrink-0"
-                            aria-label={`Xóa "${q}" khỏi lịch sử`}
+                            aria-label={`Remove this search from history`}
                           >
                             <X className="w-3.5 h-3.5 text-gray-500 dark:text-gray-300" />
                           </button>
@@ -319,7 +319,7 @@ export default function SearchModal() {
                   {!query.trim() && recent.length === 0 && (
                     <div className="px-4 py-8 text-center">
                       <p className="text-sm text-gray-500 dark:text-gray-400">
-                        Nhập tên sản phẩm để tìm kiếm
+                        Type a product name to search
                       </p>
                     </div>
                   )}
@@ -330,15 +330,15 @@ export default function SearchModal() {
                   <span className="flex items-center gap-1">
                     <kbd className="bg-gray-100 dark:bg-gray-700 px-1 py-0.5 rounded font-mono">↑</kbd>
                     <kbd className="bg-gray-100 dark:bg-gray-700 px-1 py-0.5 rounded font-mono">↓</kbd>
-                    điều hướng
+                    navigate
                   </span>
                   <span className="flex items-center gap-1">
                     <kbd className="bg-gray-100 dark:bg-gray-700 px-1 py-0.5 rounded font-mono">Enter</kbd>
-                    chọn
+                    select
                   </span>
                   <span className="flex items-center gap-1">
                     <kbd className="bg-gray-100 dark:bg-gray-700 px-1 py-0.5 rounded font-mono">Esc</kbd>
-                    đóng
+                    close
                   </span>
                 </div>
               </div>

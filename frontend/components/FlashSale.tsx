@@ -16,8 +16,8 @@ interface FlashDeal {
 
 const deals: FlashDeal[] = [
   { id: 1, name: "Brown Sugar Boba", slug: "brown-sugar-boba", originalPrice: 55000, salePrice: 39000, endsIn: "2:30:00" },
-  { id: 2, name: "Matcha Latte Đá Xay", slug: "matcha-latte-da-xay", originalPrice: 55000, salePrice: 42000, endsIn: "2:30:00" },
-  { id: 3, name: "Trà Đào Cam Sả", slug: "tra-dao-cam-sa", originalPrice: 40000, salePrice: 29000, endsIn: "2:30:00" },
+  { id: 2, name: "Blended Matcha Latte", slug: "matcha-latte-da-xay", originalPrice: 55000, salePrice: 42000, endsIn: "2:30:00" },
+  { id: 3, name: "Peach Lemongrass Tea", slug: "tra-dao-cam-sa", originalPrice: 40000, salePrice: 29000, endsIn: "2:30:00" },
 ];
 
 export default function FlashSale() {
@@ -33,7 +33,7 @@ export default function FlashSale() {
               <h3 className="font-display font-bold text-gray-900 dark:text-gray-50">Flash Sale</h3>
               <div className="flex items-center gap-1 text-xs text-red-600">
                 <Clock className="w-3 h-3" />
-                <span>Kết thúc sau 2:30:00</span>
+                <span>Ends in 2:30:00</span>
               </div>
             </div>
           </div>
@@ -41,7 +41,7 @@ export default function FlashSale() {
             href="/promotions"
             className="text-sm text-red-600 font-medium hover:text-red-700 flex items-center gap-1"
           >
-            Xem tất cả
+            View All
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>

@@ -59,7 +59,7 @@ export default function Modal({ isOpen, onClose, title, children, size = "md" }:
             <h3 className="font-semibold text-gray-900 dark:text-gray-50">{title}</h3>
             <button
               onClick={onClose}
-              aria-label="Đóng"
+              aria-label="Close"
               className="p-1.5 rounded-lg text-gray-400 hover:text-gray-600 hover:bg-gray-100 dark:hover:text-gray-200 dark:hover:bg-gray-700 transition-colors"
             >
               <X className="w-5 h-5" />

@@ -20,28 +20,28 @@ const jobs: Job[] = [
     id: 1,
     title: "Barista",
     type: "Full-time",
-    location: "TP.HCM – Nhiều chi nhánh",
-    department: "Cửa hàng",
+    location: "Ho Chi Minh City – Multiple locations",
+    department: "Store",
     description:
-      "Pha chế đồ uống theo công thức chuẩn Iku, đảm bảo chất lượng và trải nghiệm khách hàng xuất sắc tại quầy.",
+      "Craft drinks with Drinma's standard recipes, delivering great quality and an excellent customer experience at the counter.",
   },
   {
     id: 2,
-    title: "Nhân viên phục vụ",
+    title: "Service Staff",
     type: "Part-time",
-    location: "TP.HCM & Hà Nội",
-    department: "Cửa hàng",
+    location: "Ho Chi Minh City & Hanoi",
+    department: "Store",
     description:
-      "Tiếp đón và phục vụ khách hàng tại cửa hàng, hỗ trợ thu ngân và duy trì không gian sạch sẽ, thân thiện.",
+      "Welcome and serve customers in-store, support the cashier and keep the space clean and welcoming.",
   },
   {
     id: 3,
     title: "Marketing Executive",
     type: "Full-time",
-    location: "TP.HCM – Văn phòng",
+    location: "Ho Chi Minh City – Office",
     department: "Marketing",
     description:
-      "Lên kế hoạch và triển khai chiến dịch marketing đa kênh, quản lý mạng xã hội và phân tích hiệu quả truyền thông.",
+      "Plan and run multi-channel marketing campaigns, manage social media and analyse performance.",
   },
 ];
 
@@ -59,7 +59,7 @@ export default function CareersPage() {
               animate={{ opacity: 1, y: 0 }}
               className="inline-block px-4 py-1.5 bg-brand-100 dark:bg-brand-900/40 text-brand-700 dark:text-brand-300 rounded-full text-sm font-medium mb-5"
             >
-              Tuyển dụng
+              Careers
             </motion.span>
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
@@ -67,8 +67,8 @@ export default function CareersPage() {
               transition={{ delay: 0.1 }}
               className="text-4xl md:text-5xl font-display font-bold text-gray-900 dark:text-gray-50 mb-4"
             >
-              Gia nhập đội ngũ{" "}
-              <span className="text-brand-600 dark:text-brand-400">Iku</span>
+              Join the team{" "}
+              <span className="text-brand-600 dark:text-brand-400">Drinma</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -76,7 +76,7 @@ export default function CareersPage() {
               transition={{ delay: 0.2 }}
               className="text-gray-500 dark:text-gray-400 text-lg max-w-xl mx-auto"
             >
-              Cùng chúng tôi mang đến trải nghiệm trà sữa tuyệt vời cho hàng triệu khách hàng
+              Join us in bringing a great milk tea experience to millions of customers
             </motion.p>
           </div>
         </section>
@@ -117,10 +117,10 @@ export default function CareersPage() {
                     </div>
                   </div>
                   <a
-                    href={`mailto:careers@milktea-iku.vn?subject=Ứng tuyển: ${job.title}`}
+                    href={`mailto:careers@drinma.com?subject=Application: [position]`}
                     className="shrink-0 flex items-center gap-1.5 px-4 py-2 bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-300 rounded-xl text-sm font-medium hover:bg-brand-100 dark:hover:bg-brand-900/50 transition-colors"
                   >
-                    Ứng tuyển
+                    Apply now
                     <ArrowRight className="w-3.5 h-3.5" />
                   </a>
                 </div>
@@ -137,16 +137,16 @@ export default function CareersPage() {
           >
             <Briefcase className="w-10 h-10 text-brand-400 mx-auto mb-4" />
             <h3 className="text-xl font-display font-bold text-gray-900 dark:text-gray-50 mb-2">
-              Không tìm thấy vị trí phù hợp?
+              Didn't find the right role?
             </h3>
             <p className="text-gray-500 dark:text-gray-400 mb-6 max-w-md mx-auto">
-              Gửi CV của bạn đến careers@milktea-iku.vn và chúng tôi sẽ liên hệ khi có vị trí phù hợp.
+              Send your CV to careers@drinma.com and we'll get in touch when a matching role opens up.
             </p>
             <a
-              href="mailto:careers@milktea-iku.vn"
+              href="mailto:careers@drinma.com"
               className="inline-flex items-center gap-2 px-6 py-3 bg-brand-600 hover:bg-brand-700 text-white rounded-xl font-medium transition-colors"
             >
-              Gửi CV
+              Send CV
             </a>
           </motion.div>
         </div>

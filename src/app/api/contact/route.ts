@@ -4,11 +4,11 @@ import { z } from "zod";
 import { limiter } from "@/lib/rate-limit";
 
 const contactSchema = z.object({
-  name: z.string().min(2, "Tên phải có ít nhất 2 ký tự"),
-  email: z.string().email("Email không hợp lệ"),
+  name: z.string().min(2, "Name must be at least 2 characters"),
+  email: z.string().email("Invalid email"),
   phone: z.string().optional(),
   subject: z.string().optional().default("general"),
-  message: z.string().min(20, "Nội dung phải có ít nhất 20 ký tự"),
+  message: z.string().min(20, "Your message must be at least 20 characters"),
 });
 
 export async function POST(request: NextRequest) {
@@ -18,7 +18,7 @@ export async function POST(request: NextRequest) {
       await limiter.check(3, ip);
     } catch {
       return NextResponse.json(
-        { error: "Quá nhiều yêu cầu, vui lòng thử lại sau" },
+        { error: "Too many requests, please try again later" },
         { status: 429 }
       );
     }
@@ -37,18 +37,18 @@ export async function POST(request: NextRequest) {
     });
 
     return NextResponse.json(
-      { message: "Cảm ơn bạn đã liên hệ! Chúng tôi sẽ phản hồi trong 24 giờ.", id: contact.id },
+      { message: "Thanks for reaching out! We'll get back to you within 24 hours.", id: contact.id },
       { status: 201 }
     );
   } catch (error) {
     if (error instanceof z.ZodError) {
       return NextResponse.json(
-        { error: "Dữ liệu không hợp lệ", details: error.errors },
+        { error: "Invalid data", details: error.errors },
         { status: 400 }
       );
     }
     return NextResponse.json(
-      { error: "Không thể gửi liên hệ. Vui lòng thử lại sau." },
+      { error: "We couldn't send your message. Please try again later." },
       { status: 500 }
     );
   }

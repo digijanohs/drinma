@@ -2,17 +2,17 @@ export default function JsonLd() {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Restaurant",
-    name: "MilkTea Iku",
-    description: "Trà sữa premium với nguyên liệu tươi ngon nhất. Đặt hàng online, giao tận nơi.",
-    url: "https://milktea-iku.vercel.app",
-    logo: "https://milktea-iku.vercel.app/logo.svg",
-    image: "https://milktea-iku.vercel.app/logo.svg",
+    name: "Drinma",
+    description: "Premium milk tea with the freshest ingredients. Order online, delivered to your door.",
+    url: "https://drinmademo.vercel.app",
+    logo: "https://drinmademo.vercel.app/logo.svg",
+    image: "https://drinmademo.vercel.app/logo.svg",
     telephone: "+84-28-1234-5678",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "123 Nguyễn Huệ",
-      addressLocality: "Quận 1",
-      addressRegion: "TP. Hồ Chí Minh",
+      streetAddress: "123 Nguyen Hue",
+      addressLocality: "District 1",
+      addressRegion: "Ho Chi Minh City",
       postalCode: "700000",
       addressCountry: "VN",
     },
@@ -21,7 +21,7 @@ export default function JsonLd() {
       latitude: 10.7769,
       longitude: 106.7009,
     },
-    servesCuisine: ["Milk Tea", "Bubble Tea", "Vietnamese Tea"],
+    servesCuisine: ["Bubble Tea", "Bubble Tea", "Vietnamese Tea"],
     priceRange: "$$",
     openingHoursSpecification: [
       {
@@ -37,11 +37,11 @@ export default function JsonLd() {
       reviewCount: "2000",
       bestRating: "5",
     },
-    hasMenu: "https://milktea-iku.vercel.app/menu",
+    hasMenu: "https://drinmademo.vercel.app/menu",
     acceptsReservations: false,
     sameAs: [
-      "https://facebook.com/milkteaiku",
-      "https://instagram.com/milkteaiku",
+      "https://facebook.com/drinma",
+      "https://instagram.com/drinma",
     ],
   };
 

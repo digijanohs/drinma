@@ -4,8 +4,8 @@ import CartDrawer from "@/components/CartDrawer";
 import ContactContent from "./ContactContent";
 
 export const metadata = {
-  title: "Liên hệ | MilkTea Iku",
-  description: "Liên hệ với MilkTea Iku - Chúng tôi luôn sẵn sàng lắng nghe và hỗ trợ bạn",
+  title: "Contact | Drinma",
+  description: "Contact Drinma – we're always ready to listen and help.",
 };
 
 export default function ContactPage() {

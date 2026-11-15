@@ -13,9 +13,9 @@ interface TrendingItem {
 
 const trendingItems: TrendingItem[] = [
   { id: "1", name: "Brown Sugar Boba", slug: "brown-sugar-boba", orders: 1250 },
-  { id: "2", name: "Trà Sữa Oolong", slug: "tra-sua-oolong", orders: 980 },
+  { id: "2", name: "Oolong Milk Tea", slug: "tra-sua-oolong", orders: 980 },
   { id: "3", name: "Matcha Latte", slug: "matcha-latte-da-xay", orders: 870 },
-  { id: "4", name: "Trà Đào Cam Sả", slug: "tra-dao-cam-sa", orders: 750 },
+  { id: "4", name: "Peach Lemongrass Tea", slug: "tra-dao-cam-sa", orders: 750 },
   { id: "5", name: "Dirty Matcha", slug: "dirty-matcha-latte", orders: 620 },
 ];
 
@@ -25,7 +25,7 @@ export default function TrendingProducts() {
       <div className="flex items-center gap-2 mb-5">
         <Flame className="w-5 h-5 text-red-500" />
         <h3 className="text-lg font-display font-bold text-gray-900">
-          Đang hot tuần này
+          Trending this week
         </h3>
       </div>
 
@@ -55,7 +55,7 @@ export default function TrendingProducts() {
                 </p>
                 <p className="text-xs text-gray-400 flex items-center gap-1">
                   <TrendingUp className="w-3 h-3" />
-                  {item.orders} đơn tuần này
+                  {item.orders} orders this week
                 </p>
               </div>
               <svg className="w-7 h-7 text-brand-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M17 8H7l1.5 12h7L17 8z"/><path d="M6 8h12l-.5-2H6.5L6 8z"/><circle cx="12" cy="14" r="1.5" fill="currentColor" stroke="none"/><circle cx="10" cy="17" r="1" fill="currentColor" stroke="none"/></svg>

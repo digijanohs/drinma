@@ -19,51 +19,51 @@ interface BlogPost {
 const posts: BlogPost[] = [
   {
     id: 1,
-    title: "Bí quyết chọn trà sữa phù hợp với khẩu vị",
+    title: "How to pick the milk tea that suits your taste",
     excerpt:
-      "Hướng dẫn chi tiết cách chọn loại trà, độ ngọt, và topping phù hợp với sở thích cá nhân của bạn.",
+      "A detailed guide to choosing the tea base, sweetness level and toppings that match your personal taste.",
     date: "15/05/2024",
-    category: "Mẹo hay",
-    readTime: "5 phút",
+    category: "Tips",
+    readTime: "5 minutes",
     gradient: "from-amber-100 to-orange-200",
   },
   {
     id: 2,
-    title: "Matcha Nhật Bản: Từ vườn trà đến ly Iku",
+    title: "Japanese Matcha: From tea garden to Drinma cup",
     excerpt:
-      "Hành trình của lá matcha Uji từ Kyoto đến cửa hàng Iku tại Việt Nam — câu chuyện về chất lượng và đam mê.",
+      "The journey of Uji matcha leaves from Kyoto to our Drinma stores in Vietnam — a story of quality and passion.",
     date: "10/05/2024",
-    category: "Nguyên liệu",
-    readTime: "7 phút",
+    category: "Ingredients",
+    readTime: "7 minutes",
     gradient: "from-green-100 to-emerald-200",
   },
   {
     id: 3,
-    title: "Top 5 combo trà sữa cho mùa hè 2024",
+    title: "Top 5 milk tea combos for summer 2024",
     excerpt:
-      "Những sự kết hợp trà sữa và topping giải nhiệt hoàn hảo cho những ngày nắng nóng oi bức.",
+      "Perfect pairings of milk tea and cooling toppings for hot, sticky days.",
     date: "05/05/2024",
-    category: "Gợi ý",
-    readTime: "4 phút",
+    category: "Suggestions",
+    readTime: "4 minutes",
     gradient: "from-sky-100 to-blue-200",
   },
   {
     id: 4,
-    title: "Câu chuyện đằng sau Brown Sugar Boba",
+    title: "The story behind Brown Sugar Boba",
     excerpt:
-      "Tại sao trân châu đường đen lại trở thành hiện tượng toàn cầu và bí mật công thức đặc biệt của Iku.",
+      "Why brown sugar boba became a global phenomenon — and the secret behind Drinma's special recipe.",
     date: "28/04/2024",
-    category: "Câu chuyện",
-    readTime: "6 phút",
+    category: "Our story",
+    readTime: "6 minutes",
     gradient: "from-yellow-100 to-amber-200",
   },
 ];
 
 const categoryColors: Record<string, string> = {
-  "Mẹo hay": "bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300",
-  "Nguyên liệu": "bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-300",
-  "Gợi ý": "bg-purple-100 text-purple-700 dark:bg-purple-900/40 dark:text-purple-300",
-  "Câu chuyện": "bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-300",
+  "Tips": "bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300",
+  "Ingredients": "bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-300",
+  "Suggestions": "bg-purple-100 text-purple-700 dark:bg-purple-900/40 dark:text-purple-300",
+  "Our story": "bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-300",
 };
 
 export default function BlogPage() {
@@ -89,7 +89,7 @@ export default function BlogPage() {
               transition={{ delay: 0.1 }}
               className="text-4xl md:text-5xl font-display font-bold text-gray-900 dark:text-white mb-4"
             >
-              Tin tức &amp; Công thức
+              News &amp; Recipes
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -97,7 +97,7 @@ export default function BlogPage() {
               transition={{ delay: 0.2 }}
               className="text-gray-500 dark:text-gray-400 text-lg max-w-xl mx-auto"
             >
-              Khám phá thế giới trà sữa, công thức pha chế và câu chuyện thú vị cùng Iku
+              Explore the world of milk tea, brewing recipes and fun stories with Drinma
             </motion.p>
           </div>
         </section>
@@ -149,7 +149,7 @@ export default function BlogPage() {
                   </p>
 
                   <div className="mt-4 flex items-center gap-1 text-xs font-medium text-brand-600 dark:text-brand-400 group-hover:gap-2 transition-all">
-                    Đọc thêm
+                    Read more
                     <ArrowRight className="w-3.5 h-3.5" />
                   </div>
                 </div>

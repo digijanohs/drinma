@@ -53,9 +53,7 @@ const addToCartVariants = {
 
 export default function ProductCard({ product, index = 0 }: ProductCardProps) {
   const formatPrice = (price: number) =>
-    new Intl.NumberFormat("vi-VN").format(price) + "đ";
-
-  return (
+    new Intl.NumberFormat("vi-VN").format(price) + "đ"; return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -106,7 +104,7 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
               )}
               {product.isNew && (
                 <Badge className="border-0 bg-green-500 text-[11px] font-semibold text-white">
-                  Mới
+                  New
                 </Badge>
               )}
               {product.isBestSeller && (
@@ -144,7 +142,7 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
                 }}
               >
                 <ShoppingCart className="size-4" />
-                Thêm vào giỏ
+                Add to cart
               </Button>
             </motion.div>
           </div>
@@ -170,7 +168,7 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
               href={`/menu/${product.slug}`}
               className="flex items-center gap-1 text-xs font-medium text-gray-400 dark:text-gray-500 transition-colors hover:text-brand-600 dark:hover:text-brand-400"
             >
-              Xem chi tiết
+              View Details
               <ArrowRight className="size-3" />
             </Link>
           </CardFooter>

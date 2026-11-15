@@ -58,7 +58,7 @@ export default function SocialShare({ url, title }: SocialShareProps) {
           href={href}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label={`Chia sẻ lên ${label}`}
+          aria-label={`Share this`}
           className={`inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-medium transition-colors ${className}`}
         >
           <Icon className="h-3.5 w-3.5" />
@@ -68,7 +68,7 @@ export default function SocialShare({ url, title }: SocialShareProps) {
 
       <button
         onClick={copyLink}
-        aria-label="Sao chép liên kết"
+        aria-label="Copy link"
         className="inline-flex items-center gap-1.5 rounded-lg border border-gray-200 bg-white px-3 py-1.5 text-xs font-medium text-gray-700 transition-colors hover:bg-gray-50 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700"
       >
         <AnimatePresence mode="wait" initial={false}>
@@ -82,7 +82,7 @@ export default function SocialShare({ url, title }: SocialShareProps) {
               className="flex items-center gap-1.5 text-green-600 dark:text-green-400"
             >
               <Check className="h-3.5 w-3.5" />
-              Đã sao chép!
+              Copied!
             </motion.span>
           ) : (
             <motion.span
@@ -94,7 +94,7 @@ export default function SocialShare({ url, title }: SocialShareProps) {
               className="flex items-center gap-1.5"
             >
               <Link className="h-3.5 w-3.5" />
-              Sao chép link
+              Copy link
             </motion.span>
           )}
         </AnimatePresence>

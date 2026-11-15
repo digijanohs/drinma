@@ -7,23 +7,23 @@ import { isAuthorized, UNAUTHORIZED_HEADERS } from "@/lib/auth";
 export const dynamic = "force-dynamic";
 
 const orderItemSchema = z.object({
-  productId: z.string().min(1, "ID sản phẩm không hợp lệ"),
-  size: z.string().min(1, "Kích cỡ không hợp lệ"),
-  quantity: z.number().int().min(1, "Số lượng phải ít nhất là 1"),
+  productId: z.string().min(1, "Invalid product ID"),
+  size: z.string().min(1, "Invalid size"),
+  quantity: z.number().int().min(1, "Quantity must be at least 1"),
   sugarLevel: z.number().int().min(0).max(100),
   iceLevel: z.number().int().min(0).max(100),
   toppings: z.array(z.string()),
-  subtotal: z.number().int().min(0, "Thành tiền không hợp lệ"),
+  subtotal: z.number().int().min(0, "Invalid total amount"),
 });
 
 const orderSchema = z.object({
-  customerName: z.string().min(2, "Tên khách hàng phải có ít nhất 2 ký tự"),
-  phone: z.string().min(9, "Số điện thoại không hợp lệ"),
+  customerName: z.string().min(2, "Customer name must be at least 2 characters"),
+  phone: z.string().min(9, "Invalid phone number"),
   address: z.string().optional(),
   note: z.string().optional(),
   items: z
     .array(orderItemSchema)
-    .min(1, "Đơn hàng phải có ít nhất một sản phẩm"),
+    .min(1, "Your order needs at least one item"),
 });
 
 export async function POST(request: NextRequest) {
@@ -33,7 +33,7 @@ export async function POST(request: NextRequest) {
       await limiter.check(5, ip);
     } catch {
       return NextResponse.json(
-        { error: "Quá nhiều yêu cầu, vui lòng thử lại sau" },
+        { error: "Too many requests, please try again later" },
         { status: 429 }
       );
     }
@@ -43,7 +43,7 @@ export async function POST(request: NextRequest) {
       body = await request.json();
     } catch {
       return NextResponse.json(
-        { error: "Dữ liệu gửi lên không hợp lệ" },
+        { error: "Invalid data submitted" },
         { status: 400 }
       );
     }
@@ -55,7 +55,7 @@ export async function POST(request: NextRequest) {
       const firstMessage =
         Object.values(fieldErrors).flat()[0] ??
         parsed.error.flatten().formErrors[0] ??
-        "Dữ liệu đơn hàng không hợp lệ";
+        "Invalid order data";
 
       return NextResponse.json(
         {
@@ -77,7 +77,7 @@ export async function POST(request: NextRequest) {
 
     if (productRecords.length !== productIds.length) {
       return NextResponse.json(
-        { error: "Một hoặc nhiều sản phẩm không tồn tại hoặc đã ngừng bán" },
+        { error: "One or more items are unavailable or have been discontinued" },
         { status: 422 }
       );
     }
@@ -133,7 +133,7 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     console.error("[POST /api/orders]", error);
     return NextResponse.json(
-      { error: "Không thể tạo đơn hàng, vui lòng thử lại" },
+      { error: "We couldn't place your order. Please try again." },
       { status: 500 }
     );
   }
@@ -186,7 +186,7 @@ export async function GET(request: NextRequest) {
   } catch (error) {
     console.error("[GET /api/orders]", error);
     return NextResponse.json(
-      { error: "Không thể tải danh sách đơn hàng" },
+      { error: "Unable to load orders" },
       { status: 500 }
     );
   }

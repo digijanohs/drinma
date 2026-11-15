@@ -44,22 +44,22 @@ export default function CountdownTimer({ targetDate }: CountdownTimerProps) {
   if (!timeLeft) {
     return (
       <div className="inline-flex items-center rounded-xl bg-gray-100 px-4 py-2 text-sm font-semibold text-gray-500 dark:bg-gray-700 dark:text-gray-400">
-        Đã kết thúc
+        Ended
       </div>
     );
   }
 
   const units = [
-    { label: "Ngày", value: timeLeft.days },
-    { label: "Giờ", value: timeLeft.hours },
-    { label: "Phút", value: timeLeft.minutes },
-    { label: "Giây", value: timeLeft.seconds },
+    { label: "Day", value: timeLeft.days },
+    { label: "Hours", value: timeLeft.hours },
+    { label: "Minutes", value: timeLeft.minutes },
+    { label: "Seconds", value: timeLeft.seconds },
   ];
 
   return (
     <div
       className="inline-flex items-center gap-1.5"
-      aria-label={`Còn lại: ${timeLeft.days} ngày ${timeLeft.hours} giờ ${timeLeft.minutes} phút ${timeLeft.seconds} giây`}
+      aria-label={`Time left: days hours minutes seconds`}
       aria-live="polite"
       aria-atomic="true"
     >

@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 const API_DOCS = {
   openapi: "3.0.0",
   info: {
-    title: "MilkTea Iku API",
+    title: "Drinma API",
     version: "1.0.0",
     description: "Premium Milk Tea E-Commerce Platform API",
     contact: {
@@ -12,7 +12,7 @@ const API_DOCS = {
     },
   },
   servers: [
-    { url: "https://milktea-iku.vercel.app/api", description: "Production" },
+    { url: "https://drinmademo.vercel.app/api", description: "Production" },
     { url: "http://localhost:3000/api", description: "Development" },
   ],
   paths: {

@@ -11,18 +11,18 @@ const sizes = [
 ];
 
 const sugarLevels = [
-  { id: "0", label: "0%", desc: "Không đường" },
-  { id: "30", label: "30%", desc: "Ít ngọt" },
-  { id: "50", label: "50%", desc: "Nửa đường" },
-  { id: "70", label: "70%", desc: "Bình thường" },
-  { id: "100", label: "100%", desc: "Ngọt đầy đủ" },
+  { id: "0", label: "0%", desc: "No sugar" },
+  { id: "30", label: "30%", desc: "Less sweet" },
+  { id: "50", label: "50%", desc: "Half sugar" },
+  { id: "70", label: "70%", desc: "Regular" },
+  { id: "100", label: "100%", desc: "Full sugar" },
 ];
 
 const iceLevels = [
-  { id: "0", label: "Không đá" },
-  { id: "30", label: "Ít đá" },
-  { id: "50", label: "Nửa đá" },
-  { id: "100", label: "Đầy đá" },
+  { id: "0", label: "No ice" },
+  { id: "30", label: "Less ice" },
+  { id: "50", label: "Half ice" },
+  { id: "100", label: "Full ice" },
 ];
 
 export default function DrinkBuilder() {
@@ -35,7 +35,7 @@ export default function DrinkBuilder() {
       <div>
         <div className="flex items-center gap-2 mb-3">
           <Palette className="w-4 h-4 text-brand-600" />
-          <h3 className="font-semibold text-gray-900 dark:text-gray-50 text-sm">Chọn size</h3>
+          <h3 className="font-semibold text-gray-900 dark:text-gray-50 text-sm">Choose size</h3>
         </div>
         <div className="grid grid-cols-3 gap-3">
           {sizes.map((size) => (
@@ -61,7 +61,7 @@ export default function DrinkBuilder() {
       <div>
         <div className="flex items-center gap-2 mb-3">
           <Droplets className="w-4 h-4 text-brand-600" />
-          <h3 className="font-semibold text-gray-900 dark:text-gray-50 text-sm">Độ ngọt</h3>
+          <h3 className="font-semibold text-gray-900 dark:text-gray-50 text-sm">Sweetness</h3>
         </div>
         <div className="flex gap-2 flex-wrap">
           {sugarLevels.map((level) => (
@@ -83,7 +83,7 @@ export default function DrinkBuilder() {
       <div>
         <div className="flex items-center gap-2 mb-3">
           <Thermometer className="w-4 h-4 text-brand-600" />
-          <h3 className="font-semibold text-gray-900 dark:text-gray-50 text-sm">Đá</h3>
+          <h3 className="font-semibold text-gray-900 dark:text-gray-50 text-sm">Ice</h3>
         </div>
         <div className="flex gap-2 flex-wrap">
           {iceLevels.map((level) => (

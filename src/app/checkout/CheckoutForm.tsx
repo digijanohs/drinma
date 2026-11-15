@@ -27,7 +27,7 @@ const paymentMethods = [
     icon: "💜",
     color: "bg-pink-50 border-pink-200 hover:border-pink-400",
     activeColor: "bg-pink-50 border-pink-500 ring-2 ring-pink-200",
-    desc: "Thanh toán qua ví MoMo",
+    desc: "Pay with MoMo wallet",
   },
   {
     id: "zalopay",
@@ -35,7 +35,7 @@ const paymentMethods = [
     icon: "💙",
     color: "bg-blue-50 border-blue-200 hover:border-blue-400",
     activeColor: "bg-blue-50 border-blue-500 ring-2 ring-blue-200",
-    desc: "Thanh toán qua ZaloPay",
+    desc: "Pay with ZaloPay",
   },
   {
     id: "vnpay",
@@ -43,23 +43,23 @@ const paymentMethods = [
     icon: "🔵",
     color: "bg-indigo-50 border-indigo-200 hover:border-indigo-400",
     activeColor: "bg-indigo-50 border-indigo-500 ring-2 ring-indigo-200",
-    desc: "VNPay QR / Thẻ ATM",
+    desc: "VNPay QR / ATM card",
   },
   {
     id: "bank",
-    name: "Chuyển khoản",
+    name: "Bank transfer",
     icon: "🏦",
     color: "bg-emerald-50 border-emerald-200 hover:border-emerald-400",
     activeColor: "bg-emerald-50 border-emerald-500 ring-2 ring-emerald-200",
-    desc: "Chuyển khoản ngân hàng",
+    desc: "Bank transfer",
   },
   {
     id: "cod",
-    name: "Tiền mặt (COD)",
+    name: "Cash (COD)",
     icon: "💵",
     color: "bg-amber-50 border-amber-200 hover:border-amber-400",
     activeColor: "bg-amber-50 border-amber-500 ring-2 ring-amber-200",
-    desc: "Thanh toán khi nhận hàng",
+    desc: "Cash on delivery",
   },
 ];
 
@@ -86,11 +86,11 @@ export default function CheckoutForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (items.length === 0) {
-      toast.error("Giỏ hàng trống!");
+      toast.error("Your cart is empty!");
       return;
     }
     if (!form.customerName || !form.phone) {
-      toast.error("Vui lòng điền đầy đủ thông tin!");
+      toast.error("Please fill in all fields!");
       return;
     }
 
@@ -118,9 +118,9 @@ export default function CheckoutForm() {
 
       clearCart();
       setOrderSuccess(true);
-      toast.success("Đặt hàng thành công!");
+      toast.success("Order placed successfully!");
     } catch {
-      toast.error("Có lỗi xảy ra, vui lòng thử lại!");
+      toast.error("Something went wrong. Please try again!");
     } finally {
       setIsSubmitting(false);
     }
@@ -142,27 +142,26 @@ export default function CheckoutForm() {
           <CheckCircle2 className="w-12 h-12 text-green-600" />
         </motion.div>
         <h2 className="text-2xl font-display font-bold text-gray-900 dark:text-gray-50 mb-3">
-          Đặt hàng thành công!
+          Order placed successfully!
         </h2>
         <p className="text-gray-500 dark:text-gray-400 mb-2">
-          Đơn hàng của bạn đang được chuẩn bị
+          Your order is being prepared
         </p>
         <p className="text-sm text-gray-500 dark:text-gray-400 mb-8">
-          Chúng tôi sẽ giao trong 20-30 phút. Bạn có thể theo dõi đơn hàng tại
-          trang &quot;Tra cứu đơn hàng&quot;.
+          We'll deliver in 20-30 minutes. You can track your order on the &quot;Order tracking&quot; page.
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <Link
             href="/order"
             className="inline-flex items-center justify-center px-6 py-3 border-2 border-brand-200 text-brand-700 rounded-full font-medium hover:bg-brand-50 transition-colors"
           >
-            Theo dõi đơn hàng
+            Track order
           </Link>
           <Link
             href="/menu"
             className="inline-flex items-center justify-center px-6 py-3 bg-brand-600 text-white rounded-full font-medium hover:bg-brand-700 transition-colors"
           >
-            Tiếp tục mua sắm
+            Continue shopping
           </Link>
         </div>
       </motion.div>
@@ -176,7 +175,7 @@ export default function CheckoutForm() {
         className="inline-flex items-center gap-2 text-gray-500 dark:text-gray-400 hover:text-brand-600 mb-6 transition-colors"
       >
         <ArrowLeft className="w-4 h-4" />
-        Quay lại menu
+        Back to menu
       </Link>
 
       {/* Progress steps */}
@@ -216,13 +215,13 @@ export default function CheckoutForm() {
                 className="space-y-5"
               >
                 <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-50 mb-6">
-                  Thông tin giao hàng
+                  Delivery details
                 </h2>
 
                 <div>
                   <label className="flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">
                     <User className="w-4 h-4 text-brand-500" />
-                    Họ tên *
+                    Full name *
                   </label>
                   <input
                     type="text"
@@ -232,14 +231,14 @@ export default function CheckoutForm() {
                       setForm({ ...form, customerName: e.target.value })
                     }
                     className="w-full px-4 py-3.5 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-50 focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 transition-all"
-                    placeholder="Nguyễn Văn A"
+                    placeholder="Nguyen Van A"
                   />
                 </div>
 
                 <div>
                   <label className="flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">
                     <Phone className="w-4 h-4 text-brand-500" />
-                    Số điện thoại *
+                    Phone number *
                   </label>
                   <input
                     type="tel"
@@ -256,7 +255,7 @@ export default function CheckoutForm() {
                 <div>
                   <label className="flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">
                     <MapPin className="w-4 h-4 text-brand-500" />
-                    Địa chỉ giao hàng
+                    Delivery address
                   </label>
                   <input
                     type="text"
@@ -265,14 +264,14 @@ export default function CheckoutForm() {
                       setForm({ ...form, address: e.target.value })
                     }
                     className="w-full px-4 py-3.5 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-50 focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 transition-all"
-                    placeholder="123 Nguyễn Huệ, Q.1, TP.HCM"
+                    placeholder="123 Nguyen Hue, District 1, Ho Chi Minh City"
                   />
                 </div>
 
                 <div>
                   <label className="flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">
                     <FileText className="w-4 h-4 text-brand-500" />
-                    Ghi chú
+                    Note
                   </label>
                   <textarea
                     value={form.note}
@@ -281,21 +280,21 @@ export default function CheckoutForm() {
                     }
                     rows={3}
                     className="w-full px-4 py-3.5 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-50 focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 transition-all resize-none"
-                    placeholder="Ít đá, nhiều đường..."
+                    placeholder="Less ice, more sugar..."
                   />
                 </div>
 
                 <button
                   onClick={() => {
                     if (!form.customerName || !form.phone) {
-                      toast.error("Vui lòng điền họ tên và số điện thoại!");
+                      toast.error("Please enter your name and phone number!");
                       return;
                     }
                     setStep(2);
                   }}
                   className="w-full py-4 bg-brand-600 text-white rounded-full font-semibold hover:bg-brand-700 transition-all hover:shadow-lg"
                 >
-                  Tiếp tục chọn thanh toán →
+                  Continue to payment →
                 </button>
               </motion.div>
             )}
@@ -309,7 +308,7 @@ export default function CheckoutForm() {
                 className="space-y-5"
               >
                 <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-50 mb-6">
-                  Phương thức thanh toán
+                  Payment method
                 </h2>
 
                 <div className="grid gap-3">
@@ -346,7 +345,7 @@ export default function CheckoutForm() {
 
                 <div className="flex items-center gap-2 p-3 bg-green-50 rounded-xl text-sm text-green-700">
                   <ShieldCheck className="w-4 h-4 flex-shrink-0" />
-                  <span>Thanh toán an toàn & bảo mật 100%</span>
+                  <span>100% safe & secure payment</span>
                 </div>
 
                 <div className="flex gap-3">
@@ -354,13 +353,13 @@ export default function CheckoutForm() {
                     onClick={() => setStep(1)}
                     className="flex-1 py-4 border-2 border-gray-200 dark:border-gray-600 text-gray-700 dark:text-gray-200 rounded-full font-medium hover:bg-gray-50 dark:hover:bg-gray-700 transition-all"
                   >
-                    ← Quay lại
+                    ← Back
                   </button>
                   <button
                     onClick={() => setStep(3)}
                     className="flex-1 py-4 bg-brand-600 text-white rounded-full font-semibold hover:bg-brand-700 transition-all hover:shadow-lg"
                   >
-                    Xác nhận →
+                    Confirm →
                   </button>
                 </div>
               </motion.div>
@@ -375,29 +374,29 @@ export default function CheckoutForm() {
                 className="space-y-5"
               >
                 <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-50 mb-6">
-                  Xác nhận đơn hàng
+                  Confirm order
                 </h2>
 
                 {/* Summary info */}
                 <div className="bg-gray-50 dark:bg-gray-700 rounded-2xl p-5 space-y-3">
                   <div className="flex justify-between text-sm">
-                    <span className="text-gray-500 dark:text-gray-400">Người nhận</span>
+                    <span className="text-gray-500 dark:text-gray-400">Recipient</span>
                     <span className="font-medium">{form.customerName}</span>
                   </div>
                   <div className="flex justify-between text-sm">
-                    <span className="text-gray-500 dark:text-gray-400">Điện thoại</span>
+                    <span className="text-gray-500 dark:text-gray-400">Phone</span>
                     <span className="font-medium">{form.phone}</span>
                   </div>
                   {form.address && (
                     <div className="flex justify-between text-sm">
-                    <span className="text-gray-500 dark:text-gray-400">Địa chỉ</span>
+                    <span className="text-gray-500 dark:text-gray-400">Address</span>
                       <span className="font-medium text-right max-w-[200px]">
                         {form.address}
                       </span>
                     </div>
                   )}
                   <div className="flex justify-between text-sm">
-                    <span className="text-gray-500 dark:text-gray-400">Thanh toán</span>
+                    <span className="text-gray-500 dark:text-gray-400">Checkout</span>
                     <span className="font-medium">
                       {paymentMethods.find((m) => m.id === paymentMethod)?.name}
                     </span>
@@ -436,15 +435,15 @@ export default function CheckoutForm() {
 
                 <div className="border-t pt-4 space-y-2">
                   <div className="flex justify-between text-sm">
-                    <span className="text-gray-500 dark:text-gray-400">Tạm tính</span>
+                    <span className="text-gray-500 dark:text-gray-400">Subtotal</span>
                     <span>{formatPrice(total())}</span>
                   </div>
                   <div className="flex justify-between text-sm">
-                    <span className="text-gray-500 dark:text-gray-400">Phí giao hàng</span>
-                    <span className="text-green-600 font-medium">Miễn phí</span>
+                    <span className="text-gray-500 dark:text-gray-400">Delivery fee</span>
+                    <span className="text-green-600 font-medium">Free</span>
                   </div>
                   <div className="flex justify-between text-lg font-bold pt-2 border-t">
-                    <span>Tổng cộng</span>
+                    <span>Total</span>
                     <span className="text-brand-600">
                       {formatPrice(total())}
                     </span>
@@ -457,7 +456,7 @@ export default function CheckoutForm() {
                     onClick={() => setStep(2)}
                     className="flex-1 py-4 border-2 border-gray-200 dark:border-gray-600 text-gray-700 dark:text-gray-200 rounded-full font-medium hover:bg-gray-50 dark:hover:bg-gray-700 transition-all"
                   >
-                    ← Quay lại
+                    ← Back
                   </button>
                   <button
                     type="submit"
@@ -467,10 +466,10 @@ export default function CheckoutForm() {
                     {isSubmitting ? (
                       <span className="flex items-center justify-center gap-2">
                         <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                        Đang xử lý...
+                        Processing...
                       </span>
                     ) : (
-                      "Đặt hàng"
+                      "Order"
                     )}
                   </button>
                 </form>
@@ -484,7 +483,7 @@ export default function CheckoutForm() {
           <div className="bg-gradient-to-br from-cream-50 to-brand-50/30 rounded-2xl p-6 sticky top-24 border border-brand-100/50">
             <h3 className="font-semibold text-gray-900 dark:text-gray-50 mb-4 flex items-center gap-2">
               <Wallet className="w-4 h-4 text-brand-500" />
-              Đơn hàng ({items.length} món)
+              Order ({items.length} items)
             </h3>
             <div className="space-y-3 max-h-72 overflow-y-auto pr-1">
               {items.map((item) => (
@@ -509,11 +508,11 @@ export default function CheckoutForm() {
 
             <div className="border-t border-brand-100 mt-4 pt-4 space-y-2">
               <div className="flex justify-between text-sm">
-                <span className="text-gray-500 dark:text-gray-400">Phí giao hàng</span>
-                <span className="text-green-600 font-medium">Miễn phí</span>
+                <span className="text-gray-500 dark:text-gray-400">Delivery fee</span>
+                <span className="text-green-600 font-medium">Free</span>
               </div>
               <div className="flex justify-between text-lg font-bold">
-                <span>Tổng</span>
+                <span>Total</span>
                 <span className="text-brand-600">{formatPrice(total())}</span>
               </div>
             </div>
@@ -522,19 +521,19 @@ export default function CheckoutForm() {
             <div className="mt-6 pt-4 border-t border-brand-100 grid grid-cols-2 gap-3">
               <div className="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400">
                 <ShieldCheck className="w-4 h-4 text-green-500" />
-                An toàn
+                Safe
               </div>
               <div className="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400">
                 <CreditCard className="w-4 h-4 text-blue-500" />
-                Bảo mật
+                Security
               </div>
               <div className="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400">
                 <Banknote className="w-4 h-4 text-emerald-500" />
-                Hoàn tiền
+                Refund
               </div>
               <div className="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400">
                 <Building2 className="w-4 h-4 text-purple-500" />
-                Uy tín
+                Trusted
               </div>
             </div>
           </div>

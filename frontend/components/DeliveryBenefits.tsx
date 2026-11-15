@@ -6,22 +6,22 @@ import { Truck, Shield, Clock, CreditCard } from "lucide-react";
 const benefits = [
   {
     icon: Truck,
-    title: "Giao hàng miễn phí",
-    description: "Đơn từ 100.000đ trong bán kính 5km",
+    title: "Free delivery",
+    description: "Orders from 100.000đ within 5km",
   },
   {
     icon: Clock,
-    title: "Giao nhanh 30 phút",
-    description: "Cam kết giao đúng giờ hoặc hoàn tiền",
+    title: "Fast delivery in 30 minutes",
+    description: "On-time delivery or your money back",
   },
   {
     icon: Shield,
-    title: "Đảm bảo chất lượng",
-    description: "Nguyên liệu tươi mới mỗi ngày",
+    title: "Quality guaranteed",
+    description: "Fresh ingredients every day",
   },
   {
     icon: CreditCard,
-    title: "Thanh toán linh hoạt",
+    title: "Flexible payment",
     description: "MoMo, ZaloPay, VNPay, COD",
   },
 ];

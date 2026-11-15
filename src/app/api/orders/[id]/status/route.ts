@@ -33,14 +33,14 @@ export async function PATCH(
     try {
       body = await request.json();
     } catch {
-      return errorResponse("Dữ liệu không hợp lệ", 400);
+      return errorResponse("Invalid data", 400);
     }
 
     const { status } = body as { status?: string };
 
     if (!status || !VALID_STATUSES.includes(status as OrderStatus)) {
       return errorResponse(
-        `Trạng thái không hợp lệ. Các giá trị hợp lệ: ${VALID_STATUSES.join(", ")}`,
+        `Invalid status. Valid values: the list of supported order statuses.`,
         400
       );
     }
@@ -49,7 +49,7 @@ export async function PATCH(
 
     const existing = await prisma.order.findUnique({ where: { id } });
     if (!existing) {
-      return errorResponse("Không tìm thấy đơn hàng", 404);
+      return errorResponse("Order not found", 404);
     }
 
     const updated = await prisma.order.update({
@@ -69,6 +69,6 @@ export async function PATCH(
       error: String(error),
       orderId: params.id,
     });
-    return errorResponse("Không thể cập nhật trạng thái đơn hàng", 500);
+    return errorResponse("Couldn't update the order status", 500);
   }
 }

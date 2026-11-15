@@ -47,7 +47,7 @@ export async function GET(request: NextRequest) {
     });
   } catch {
     return NextResponse.json(
-      { error: "Không thể tải danh sách đơn hàng" },
+      { error: "Unable to load orders" },
       { status: 500 }
     );
   }
@@ -67,7 +67,7 @@ export async function PATCH(request: NextRequest) {
 
     if (!orderId || !status) {
       return NextResponse.json(
-        { error: "Thiếu orderId hoặc status" },
+        { error: "Missing orderId or status" },
         { status: 400 }
       );
     }
@@ -75,7 +75,7 @@ export async function PATCH(request: NextRequest) {
     const validStatuses = ["pending", "confirmed", "preparing", "delivering", "delivered", "cancelled"];
     if (!validStatuses.includes(status)) {
       return NextResponse.json(
-        { error: "Trạng thái không hợp lệ" },
+        { error: "Invalid status" },
         { status: 400 }
       );
     }
@@ -88,7 +88,7 @@ export async function PATCH(request: NextRequest) {
     return NextResponse.json(order);
   } catch {
     return NextResponse.json(
-      { error: "Không thể cập nhật đơn hàng" },
+      { error: "We couldn't update the order" },
       { status: 500 }
     );
   }

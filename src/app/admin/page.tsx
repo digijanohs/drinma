@@ -2,7 +2,7 @@ import { prisma } from "@/lib/prisma";
 import AdminDashboard from "./AdminDashboard";
 
 export const metadata = {
-  title: "Admin | MilkTea Iku",
+  title: "Admin | Drinma",
 };
 
 export const dynamic = "force-dynamic";

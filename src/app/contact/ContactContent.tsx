@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -15,35 +15,35 @@ import {
 } from "lucide-react";
 
 const subjects = [
-  "GÃ³p Ã½ vá» sáº£n pháº©m",
-  "Váº¥n Ä‘á» Ä‘áº·t hÃ ng",
-  "Váº¥n Ä‘á» giao hÃ ng",
-  "Thanh toÃ¡n & hoÃ n tiá»n",
-  "Há»£p tÃ¡c kinh doanh",
-  "Äáº·t hÃ ng sá»‘ lÆ°á»£ng lá»›n",
-  "KhÃ¡c",
+  "Product feedback",
+  "Ordering issue",
+  "Delivery issue",
+  "Payment & refunds",
+  "Business partnership",
+  "Bulk orders",
+  "Other",
 ];
 
 const contactInfo = [
   {
     icon: MapPin,
-    label: "Äá»‹a chá»‰",
-    lines: ["123 Nguyá»…n Huá»‡, Quáº­n 1", "TP. Há»“ ChÃ­ Minh, Viá»‡t Nam"],
+    label: "Address",
+    lines: ["123 Nguyen Hue, District 1", "Ho Chi Minh City, Vietnam"],
   },
   {
     icon: Phone,
-    label: "Äiá»‡n thoáº¡i",
-    lines: ["1800-IKU (miá»…n phÃ­)", "028 3822 1234"],
+    label: "Phone",
+    lines: ["1800-DRINMA (toll-free)", "028 3822 1234"],
   },
   {
     icon: Mail,
     label: "Email",
-    lines: ["hello@milkteaiku.vn", "event@milkteaiku.vn"],
+    lines: ["hello@drinma.com", "event@drinma.com"],
   },
   {
     icon: Clock,
-    label: "Giá» lÃ m viá»‡c",
-    lines: ["Thá»© 2 â€“ Chá»§ nháº­t", "07:00 â€“ 22:00"],
+    label: "Working hours",
+    lines: ["Monday – Sunday", "07:00 – 22:00"],
   },
 ];
 
@@ -51,19 +51,19 @@ const socials = [
   {
     icon: Facebook,
     label: "Facebook",
-    href: "https://facebook.com/milkteaiku",
+    href: "https://facebook.com/drinma",
     color: "hover:text-blue-600",
   },
   {
     icon: Instagram,
     label: "Instagram",
-    href: "https://instagram.com/milkteaiku",
+    href: "https://instagram.com/drinma",
     color: "hover:text-pink-500",
   },
   {
     icon: Youtube,
     label: "YouTube",
-    href: "https://youtube.com/@milkteaiku",
+    href: "https://youtube.com/@drinma",
     color: "hover:text-red-500",
   },
 ];
@@ -80,19 +80,19 @@ type Errors = Partial<Record<keyof FormState, string>>;
 
 function validate(form: FormState): Errors {
   const errors: Errors = {};
-  if (!form.name.trim()) errors.name = "Vui lÃ²ng nháº­p há» tÃªn.";
+  if (!form.name.trim()) errors.name = "Please enter your full name.";
   if (!form.email.trim()) {
-    errors.email = "Vui lÃ²ng nháº­p email.";
+    errors.email = "Please enter your email.";
   } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
-    errors.email = "Email khÃ´ng há»£p lá»‡.";
+    errors.email = "That email doesn't look right.";
   }
   if (form.phone && !/^[0-9+\s\-()]{7,15}$/.test(form.phone)) {
-    errors.phone = "Sá»‘ Ä‘iá»‡n thoáº¡i khÃ´ng há»£p lá»‡.";
+    errors.phone = "That phone number doesn't look right.";
   }
-  if (!form.subject) errors.subject = "Vui lÃ²ng chá»n chá»§ Ä‘á».";
-  if (!form.message.trim()) errors.message = "Vui lÃ²ng nháº­p ná»™i dung.";
+  if (!form.subject) errors.subject = "Please select a topic.";
+  if (!form.message.trim()) errors.message = "Please enter your message.";
   else if (form.message.trim().length < 20)
-    errors.message = "Ná»™i dung cáº§n Ã­t nháº¥t 20 kÃ½ tá»±.";
+    errors.message = "Message must be at least 20 characters.";
   return errors;
 }
 
@@ -150,7 +150,7 @@ export default function ContactContent() {
             transition={{ duration: 0.5 }}
             className="inline-block px-4 py-1.5 bg-brand-100 text-brand-700 rounded-full text-sm font-medium mb-6"
           >
-            ChÃºng tÃ´i láº¯ng nghe báº¡n
+            We're listening
           </motion.span>
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
@@ -158,8 +158,8 @@ export default function ContactContent() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-4xl md:text-5xl font-display font-bold text-gray-900 dark:text-gray-50 mb-6"
           >
-            LiÃªn há»‡ vá»›i{" "}
-            <span className="text-brand-600">MilkTea Iku</span>
+            Contact{" "}
+            <span className="text-brand-600">Drinma</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -167,8 +167,7 @@ export default function ContactContent() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto"
           >
-            CÃ³ cÃ¢u há»i, gÃ³p Ã½ hay muá»‘n há»£p tÃ¡c? Äá»™i ngÅ© cá»§a chÃºng tÃ´i luÃ´n
-            sáºµn sÃ ng há»— trá»£ báº¡n trong thá»i gian sá»›m nháº¥t.
+            Have a question, feedback or want to partner with us? Our team is always ready to help you as soon as possible.
           </motion.p>
         </div>
       </section>
@@ -186,11 +185,10 @@ export default function ContactContent() {
             >
               <div className="bg-white dark:bg-gray-800 rounded-3xl shadow-sm border border-cream-100 dark:border-gray-700 p-8 md:p-10">
                 <h2 className="text-2xl font-display font-bold text-gray-900 dark:text-gray-50 mb-2">
-                  Gá»­i tin nháº¯n
+                  Send message
                 </h2>
                 <p className="text-gray-500 dark:text-gray-400 mb-8">
-                  Äiá»n thÃ´ng tin bÃªn dÆ°á»›i, chÃºng tÃ´i sáº½ pháº£n há»“i trong vÃ²ng 24
-                  giá».
+                  Fill in the details below and we'll get back to you within 24 hours.
                 </p>
 
                 <AnimatePresence mode="wait">
@@ -217,14 +215,14 @@ export default function ContactContent() {
                         <CheckCircle size={40} className="text-green-500" />
                       </motion.div>
                       <h3 className="text-2xl font-display font-bold text-gray-900 dark:text-gray-50 mb-3">
-                        Gá»­i thÃ nh cÃ´ng!
+                        Sent successfully!
                       </h3>
                       <p className="text-gray-500 dark:text-gray-400 max-w-sm">
-                        Cáº£m Æ¡n báº¡n Ä‘Ã£ liÃªn há»‡. ChÃºng tÃ´i sáº½ pháº£n há»“i qua email{" "}
+                        Thanks for contacting us. We will reply by email{" "}
                         <span className="font-medium text-brand-600">
                           {form.email}
                         </span>{" "}
-                        trong vÃ²ng 24 giá».
+                        within 24 hours.
                       </p>
                       <button
                         onClick={() => {
@@ -239,7 +237,7 @@ export default function ContactContent() {
                         }}
                         className="mt-8 px-6 py-2.5 rounded-full border border-brand-300 text-brand-600 hover:bg-brand-50 transition-colors text-sm font-medium"
                       >
-                        Gá»­i tin nháº¯n khÃ¡c
+                        Send another message
                       </button>
                     </motion.div>
                   ) : (
@@ -256,14 +254,14 @@ export default function ContactContent() {
                       <div className="grid sm:grid-cols-2 gap-5">
                         <div>
                           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
-                            Há» vÃ  tÃªn <span className="text-red-400">*</span>
+                            Full name <span className="text-red-400">*</span>
                           </label>
                           <input
                             type="text"
                             name="name"
                             value={form.name}
                             onChange={handleChange}
-                            placeholder="Nguyá»…n VÄƒn A"
+                            placeholder="Nguyen Van A"
                             className={errors.name ? inputError : inputNormal}
                           />
                           {errors.name && (
@@ -296,7 +294,7 @@ export default function ContactContent() {
                       <div className="grid sm:grid-cols-2 gap-5">
                         <div>
                           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
-                            Sá»‘ Ä‘iá»‡n thoáº¡i
+                            Phone number
                           </label>
                           <input
                             type="tel"
@@ -314,7 +312,7 @@ export default function ContactContent() {
                         </div>
                         <div>
                           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
-                            Chá»§ Ä‘á» <span className="text-red-400">*</span>
+                            Topic <span className="text-red-400">*</span>
                           </label>
                           <select
                             name="subject"
@@ -322,7 +320,7 @@ export default function ContactContent() {
                             onChange={handleChange}
                             className={`${errors.subject ? inputError : inputNormal} appearance-none cursor-pointer`}
                           >
-                            <option value="">Chá»n chá»§ Ä‘á»...</option>
+                            <option value="">Select a topic...</option>
                             {subjects.map((s) => (
                               <option key={s} value={s}>
                                 {s}
@@ -340,14 +338,14 @@ export default function ContactContent() {
                       {/* Message */}
                       <div>
                         <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
-                          Ná»™i dung <span className="text-red-400">*</span>
+                          Message <span className="text-red-400">*</span>
                         </label>
                         <textarea
                           name="message"
                           value={form.message}
                           onChange={handleChange}
                           rows={5}
-                          placeholder="MÃ´ táº£ chi tiáº¿t váº¥n Ä‘á» hoáº·c cÃ¢u há»i cá»§a báº¡n..."
+                          placeholder="Describe your issue or question in detail..."
                           className={`${errors.message ? inputError : inputNormal} resize-none`}
                         />
                         <div className="flex justify-between mt-1">
@@ -359,7 +357,7 @@ export default function ContactContent() {
                             <span />
                           )}
                           <span className="text-xs text-gray-400 dark:text-gray-500">
-                            {form.message.length} kÃ½ tá»±
+                            {form.message.length} characters
                           </span>
                         </div>
                       </div>
@@ -382,12 +380,12 @@ export default function ContactContent() {
                               }}
                               className="w-5 h-5 border-2 border-white border-t-transparent rounded-full inline-block"
                             />
-                            Äang gá»­i...
+                            Sending...
                           </>
                         ) : (
                           <>
                             <Send size={18} />
-                            Gá»­i tin nháº¯n
+                            Send message
                           </>
                         )}
                       </motion.button>
@@ -407,7 +405,7 @@ export default function ContactContent() {
               {/* Contact info cards */}
               <div className="bg-white dark:bg-gray-800 rounded-3xl shadow-sm border border-cream-100 dark:border-gray-700 p-8">
                 <h3 className="text-lg font-display font-bold text-gray-900 dark:text-gray-50 mb-6">
-                  ThÃ´ng tin liÃªn há»‡
+                  Contact information
                 </h3>
                 <div className="space-y-5">
                   {contactInfo.map((item, i) => (
@@ -438,7 +436,7 @@ export default function ContactContent() {
                 {/* Social links */}
                 <div className="mt-8 pt-6 border-t border-cream-100 dark:border-gray-700">
                   <p className="text-xs font-medium text-gray-400 dark:text-gray-500 uppercase tracking-wide mb-4">
-                    Máº¡ng xÃ£ há»™i
+                    Social media
                   </p>
                   <div className="flex gap-3">
                     {socials.map((s) => (
@@ -479,10 +477,10 @@ export default function ContactContent() {
                   </div>
                   <div className="relative z-10 text-center">
                     <p className="font-semibold text-gray-800 dark:text-gray-100 text-sm">
-                      123 Nguyá»…n Huá»‡, Quáº­n 1
+                      123 Nguyen Hue, District 1
                     </p>
                     <p className="text-gray-500 dark:text-gray-400 text-xs mt-0.5">
-                      TP. Há»“ ChÃ­ Minh
+                      Ho Chi Minh City
                     </p>
                   </div>
                   <a
@@ -491,7 +489,7 @@ export default function ContactContent() {
                     rel="noopener noreferrer"
                     className="relative z-10 mt-1 px-4 py-1.5 bg-white rounded-full text-xs font-medium text-brand-600 shadow hover:shadow-md transition-shadow"
                   >
-                    Xem trÃªn Google Maps
+                    View on Google Maps
                   </a>
                 </div>
               </motion.div>
@@ -506,14 +504,14 @@ export default function ContactContent() {
                 <svg className="w-6 h-6 text-brand-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
                 <div>
                   <p className="font-semibold text-gray-800 dark:text-gray-100 text-sm mb-1">
-                    Pháº£n há»“i nhanh
+                    Quick response
                   </p>
                   <p className="text-gray-500 dark:text-gray-400 text-sm">
-                    Thá»i gian pháº£n há»“i trung bÃ¬nh cá»§a chÃºng tÃ´i lÃ {" "}
+                    Our average response time is{" "}
                     <span className="font-medium text-brand-700">
-                      dÆ°á»›i 2 giá»
+                      under 2 hours
                     </span>{" "}
-                    trong giá» lÃ m viá»‡c.
+                    during business hours.
                   </p>
                 </div>
               </motion.div>

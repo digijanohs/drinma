@@ -15,7 +15,7 @@ export async function GET(request: NextRequest) {
     await limiter.check(10, ip);
   } catch {
     return NextResponse.json(
-      { error: "Quá nhiều yêu cầu, vui lòng thử lại sau." },
+      { error: "Too many requests, please try again later." },
       { status: 429 }
     );
   }
@@ -26,7 +26,7 @@ export async function GET(request: NextRequest) {
 
   if (!orderId && !phone) {
     return NextResponse.json(
-      { error: "Vui lòng cung cấp mã đơn hàng hoặc số điện thoại" },
+      { error: "Please enter your order number or phone number" },
       { status: 400 }
     );
   }
@@ -35,7 +35,7 @@ export async function GET(request: NextRequest) {
     const result = phoneSchema.safeParse(phone);
     if (!result.success) {
       return NextResponse.json(
-        { error: "Số điện thoại không hợp lệ" },
+        { error: "Invalid phone number" },
         { status: 400 }
       );
     }
@@ -61,7 +61,7 @@ export async function GET(request: NextRequest) {
 
     if (orders.length === 0) {
       return NextResponse.json(
-        { error: "Không tìm thấy đơn hàng" },
+        { error: "Order not found" },
         { status: 404 }
       );
     }
@@ -74,7 +74,7 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ orders: redacted });
   } catch {
     return NextResponse.json(
-      { error: "Không thể tra cứu đơn hàng" },
+      { error: "We couldn't look up your order" },
       { status: 500 }
     );
   }

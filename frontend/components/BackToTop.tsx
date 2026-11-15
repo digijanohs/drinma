@@ -28,7 +28,7 @@ export default function BackToTop() {
           exit={{ opacity: 0, y: 16 }}
           transition={{ duration: 0.25, ease: "easeOut" }}
           onClick={scrollToTop}
-          aria-label="Về đầu trang"
+          aria-label="Back to top"
           className="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-brand-600 text-white shadow-lg transition-colors hover:bg-brand-700 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700"
         >
           <ArrowUp className="h-5 w-5" />

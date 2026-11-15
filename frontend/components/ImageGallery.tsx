@@ -55,14 +55,14 @@ export default function ImageGallery({ images, productName }: ImageGalleryProps)
             <button
               onClick={goPrev}
               className="absolute left-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm shadow-md flex items-center justify-center md:opacity-0 md:group-hover:opacity-100 opacity-100 transition-opacity hover:bg-white dark:hover:bg-gray-700"
-              aria-label="Ảnh trước"
+              aria-label="Previous image"
             >
               <ChevronLeft className="w-5 h-5 text-gray-700 dark:text-gray-200" />
             </button>
             <button
               onClick={goNext}
               className="absolute right-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm shadow-md flex items-center justify-center md:opacity-0 md:group-hover:opacity-100 opacity-100 transition-opacity hover:bg-white dark:hover:bg-gray-700"
-              aria-label="Ảnh tiếp"
+              aria-label="Next image"
             >
               <ChevronRight className="w-5 h-5 text-gray-700 dark:text-gray-200" />
             </button>
@@ -72,7 +72,7 @@ export default function ImageGallery({ images, productName }: ImageGalleryProps)
         <button
           onClick={() => setIsZoomed(true)}
           className="absolute top-3 right-3 w-11 h-11 rounded-full bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm shadow-md flex items-center justify-center md:opacity-0 md:group-hover:opacity-100 opacity-100 transition-opacity hover:bg-white dark:hover:bg-gray-700"
-          aria-label="Phóng to ảnh"
+          aria-label="Zoom in on image"
         >
           <ZoomIn className="w-5 h-5 text-gray-700 dark:text-gray-200" />
         </button>
@@ -88,7 +88,7 @@ export default function ImageGallery({ images, productName }: ImageGalleryProps)
                     ? "bg-white w-5"
                     : "bg-white/60 hover:bg-white/90 w-2"
                 }`}
-                aria-label={`Đi tới ảnh ${i + 1} của ${displayImages.length}`}
+                aria-label={`Go to image \${i + 1} of \${displayImages.length}`}
                 aria-current={i === currentIndex ? "true" : undefined}
               />
             ))}

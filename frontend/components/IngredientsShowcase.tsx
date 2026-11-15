@@ -11,19 +11,19 @@ interface Ingredient {
 }
 
 const ingredients: Ingredient[] = [
-  { name: "Trà Oolong", origin: "Đài Loan", icon: <Leaf className="w-7 h-7 text-green-600" /> },
-  { name: "Matcha Uji", origin: "Kyoto, Nhật Bản", icon: <CupSoda className="w-7 h-7 text-emerald-600" /> },
-  { name: "Đường nâu", origin: "Okinawa, Nhật Bản", icon: <Candy className="w-7 h-7 text-amber-600" /> },
-  { name: "Sữa tươi", origin: "TH True Milk, Việt Nam", icon: <Milk className="w-7 h-7 text-blue-400" /> },
-  { name: "Trân châu", origin: "Tự làm mỗi ngày", icon: <Circle className="w-7 h-7 text-gray-800" /> },
-  { name: "Trà đen", origin: "Assam, Ấn Độ", icon: <Coffee className="w-7 h-7 text-red-800" /> },
+  { name: "Oolong tea", origin: "Taiwan", icon: <Leaf className="w-7 h-7 text-green-600" /> },
+  { name: "Matcha Uji", origin: "Kyoto, Japan", icon: <CupSoda className="w-7 h-7 text-emerald-600" /> },
+  { name: "Brown sugar", origin: "Okinawa, Japan", icon: <Candy className="w-7 h-7 text-amber-600" /> },
+  { name: "Fresh milk", origin: "TH True Milk, Vietnam", icon: <Milk className="w-7 h-7 text-blue-400" /> },
+  { name: "Tapioca pearls", origin: "Made fresh daily", icon: <Circle className="w-7 h-7 text-gray-800" /> },
+  { name: "Black tea", origin: "Assam, India", icon: <Coffee className="w-7 h-7 text-red-800" /> },
 ];
 
 const features = [
-  { icon: Leaf, title: "100% tự nhiên", desc: "Không phẩm màu, không hương liệu nhân tạo" },
-  { icon: Snowflake, title: "Bảo quản lạnh", desc: "Nguyên liệu luôn được giữ ở nhiệt độ tối ưu" },
-  { icon: Flame, title: "Nấu tươi", desc: "Trân châu và topping nấu mới mỗi 4 giờ" },
-  { icon: Clock, title: "Nhập mới mỗi ngày", desc: "Sữa tươi và trái cây nhập hàng ngày" },
+  { icon: Leaf, title: "100% Natural", desc: "No artificial colors or flavors" },
+  { icon: Snowflake, title: "Keep refrigerated", desc: "Ingredients always kept at the ideal temperature" },
+  { icon: Flame, title: "Cooked fresh", desc: "Pearls and toppings cooked fresh every 4 hours" },
+  { icon: Clock, title: "Fresh stock daily", desc: "Fresh milk and fruit delivered daily" },
 ];
 
 export default function IngredientsShowcase() {
@@ -32,10 +32,10 @@ export default function IngredientsShowcase() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-display font-bold text-gray-900 dark:text-gray-50 mb-3">
-            Nguyên liệu cao cấp
+            Premium ingredients
           </h2>
           <p className="text-gray-500 dark:text-gray-400 max-w-md mx-auto">
-            Chọn lọc kỹ lưỡng từ những nguồn cung uy tín nhất
+            Carefully selected from the most trusted suppliers
           </p>
         </div>
 

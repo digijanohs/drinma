@@ -67,7 +67,7 @@ export default function StoreCard({
           className="mt-2 w-full flex items-center justify-center gap-2 py-3 min-h-11 bg-brand-600 hover:bg-brand-700 active:bg-brand-800 text-white rounded-xl text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-gray-900"
         >
           <Navigation className="w-4 h-4" />
-          Chỉ đường
+          Get Directions
         </a>
       </div>
     </motion.div>

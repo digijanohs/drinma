@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 import { CheckCircle2, Circle, Clock, Package, Bike, PartyPopper } from "lucide-react";
 
 const STEPS = [
-  { label: "Đã xác nhận", icon: CheckCircle2, key: "confirmed" },
-  { label: "Đang pha chế", icon: Package, key: "preparing" },
-  { label: "Đang giao", icon: Bike, key: "delivering" },
-  { label: "Hoàn thành", icon: PartyPopper, key: "done" },
+  { label: "Confirmed", icon: CheckCircle2, key: "confirmed" },
+  { label: "Being prepared", icon: Package, key: "preparing" },
+  { label: "Out for delivery", icon: Bike, key: "delivering" },
+  { label: "Completed", icon: PartyPopper, key: "done" },
 ] as const;
 
 type StepKey = (typeof STEPS)[number]["key"];
@@ -36,7 +36,7 @@ export default function DeliveryTracker({
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
         <h3 className="font-display font-bold text-gray-900 dark:text-white text-lg">
-          Theo dõi đơn hàng
+          Track order
         </h3>
         <div className="flex items-center gap-1.5 text-sm text-gray-500 dark:text-gray-400">
           <Clock className="w-4 h-4 text-brand-500" />
@@ -107,10 +107,10 @@ export default function DeliveryTracker({
         transition={{ duration: 0.35 }}
         className="bg-brand-50 dark:bg-brand-900/30 rounded-xl px-4 py-3 text-sm text-brand-700 dark:text-brand-300 text-center font-medium"
       >
-        {activeIndex === 0 && "Đơn hàng của bạn đã được xác nhận!"}
-        {activeIndex === 1 && "Barista đang pha chế đồ uống cho bạn..."}
-        {activeIndex === 2 && "Shipper đang trên đường giao đến bạn!"}
-        {activeIndex === 3 && "Đơn hàng đã giao thành công. Chúc bạn ngon miệng!"}
+        {activeIndex === 0 && "Your order is confirmed!"}
+        {activeIndex === 1 && "Your barista is making your drink..."}
+        {activeIndex === 2 && "Your rider is on the way!"}
+        {activeIndex === 3 && "Order delivered successfully. Enjoy!"}
       </motion.div>
     </div>
   );

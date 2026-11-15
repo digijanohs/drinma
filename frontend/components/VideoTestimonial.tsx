@@ -6,10 +6,10 @@ import { Play, Star } from "lucide-react";
 const testimonials = [
   {
     id: 1,
-    name: "Nguyễn Thị Lan",
-    role: "Khách hàng thân thiết",
+    name: "Nguyen Thi Lan",
+    role: "Loyal customers",
     quote:
-      "Trà sữa Iku ngon nhất mình từng uống! Topping trân châu dai mềm, trà thơm tự nhiên. Mình order mỗi ngày luôn.",
+      "The best Drinma milk tea I've ever had! The boba topping is perfectly chewy and the tea tastes naturally fragrant. I order it every single day.",
     rating: 5,
     gradient: "from-brand-400 via-brand-500 to-brand-700",
     thumbBg: "bg-brand-100 dark:bg-brand-900",
@@ -19,17 +19,17 @@ const testimonials = [
     name: "Trần Minh Khoa",
     role: "Food Blogger",
     quote:
-      "Đã thử qua rất nhiều thương hiệu trà sữa nhưng Iku vẫn là số 1. Nguyên liệu tươi, không dùng bột pha sẵn.",
+      "I've tried so many milk tea brands, but Drinma is still number one. Fresh ingredients, no pre-mixed powders.",
     rating: 5,
     gradient: "from-cream-400 via-amber-400 to-orange-500",
     thumbBg: "bg-amber-100 dark:bg-amber-900",
   },
   {
     id: 3,
-    name: "Phạm Thu Hà",
-    role: "Sinh viên ĐH Bách Khoa",
+    name: "Pham Thu Ha",
+    role: "Bach Khoa University student",
     quote:
-      "Giá cả hợp lý, chất lượng premium. Mỗi lần stress học bài là mình lại order Iku để lấy lại năng lượng.",
+      "Fair prices, premium quality. Every time studying gets stressful, I order Drinma to recharge.",
     rating: 5,
     gradient: "from-pink-400 via-rose-400 to-brand-500",
     thumbBg: "bg-pink-100 dark:bg-pink-900",
@@ -61,11 +61,10 @@ export default function VideoTestimonial() {
           className="text-center mb-14"
         >
           <h2 className="text-3xl sm:text-4xl font-display font-bold text-gray-900 dark:text-white mb-4">
-            Khách hàng nói gì?
+            What do customers say?
           </h2>
           <p className="text-gray-500 dark:text-gray-400 max-w-xl mx-auto">
-            Hàng nghìn khách hàng đã tin tưởng và yêu thích MilkTea Iku. Nghe
-            họ chia sẻ trải nghiệm thực tế.
+            Thousands of customers trust and love Drinma. Hear what they have to say about their real experiences.
           </p>
         </motion.div>
 
@@ -89,7 +88,7 @@ export default function VideoTestimonial() {
                 <motion.button
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
-                  aria-label={`Xem video của ${t.name}`}
+                  aria-label={`Watch the video`}
                   className="w-16 h-16 rounded-full bg-white/30 backdrop-blur-sm flex items-center justify-center border-2 border-white/60 shadow-lg"
                 >
                   <Play className="w-7 h-7 text-white fill-white ml-1" />

@@ -8,14 +8,14 @@ import CartDrawer from "@/components/CartDrawer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
-type City = "Tất cả" | "TP.HCM" | "Hà Nội";
+type City = "All" | "TP.HCM" | "Hanoi";
 
 interface Store {
   id: number;
   name: string;
   address: string;
   district: string;
-  city: "TP.HCM" | "Hà Nội";
+  city: "TP.HCM" | "Hanoi";
   phone: string;
   hours: string;
   mapsUrl: string;
@@ -24,9 +24,9 @@ interface Store {
 const stores: Store[] = [
   {
     id: 1,
-    name: "Iku Nguyễn Huệ",
+    name: "Drinma Nguyen Hue",
     address: "12 Nguyễn Huệ, Phường Bến Nghé",
-    district: "Quận 1",
+    district: "District 1",
     city: "TP.HCM",
     phone: "028 1234 5678",
     hours: "08:00 – 22:00",
@@ -35,9 +35,9 @@ const stores: Store[] = [
   },
   {
     id: 2,
-    name: "Iku Phạm Ngọc Thạch",
+    name: "Drinma Pham Ngoc Thach",
     address: "45 Phạm Ngọc Thạch, Phường 6",
-    district: "Quận 3",
+    district: "District 3",
     city: "TP.HCM",
     phone: "028 2345 6789",
     hours: "08:00 – 22:00",
@@ -46,9 +46,9 @@ const stores: Store[] = [
   },
   {
     id: 3,
-    name: "Iku Lê Văn Sỹ",
+    name: "Drinma Le Van Sy",
     address: "78 Lê Văn Sỹ, Phường 13",
-    district: "Quận 3",
+    district: "District 3",
     city: "TP.HCM",
     phone: "028 3456 7890",
     hours: "08:00 – 22:00",
@@ -57,10 +57,10 @@ const stores: Store[] = [
   },
   {
     id: 4,
-    name: "Iku Hoàng Đạo Thúy",
+    name: "Drinma Hoang Dao Thuy",
     address: "23 Hoàng Đạo Thúy, Phường Trung Hòa",
-    district: "Cầu Giấy",
-    city: "Hà Nội",
+    district: "Cau Giay District",
+    city: "Hanoi",
     phone: "024 4567 8901",
     hours: "08:00 – 22:00",
     mapsUrl:
@@ -68,10 +68,10 @@ const stores: Store[] = [
   },
   {
     id: 5,
-    name: "Iku Trần Duy Hưng",
+    name: "Drinma Tran Duy Hung",
     address: "56 Trần Duy Hưng, Phường Trung Hòa",
-    district: "Cầu Giấy",
-    city: "Hà Nội",
+    district: "Cau Giay District",
+    city: "Hanoi",
     phone: "024 5678 9012",
     hours: "08:00 – 22:00",
     mapsUrl:
@@ -79,10 +79,10 @@ const stores: Store[] = [
   },
   {
     id: 6,
-    name: "Iku Nguyễn Trãi",
+    name: "Drinma Nguyen Trai",
     address: "89 Nguyễn Trãi, Phường Thượng Đình",
-    district: "Thanh Xuân",
-    city: "Hà Nội",
+    district: "Thanh Xuan District",
+    city: "Hanoi",
     phone: "024 6789 0123",
     hours: "08:00 – 22:00",
     mapsUrl:
@@ -90,11 +90,11 @@ const stores: Store[] = [
   },
 ];
 
-const cityFilters: City[] = ["Tất cả", "TP.HCM", "Hà Nội"];
+const cityFilters: City[] = ["All", "TP.HCM", "Hanoi"];
 
 const cityBadgeColor: Record<Store["city"], string> = {
   "TP.HCM": "bg-brand-100 text-brand-700 border-brand-200",
-  "Hà Nội": "bg-blue-50 text-blue-700 border-blue-200",
+  "Hanoi": "bg-blue-50 text-blue-700 border-blue-200",
 };
 
 // SVG icons as inline components to avoid adding a new icon library
@@ -187,10 +187,10 @@ const cardVariants = {
 };
 
 export default function StoresPage() {
-  const [activeCity, setActiveCity] = useState<City>("Tất cả");
+  const [activeCity, setActiveCity] = useState<City>("All");
 
   const filtered =
-    activeCity === "Tất cả"
+    activeCity === "All"
       ? stores
       : stores.filter((s) => s.city === activeCity);
 
@@ -209,7 +209,7 @@ export default function StoresPage() {
               transition={{ duration: 0.5 }}
               className="inline-block px-4 py-1.5 bg-brand-100 text-brand-700 rounded-full text-sm font-medium mb-5"
             >
-              Tìm cửa hàng
+              Find a store
             </motion.span>
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
@@ -218,7 +218,7 @@ export default function StoresPage() {
               className="text-4xl md:text-5xl font-display font-bold text-gray-900 dark:text-gray-50 mb-4"
             >
               Hệ thống{" "}
-              <span className="text-brand-600">cửa hàng</span>
+              <span className="text-brand-600">store</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -226,8 +226,8 @@ export default function StoresPage() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-gray-500 dark:text-gray-400 text-lg max-w-xl mx-auto"
             >
-              {stores.length} cửa hàng tại TP.HCM và Hà Nội — mở cửa mỗi ngày
-              từ 8:00 đến 22:00
+              {stores.length} stores in Ho Chi Minh City and Hanoi — open daily
+              from 8:00 to 22:00
             </motion.p>
           </div>
         </section>
@@ -251,7 +251,7 @@ export default function StoresPage() {
                 }`}
               >
                 {city}
-                {city !== "Tất cả" && (
+                {city !== "All" && (
                   <span
                     className={`ml-2 text-xs px-1.5 py-0.5 rounded-full ${
                       activeCity === city
@@ -318,7 +318,7 @@ export default function StoresPage() {
                       </li>
                       <li className="flex items-center gap-2.5">
                         <ClockIcon />
-                        <span>{store.hours} — Mở cửa hàng ngày</span>
+                        <span>{store.hours} — Open daily</span>
                       </li>
                     </ul>
 
@@ -331,7 +331,7 @@ export default function StoresPage() {
                         className="w-full bg-brand-600 hover:bg-brand-700 text-white rounded-xl gap-2 inline-flex items-center justify-center h-10 px-4 font-medium transition-colors"
                       >
                         <DirectionsIcon />
-                        Chỉ đường
+                        Get Directions
                       </a>
                     </div>
                   </CardContent>
@@ -355,7 +355,7 @@ export default function StoresPage() {
                 <span className="w-3 h-3 rounded-full bg-green-400" />
               </div>
               <span className="text-sm text-gray-500 dark:text-gray-400 font-medium">
-                Bản đồ cửa hàng Iku
+                Drinma store map
               </span>
             </div>
             <div className="relative bg-gray-200 dark:bg-gray-700 h-72 md:h-96 flex flex-col items-center justify-center gap-4">
@@ -388,10 +388,10 @@ export default function StoresPage() {
                   <MapPinIcon />
                 </div>
                 <p className="text-gray-600 dark:text-gray-300 font-medium text-base">
-                  {stores.length} cửa hàng tại TP.HCM &amp; Hà Nội
+                  {stores.length} stores in Ho Chi Minh City & Hanoi
                 </p>
                 <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">
-                  Nhấn &ldquo;Chỉ đường&rdquo; trên từng thẻ để mở Google Maps
+                  Tap &ldquo;Directions&rdquo; on any card to open Google Maps
                 </p>
               </div>
             </div>
@@ -406,17 +406,16 @@ export default function StoresPage() {
             className="mt-14 text-center bg-white dark:bg-gray-800 rounded-3xl border border-gray-100 dark:border-gray-700 shadow-sm px-6 py-10"
           >
             <p className="text-2xl font-display font-bold text-gray-900 dark:text-gray-50 mb-2">
-              Chưa có cửa hàng gần bạn?
+              No store near you yet?
             </p>
             <p className="text-gray-500 dark:text-gray-400 mb-6 max-w-md mx-auto">
-              Đặt hàng online và nhận giao tận nơi trong vòng 30 phút tại khu
-              vực nội thành.
+              Order online and get it delivered within 30 minutes in the city center.
             </p>
             <a
               href="/menu"
               className="inline-flex items-center justify-center h-11 px-8 bg-brand-600 hover:bg-brand-700 text-white rounded-xl font-medium transition-colors"
             >
-              Đặt hàng ngay
+              Order now
             </a>
           </motion.div>
         </div>

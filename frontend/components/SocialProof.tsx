@@ -9,32 +9,32 @@ const reviews = [
     name: "Minh Anh",
     avatar: "MA",
     rating: 5,
-    text: "Brown Sugar Boba ngon xuất sắc! Trân châu dẻo, đường nâu thơm lừng. Sẽ quay lại mỗi ngày.",
+    text: "The Brown Sugar Boba is absolutely delicious! Chewy pearls and that amazing brown sugar aroma. I'll be back every day.",
     product: "Brown Sugar Boba",
   },
   {
     id: 2,
-    name: "Thanh Hà",
+    name: "Thanh Ha",
     avatar: "TH",
     rating: 5,
-    text: "Matcha Latte ở đây chuẩn vị Nhật, không quá ngọt. Đóng gói đẹp, giao hàng nhanh.",
+    text: "The Matcha Latte here tastes exactly like Japan and isn't too sweet. Lovely packaging, fast delivery.",
     product: "Matcha Latte",
   },
   {
     id: 3,
-    name: "Đức Phong",
+    name: "Duc Phong",
     avatar: "DP",
     rating: 5,
-    text: "Taro Milk Tea béo ngậy, topping phong phú. App đặt hàng tiện lợi, tích điểm nhanh.",
+    text: "Taro Milk Tea is creamy and rich, with loads of topping options. The app is easy to order from and points add up fast.",
     product: "Taro Milk Tea",
   },
   {
     id: 4,
-    name: "Ngọc Trâm",
+    name: "Ngoc Tram",
     avatar: "NT",
     rating: 5,
-    text: "Trà đào cam sả mát lạnh, vị chua ngọt hài hòa. Uống là ghiền luôn!",
-    product: "Trà Đào Cam Sả",
+    text: "The Peach Lemongrass Tea is so refreshing, with the perfect balance of sweet and tart. One sip and you're hooked!",
+    product: "Peach Lemongrass Tea",
   },
 ];
 
@@ -44,13 +44,13 @@ export default function SocialProof() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
           <h2 className="text-3xl font-display font-bold text-gray-900 mb-3">
-            Khách hàng nói gì?
+            What do customers say?
           </h2>
           <div className="flex items-center justify-center gap-1">
             {[...Array(5)].map((_, i) => (
               <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
             ))}
-            <span className="ml-2 text-sm text-gray-500">4.9/5 từ 2,000+ đánh giá</span>
+            <span className="ml-2 text-sm text-gray-500">4.9/5 from 2,000+ reviews</span>
           </div>
         </div>
 

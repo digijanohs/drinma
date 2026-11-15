@@ -4,8 +4,8 @@ import CartDrawer from "@/components/CartDrawer";
 import FAQContent from "./FAQContent";
 
 export const metadata = {
-  title: "Câu hỏi thường gặp | MilkTea Iku",
-  description: "Giải đáp mọi thắc mắc về đặt hàng, giao hàng, thanh toán và sản phẩm của MilkTea Iku",
+  title: "FAQ | Drinma",
+  description: "Answers to every question about ordering, delivery, payment and Drinma products",
 };
 
 export default function FAQPage() {

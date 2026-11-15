@@ -9,8 +9,8 @@ import CartDrawer from "@/components/CartDrawer";
 const nearbyStores = [
   {
     id: 1,
-    name: "Iku Nguyễn Huệ",
-    address: "123 Nguyễn Huệ, Q.1, TP.HCM",
+    name: "Drinma Nguyen Hue",
+    address: "123 Nguyen Hue, District 1, Ho Chi Minh City",
     distance: "0.5 km",
     hours: "07:00 - 22:00",
     phone: "028 1234 5678",
@@ -18,7 +18,7 @@ const nearbyStores = [
   },
   {
     id: 2,
-    name: "Iku Phạm Ngọc Thạch",
+    name: "Drinma Pham Ngoc Thach",
     address: "45 Phạm Ngọc Thạch, Q.3, TP.HCM",
     distance: "1.2 km",
     hours: "07:00 - 22:00",
@@ -27,7 +27,7 @@ const nearbyStores = [
   },
   {
     id: 3,
-    name: "Iku Lê Văn Sỹ",
+    name: "Drinma Le Van Sy",
     address: "78 Lê Văn Sỹ, Q.3, TP.HCM",
     distance: "2.1 km",
     hours: "07:00 - 22:00",
@@ -36,7 +36,7 @@ const nearbyStores = [
   },
   {
     id: 4,
-    name: "Iku Nguyễn Trãi",
+    name: "Drinma Nguyen Trai",
     address: "200 Nguyễn Trãi, Q.5, TP.HCM",
     distance: "3.5 km",
     hours: "07:00 - 21:30",
@@ -66,7 +66,7 @@ export default function NearbyPage() {
               transition={{ delay: 0.1 }}
               className="text-4xl font-display font-bold text-gray-900 dark:text-gray-50 mb-4"
             >
-              Cửa hàng gần bạn
+              Stores near you
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -74,7 +74,7 @@ export default function NearbyPage() {
               transition={{ delay: 0.2 }}
               className="text-gray-600 dark:text-gray-300 text-lg"
             >
-              Tìm Iku gần nhất để ghé thăm
+              Find your nearest Drinma and drop by
             </motion.p>
           </div>
         </section>
@@ -103,7 +103,7 @@ export default function NearbyPage() {
                       <span className={`inline-block px-2 py-0.5 rounded-full text-[10px] font-medium ${
                         store.isOpen ? "bg-green-50 text-green-700 dark:bg-green-900/40 dark:text-green-300" : "bg-red-50 text-red-700 dark:bg-red-900/40 dark:text-red-300"
                       }`}>
-                        {store.isOpen ? "Đang mở" : "Đã đóng"}
+                        {store.isOpen ? "Open now" : "Closed"}
                       </span>
                     </div>
                   </div>

@@ -33,7 +33,7 @@ export default function FeedbackPage() {
               animate={{ opacity: 1, y: 0 }}
               className="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-4"
             >
-              Góp ý & Đánh giá
+              Feedback & Reviews
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -41,7 +41,7 @@ export default function FeedbackPage() {
               transition={{ delay: 0.1 }}
               className="text-gray-500 text-lg"
             >
-              Ý kiến của bạn giúp chúng tôi phục vụ tốt hơn mỗi ngày
+              Your feedback helps us serve you better every day
             </motion.p>
           </div>
         </section>
@@ -57,16 +57,16 @@ export default function FeedbackPage() {
                 <Star className="w-9 h-9 text-yellow-400 fill-yellow-400" />
               </div>
               <h2 className="text-2xl font-display font-bold text-gray-900 mb-2">
-                Cảm ơn bạn!
+                Thank you!
               </h2>
               <p className="text-gray-500 mb-6">
-                Phản hồi của bạn đã được ghi nhận. Chúng tôi sẽ cải thiện dịch vụ dựa trên ý kiến quý báu này.
+                Your feedback has been received. We'll use it to improve our service.
               </p>
               <button
                 onClick={() => { setSubmitted(false); setRating(0); setFeedback(""); }}
                 className="px-6 py-3 bg-brand-600 hover:bg-brand-700 text-white rounded-xl font-medium transition-colors"
               >
-                Gửi thêm góp ý
+                Send more feedback
               </button>
             </motion.div>
           ) : (
@@ -77,7 +77,7 @@ export default function FeedbackPage() {
               className="bg-white rounded-3xl border border-gray-100 shadow-sm p-8 space-y-6"
             >
               <div className="text-center">
-                <p className="text-sm font-medium text-gray-700 mb-3">Đánh giá trải nghiệm của bạn</p>
+                <p className="text-sm font-medium text-gray-700 mb-3">Rate your experience</p>
                 <div className="flex justify-center gap-2">
                   {[1, 2, 3, 4, 5].map((star) => (
                     <button
@@ -101,30 +101,30 @@ export default function FeedbackPage() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1.5">Danh mục</label>
+                <label className="block text-sm font-medium text-gray-700 mb-1.5">Category</label>
                 <select
                   value={category}
                   onChange={(e) => setCategory(e.target.value)}
                   className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-brand-500 text-sm bg-white"
                 >
-                  <option value="">Chọn danh mục</option>
-                  <option value="product">Chất lượng sản phẩm</option>
-                  <option value="service">Dịch vụ khách hàng</option>
-                  <option value="delivery">Giao hàng</option>
-                  <option value="app">Ứng dụng / Website</option>
-                  <option value="other">Khác</option>
+                  <option value="">Choose a category</option>
+                  <option value="product">Product quality</option>
+                  <option value="service">Customer service</option>
+                  <option value="delivery">Delivery</option>
+                  <option value="app">App / Website</option>
+                  <option value="other">Other</option>
                 </select>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1.5">Họ tên</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-1.5">Full name</label>
                   <input
                     type="text"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-brand-500 text-sm"
-                    placeholder="Tên của bạn"
+                    placeholder="Your name"
                   />
                 </div>
                 <div>
@@ -140,14 +140,14 @@ export default function FeedbackPage() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1.5">Nội dung góp ý</label>
+                <label className="block text-sm font-medium text-gray-700 mb-1.5">Your feedback</label>
                 <textarea
                   value={feedback}
                   onChange={(e) => setFeedback(e.target.value)}
                   required
                   rows={4}
                   className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-brand-500 text-sm resize-none"
-                  placeholder="Chia sẻ trải nghiệm của bạn với Iku..."
+                  placeholder="Share your experience with Drinma..."
                 />
               </div>
 
@@ -157,7 +157,7 @@ export default function FeedbackPage() {
                 className="w-full flex items-center justify-center gap-2 py-3 bg-brand-600 hover:bg-brand-700 disabled:bg-gray-300 disabled:cursor-not-allowed text-white rounded-xl font-medium transition-colors"
               >
                 <Send className="w-4 h-4" />
-                Gửi đánh giá
+                Submit review
               </button>
             </motion.form>
           )}

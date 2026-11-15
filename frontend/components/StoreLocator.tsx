@@ -5,26 +5,26 @@ import { MapPin, Clock, Phone } from "lucide-react";
 
 const stores = [
   {
-    name: "Iku Quận 1",
-    address: "123 Nguyễn Huệ, Q.1, TP.HCM",
+    name: "Drinma District 1",
+    address: "123 Nguyen Hue, District 1, Ho Chi Minh City",
     hours: "07:00 - 22:00",
     phone: "028 1234 5678",
   },
   {
-    name: "Iku Quận 3",
-    address: "456 Võ Văn Tần, Q.3, TP.HCM",
+    name: "Drinma District 3",
+    address: "456 Vo Van Tan, District 3, Ho Chi Minh City",
     hours: "07:00 - 22:00",
     phone: "028 2345 6789",
   },
   {
-    name: "Iku Quận 7",
-    address: "789 Nguyễn Thị Thập, Q.7, TP.HCM",
+    name: "Drinma District 7",
+    address: "789 Nguyen Thi Thap, District 7, Ho Chi Minh City",
     hours: "07:30 - 22:30",
     phone: "028 3456 7890",
   },
   {
-    name: "Iku Thủ Đức",
-    address: "321 Võ Văn Ngân, TP. Thủ Đức",
+    name: "Drinma Thu Duc",
+    address: "321 Vo Van Ngan, Thu Duc City",
     hours: "07:00 - 23:00",
     phone: "028 4567 8901",
   },
@@ -41,10 +41,10 @@ export default function StoreLocator() {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-900 dark:text-gray-50">
-            Hệ thống <span className="text-brand-500">cửa hàng</span>
+            Our stores <span className="text-brand-500">store</span>
           </h2>
           <p className="text-gray-500 dark:text-gray-400 mt-3">
-            Tìm cửa hàng Iku gần bạn nhất
+            Find the Drinma store nearest you
           </p>
         </motion.div>
 

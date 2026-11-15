@@ -10,9 +10,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   const product = await prisma.product.findUnique({
     where: { slug: params.slug },
   });
-  if (!product) return { title: "Không tìm thấy" };
+  if (!product) return { title: "Not found" };
   return {
-    title: `${product.name} | MilkTea Iku`,
+    title: `${product.name} | Drinma`,
     description: product.description,
   };
 }
@@ -53,7 +53,7 @@ export default async function ProductPage({
           <section className="py-16 bg-cream-50 dark:bg-gray-950">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <h2 className="text-2xl font-display font-bold text-gray-900 dark:text-gray-50 mb-8">
-                Có thể bạn cũng thích
+                You might also like
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 {relatedProducts.map((p, i) => (

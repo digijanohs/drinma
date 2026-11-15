@@ -9,39 +9,39 @@ const testimonials = [
     name: "Minh Anh",
     avatar: "MA",
     rating: 5,
-    text: "Trà sữa Iku ngon nhất mình từng uống! Trân châu dẻo, trà thơm, giao hàng nhanh. Sẽ quay lại nhiều lần nữa.",
+    text: "The best Drinma milk tea I've ever had! Chewy pearls, fragrant tea, fast delivery. I'll definitely be back many times.",
     drink: "Brown Sugar Boba Milk",
     color: "bg-brand-200",
   },
   {
-    name: "Thanh Hà",
+    name: "Thanh Ha",
     avatar: "TH",
     rating: 5,
-    text: "Mình rất thích Dirty Matcha Latte, sự kết hợp giữa matcha và espresso thật sự độc đáo. Quán decor cũng rất xinh!",
+    text: "I love the Dirty Matcha Latte — the matcha and espresso combo is really something special. The shop decor is gorgeous too!",
     drink: "Dirty Matcha Latte",
     color: "bg-green-200",
   },
   {
-    name: "Hoàng Nam",
+    name: "Hoang Nam",
     avatar: "HN",
     rating: 5,
-    text: "Đặt hàng online rất tiện, app dễ dùng. Trà đào cam sả luôn là lựa chọn số 1 của mình mỗi khi trời nóng.",
-    drink: "Trà Đào Cam Sả",
+    text: "Ordering online is super convenient and the app is easy to use. The Peach Lemongrass Tea is always my number one pick when it's hot outside.",
+    drink: "Peach Lemongrass Tea",
     color: "bg-amber-200",
   },
   {
-    name: "Phương Linh",
+    name: "Phuong Linh",
     avatar: "PL",
     rating: 5,
-    text: "Taro Milk Tea ở đây cực kỳ béo ngậy mà không ngán. Topping phô mai tươi là must-try luôn nha mọi người!",
+    text: "The Taro Milk Tea here is incredibly creamy without being too heavy. The fresh cheese topping is an absolute must-try, everyone!",
     drink: "Taro Milk Tea",
     color: "bg-purple-200",
   },
   {
-    name: "Đức Minh",
-    avatar: "ĐM",
+    name: "Duc Minh",
+    avatar: "DM",
     rating: 5,
-    text: "Mỗi tuần đặt ít nhất 3 lần. Chương trình tích điểm rất hời, đã đổi được mấy ly free rồi. Highly recommend!",
+    text: "I order at least three times a week. The points program is a great deal — I've already earned a few free drinks. Highly recommend!",
     drink: "Tiger Sugar Boba",
     color: "bg-orange-200",
   },
@@ -49,7 +49,7 @@ const testimonials = [
     name: "Thu Trang",
     avatar: "TT",
     rating: 5,
-    text: "Trà oolong sữa ở Iku có vị trà rất đậm đà, không bị ngọt gắt như mấy quán khác. Packaging cũng xinh nữa!",
+    text: "The oolong milk tea at Drinma has a really rich tea flavor and isn't cloyingly sweet like at other places. The packaging is beautiful too!",
     drink: "Oolong Milk Tea",
     color: "bg-yellow-200",
   },
@@ -66,10 +66,10 @@ export default function Testimonials() {
           className="text-center mb-14"
         >
           <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-900 dark:text-gray-50">
-            Khách hàng yêu thích <span className="text-brand-500">Iku</span>
+            Loved by our customers <span className="text-brand-500">Drinma</span>
           </h2>
           <p className="text-gray-500 dark:text-gray-400 mt-3">
-            Hơn 10,000+ khách hàng hài lòng và quay lại mỗi tuần
+            Over 10,000+ happy customers come back every week
           </p>
         </motion.div>
 

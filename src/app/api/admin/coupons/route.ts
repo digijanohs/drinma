@@ -29,7 +29,7 @@ export async function GET(request: NextRequest) {
     });
     return NextResponse.json(coupons);
   } catch {
-    return NextResponse.json({ error: "Lỗi server" }, { status: 500 });
+    return NextResponse.json({ error: "Server error" }, { status: 500 });
   }
 }
 
@@ -47,7 +47,7 @@ export async function POST(request: NextRequest) {
       body = await request.json();
     } catch {
       return NextResponse.json(
-        { error: "Dữ liệu không hợp lệ" },
+        { error: "Invalid data" },
         { status: 400 }
       );
     }
@@ -55,7 +55,7 @@ export async function POST(request: NextRequest) {
     const parsed = couponSchema.safeParse(body);
     if (!parsed.success) {
       return NextResponse.json(
-        { error: "Dữ liệu coupon không hợp lệ", details: parsed.error.flatten() },
+        { error: "Invalid coupon data", details: parsed.error.flatten() },
         { status: 400 }
       );
     }
@@ -64,7 +64,7 @@ export async function POST(request: NextRequest) {
 
     const existing = await prisma.coupon.findUnique({ where: { code: code.toUpperCase() } });
     if (existing) {
-      return NextResponse.json({ error: "Mã coupon đã tồn tại" }, { status: 409 });
+      return NextResponse.json({ error: "This coupon code already exists" }, { status: 409 });
     }
 
     const coupon = await prisma.coupon.create({
@@ -81,6 +81,6 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json(coupon, { status: 201 });
   } catch {
-    return NextResponse.json({ error: "Lỗi server" }, { status: 500 });
+    return NextResponse.json({ error: "Server error" }, { status: 500 });
   }
 }

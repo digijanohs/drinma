@@ -6,34 +6,34 @@ import { ChevronDown } from "lucide-react";
 
 const faqs = [
   {
-    question: "Làm sao để đặt hàng online?",
+    question: "How do I order online?",
     answer:
-      "Bạn có thể đặt hàng trực tiếp trên website hoặc ứng dụng Iku. Chọn sản phẩm yêu thích, tuỳ chỉnh theo ý muốn, thêm vào giỏ hàng và tiến hành thanh toán. Chúng tôi hỗ trợ thanh toán qua thẻ, ví điện tử và tiền mặt khi nhận hàng.",
+      "You can order right on our website or in the Drinma app. Pick your favorite drink, customize it your way, add it to your cart and check out. We accept cards, e-wallets and cash on delivery.",
   },
   {
-    question: "Thời gian giao hàng là bao lâu?",
+    question: "How long does delivery take?",
     answer:
-      "Thời gian giao hàng trung bình 20-30 phút tùy theo khoảng cách và tình trạng giao thông. Trong giờ cao điểm có thể mất thêm 10-15 phút. Bạn có thể theo dõi đơn hàng theo thời gian thực trên ứng dụng.",
+      "Delivery takes 20-30 minutes on average, depending on distance and traffic. At peak hours it can take another 10-15 minutes. You can track your order in real time in the app.",
   },
   {
-    question: "Có thể tuỳ chỉnh đồ uống không?",
+    question: "Can I customize my drink?",
     answer:
-      "Có! Bạn có thể chọn mức đường (0%, 30%, 50%, 70%, 100%), mức đá (không đá, ít đá, bình thường, nhiều đá) và thêm topping theo sở thích. Một số sản phẩm còn cho phép chọn loại sữa (sữa tươi, sữa yến mạch, sữa đậu nành).",
+      "Yes! Choose your sugar level (0%, 30%, 50%, 70%, 100%), your ice level (no ice, light ice, regular, extra ice) and add your favorite toppings. Some drinks also let you pick your milk: fresh milk, oat milk or soy milk.",
   },
   {
-    question: "Chính sách đổi trả như thế nào?",
+    question: "What's your exchange and refund policy?",
     answer:
-      "Nếu đồ uống không đúng yêu cầu hoặc có vấn đề về chất lượng, vui lòng liên hệ ngay trong vòng 15 phút sau khi nhận hàng. Chúng tôi sẽ hoàn tiền hoặc giao lại sản phẩm mới miễn phí.",
+      "If your drink isn't what you ordered or there's a quality issue, contact us within 15 minutes of delivery. We'll refund you or send a fresh replacement free of charge.",
   },
   {
-    question: "Có chương trình khách hàng thân thiết không?",
+    question: "Do you have a loyalty program?",
     answer:
-      "Có! Tích điểm mỗi đơn hàng với tỷ lệ 1.000đ = 1 điểm. Đổi điểm lấy đồ uống miễn phí, voucher giảm giá và nhiều ưu đãi hấp dẫn khác. Thành viên hạng Vàng và Kim Cương còn được ưu tiên giao hàng và quà sinh nhật đặc biệt.",
+      "Yes! Earn points with every order: 1.000đ = 1 point. Redeem them for free drinks, discount vouchers and more great perks. Gold and Diamond members also get priority delivery and a special birthday gift.",
   },
   {
-    question: "Iku có nhận đặt tiệc/sự kiện không?",
+    question: "Does Drinma take party or event orders?",
     answer:
-      "Có! Liên hệ hotline 1800 xxxx hoặc email events@milkteaiku.vn để được tư vấn gói đặt tiệc và sự kiện. Chúng tôi phục vụ từ 20 ly trở lên với mức giá ưu đãi và có thể tùy chỉnh bao bì theo yêu cầu.",
+      "Yes! Call our hotline 1800 xxxx or email events@drinma.com for advice on party and event packages. We serve orders of 20 cups or more at special prices, with custom packaging on request.",
   },
 ];
 
@@ -54,10 +54,10 @@ export default function FAQ() {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-900 dark:text-gray-50">
-            Câu hỏi <span className="text-brand-500">thường gặp</span>
+            Questions <span className="text-brand-500">frequently asked</span>
           </h2>
           <p className="text-gray-500 dark:text-gray-400 mt-3">
-            Giải đáp những thắc mắc phổ biến nhất từ khách hàng
+            Answers to the questions our customers ask most
           </p>
         </motion.div>
 

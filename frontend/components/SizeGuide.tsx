@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 import { Ruler } from "lucide-react";
 
 const sizes = [
-  { name: "S", ml: "350ml", description: "Vừa đủ cho 1 người", price: "+0đ" },
-  { name: "M", ml: "500ml", description: "Size phổ biến nhất", price: "+6.000đ" },
-  { name: "L", ml: "700ml", description: "Cho ai thích uống nhiều", price: "+12.000đ" },
+  { name: "S", ml: "350ml", description: "Just right for one", price: "+0đ" },
+  { name: "M", ml: "500ml", description: "Most popular size", price: "+6.000đ" },
+  { name: "L", ml: "700ml", description: "For anyone who wants more", price: "+12.000đ" },
 ];
 
 export default function SizeGuide() {
@@ -14,7 +14,7 @@ export default function SizeGuide() {
     <div className="bg-white rounded-2xl border border-gray-100 p-6">
       <div className="flex items-center gap-2 mb-4">
         <Ruler className="w-4 h-4 text-brand-600" />
-        <h3 className="font-semibold text-gray-900 text-sm">Hướng dẫn chọn size</h3>
+        <h3 className="font-semibold text-gray-900 text-sm">Size guide</h3>
       </div>
       <div className="space-y-3">
         {sizes.map((size, i) => (

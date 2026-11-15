@@ -23,17 +23,17 @@ export default function WishlistContent() {
             <Heart className="w-10 h-10 text-red-300" />
           </motion.div>
           <h2 className="text-2xl font-display font-bold text-gray-900 dark:text-gray-50 mb-2">
-            Chưa có sản phẩm yêu thích
+            No favorites yet
           </h2>
           <p className="text-gray-600 dark:text-gray-400 mb-8">
-            Hãy khám phá menu và thêm những món bạn thích vào danh sách nhé!
+            Explore the menu and add the drinks you love to your list!
           </p>
           <Link
             href="/menu"
             className="inline-flex items-center gap-2 px-6 py-3 bg-brand-600 hover:bg-brand-700 text-white rounded-xl font-medium transition-colors"
           >
             <ShoppingBag className="w-4 h-4" />
-            Khám phá menu
+            Explore the menu
           </Link>
         </div>
       </section>
@@ -46,16 +46,16 @@ export default function WishlistContent() {
         <div className="flex items-center justify-between mb-8">
           <div>
             <h1 className="text-3xl font-display font-bold text-gray-900 dark:text-gray-50">
-              Sản phẩm yêu thích
+              Favorite products
             </h1>
-            <p className="text-gray-500 dark:text-gray-400 mt-1">{items.length} sản phẩm</p>
+            <p className="text-gray-500 dark:text-gray-400 mt-1">{items.length} products</p>
           </div>
           <button
             onClick={clearAll}
             className="flex items-center gap-2 px-4 py-2 text-sm text-red-600 border border-red-200 rounded-full hover:bg-red-50 transition-colors"
           >
             <Trash2 className="w-4 h-4" />
-            Xóa tất cả
+            Clear all
           </button>
         </div>
 
@@ -76,7 +76,7 @@ export default function WishlistContent() {
                   <button
                     onClick={() => removeItem(item.id)}
                     className="absolute top-3 right-3 p-2 rounded-full bg-white/90 text-red-500 hover:bg-red-50 transition-colors"
-                    aria-label="Bỏ yêu thích"
+                    aria-label="Remove from Favorites"
                   >
                     <Heart className="w-4 h-4 fill-red-500" />
                   </button>
@@ -108,7 +108,7 @@ export default function WishlistContent() {
                     className="mt-3 w-full flex items-center justify-center gap-2 py-2.5 bg-brand-600 hover:bg-brand-700 text-white rounded-xl text-sm font-medium transition-colors"
                   >
                     <ShoppingBag className="w-4 h-4" />
-                    Thêm vào giỏ
+                    Add to cart
                   </button>
                 </div>
               </motion.div>

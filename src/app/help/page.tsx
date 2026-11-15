@@ -14,25 +14,25 @@ interface HelpItem {
 
 const helpTopics: { title: string; items: HelpItem[] }[] = [
   {
-    title: "Đặt hàng",
+    title: "Order",
     items: [
-      { question: "Làm sao để đặt hàng?", answer: "Bạn có thể đặt hàng trực tiếp trên website hoặc app Iku. Chọn sản phẩm, tùy chỉnh theo ý thích, thêm vào giỏ hàng và thanh toán." },
-      { question: "Tôi có thể hủy đơn hàng không?", answer: "Bạn có thể hủy đơn trong vòng 2 phút sau khi đặt. Sau thời gian này, đơn đã được chuyển sang pha chế và không thể hủy." },
-      { question: "Thời gian giao hàng bao lâu?", answer: "Thời gian giao hàng trung bình 20-30 phút trong bán kính 5km. Ngoài phạm vi có thể lâu hơn tùy khoảng cách." },
+      { question: "How do I place an order?", answer: "Order right on the website or in the Drinma app. Pick your drink, customize it your way, add it to the cart and check out." },
+      { question: "Can I cancel my order?", answer: "You can cancel within 2 minutes of ordering. After that, your drink is already being made and can't be cancelled." },
+      { question: "How long does delivery take?", answer: "Delivery usually takes 20-30 minutes within a 5km radius. Outside that area it may take longer depending on the distance." },
     ],
   },
   {
-    title: "Thanh toán",
+    title: "Checkout",
     items: [
-      { question: "Có những phương thức thanh toán nào?", answer: "Iku hỗ trợ: MoMo, ZaloPay, VNPay, chuyển khoản ngân hàng, và thanh toán khi nhận hàng (COD)." },
-      { question: "Có được hoàn tiền không?", answer: "Nếu đơn hàng không đúng yêu cầu hoặc có vấn đề chất lượng, bạn sẽ được hoàn tiền 100% hoặc đổi sản phẩm mới." },
+      { question: "What payment methods do you accept?", answer: "Drinma accepts MoMo, ZaloPay, VNPay, bank transfer and cash on delivery (COD)." },
+      { question: "Can I get a refund?", answer: "If your order isn't what you asked for or the quality isn't right, you'll get a full refund or a fresh replacement." },
     ],
   },
   {
-    title: "Tài khoản & Iku Stars",
+    title: "Account & Drinma Stars",
     items: [
-      { question: "Làm sao để tích điểm?", answer: "Mỗi 10.000đ chi tiêu = 1 Star. Tích đủ Stars để lên hạng và nhận ưu đãi đặc biệt." },
-      { question: "Điểm có hết hạn không?", answer: "Stars có hiệu lực 12 tháng kể từ ngày tích. Hạng thành viên được đánh giá lại mỗi 6 tháng." },
+      { question: "How do I earn points?", answer: "Every 10.000đ spent = 1 Star. Collect Stars to level up and unlock special perks." },
+      { question: "Do points expire?", answer: "Stars are valid for 12 months from the day you earn them. Membership tiers are reviewed every 6 months." },
     ],
   },
 ];
@@ -83,7 +83,7 @@ export default function HelpCenterPage() {
               transition={{ delay: 0.1 }}
               className="text-4xl font-display font-bold text-gray-900 dark:text-gray-50 mb-4"
             >
-              Trung tâm trợ giúp
+              Help Center
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -91,7 +91,7 @@ export default function HelpCenterPage() {
               transition={{ delay: 0.2 }}
               className="text-gray-500 dark:text-gray-400 text-lg"
             >
-              Tìm câu trả lời cho mọi thắc mắc
+              Find answers to all your questions
             </motion.p>
           </div>
         </section>

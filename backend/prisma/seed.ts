@@ -12,45 +12,45 @@ async function main() {
   const categories = await Promise.all([
     prisma.category.create({
       data: {
-        name: "Trà Sữa Truyền Thống",
+        name: "Traditional Milk Tea",
         slug: "tra-sua-truyen-thong",
-        description: "Hương vị trà sữa cổ điển, đậm đà và thơm ngon",
+        description: "Classic milk tea flavor, rich, creamy and aromatic.",
         image: "https://images.unsplash.com/photo-1558857563-b371033873b8?w=400&h=400&fit=crop",
         order: 1,
       },
     }),
     prisma.category.create({
       data: {
-        name: "Trà Trái Cây",
+        name: "Fruit Tea",
         slug: "tra-trai-cay",
-        description: "Trà kết hợp trái cây tươi mát, thanh nhiệt",
+        description: "Tea blended with fresh fruit, refreshing and cooling.",
         image: "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=400&h=400&fit=crop",
         order: 2,
       },
     }),
     prisma.category.create({
       data: {
-        name: "Đặc Biệt",
+        name: "Special",
         slug: "dac-biet",
-        description: "Những sáng tạo độc đáo chỉ có tại Iku",
+        description: "Unique creations you will only find at Drinma.",
         image: "https://images.unsplash.com/photo-1525803377221-4de0e3d3efec?w=400&h=400&fit=crop",
         order: 3,
       },
     }),
     prisma.category.create({
       data: {
-        name: "Sữa Tươi & Kem",
+        name: "Fresh Milk & Cream",
         slug: "sua-tuoi-kem",
-        description: "Thức uống từ sữa tươi nguyên chất và kem béo",
+        description: "Drinks made with pure fresh milk and rich cream.",
         image: "https://images.unsplash.com/photo-1550583724-b2692b85b150?w=400&h=400&fit=crop",
         order: 4,
       },
     }),
     prisma.category.create({
       data: {
-        name: "Trà Xanh & Matcha",
+        name: "Green Tea & Matcha",
         slug: "tra-xanh-matcha",
-        description: "Trà xanh Nhật Bản cao cấp, matcha nguyên chất",
+        description: "Premium Japanese green tea, pure matcha.",
         image: "https://images.unsplash.com/photo-1515823064-d6e0c04616a7?w=400&h=400&fit=crop",
         order: 5,
       },
@@ -61,37 +61,37 @@ async function main() {
 
   await prisma.topping.createMany({
     data: [
-      { name: "Trân châu đen", price: 10000, image: "https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=100&h=100&fit=crop" },
-      { name: "Trân châu trắng", price: 10000, image: "https://images.unsplash.com/photo-1558857563-b371033873b8?w=100&h=100&fit=crop" },
-      { name: "Thạch dừa", price: 8000, image: "https://images.unsplash.com/photo-1551024506-0bccd828d307?w=100&h=100&fit=crop" },
-      { name: "Pudding trứng", price: 12000, image: "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=100&h=100&fit=crop" },
+      { name: "Black Tapioca Pearls", price: 10000, image: "https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=100&h=100&fit=crop" },
+      { name: "White boba", price: 10000, image: "https://images.unsplash.com/photo-1558857563-b371033873b8?w=100&h=100&fit=crop" },
+      { name: "Coconut jelly", price: 8000, image: "https://images.unsplash.com/photo-1551024506-0bccd828d307?w=100&h=100&fit=crop" },
+      { name: "Egg Pudding", price: 12000, image: "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=100&h=100&fit=crop" },
       { name: "Kem cheese", price: 15000, image: "https://images.unsplash.com/photo-1559598467-f8b76c8155d0?w=100&h=100&fit=crop" },
-      { name: "Thạch trái cây", price: 10000, image: "https://images.unsplash.com/photo-1546173159-315724a31696?w=100&h=100&fit=crop" },
-      { name: "Sương sáo", price: 8000, image: "https://images.unsplash.com/photo-1541658016709-82535e94bc69?w=100&h=100&fit=crop" },
-      { name: "Đào miếng", price: 12000, image: "https://images.unsplash.com/photo-1595475207225-428b62bda831?w=100&h=100&fit=crop" },
+      { name: "Fruit Jelly", price: 10000, image: "https://images.unsplash.com/photo-1546173159-315724a31696?w=100&h=100&fit=crop" },
+      { name: "Grass Jelly", price: 8000, image: "https://images.unsplash.com/photo-1541658016709-82535e94bc69?w=100&h=100&fit=crop" },
+      { name: "Peach Slices", price: 12000, image: "https://images.unsplash.com/photo-1595475207225-428b62bda831?w=100&h=100&fit=crop" },
       { name: "Shot espresso", price: 15000, image: "https://images.unsplash.com/photo-1510707577719-ae7c14805e3a?w=100&h=100&fit=crop" },
       { name: "Kem whipping", price: 12000, image: "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=100&h=100&fit=crop" },
-      { name: "Trân châu hoàng kim", price: 12000, image: "https://images.unsplash.com/photo-1558857563-b371033873b8?w=100&h=100&fit=crop" },
-      { name: "Thạch cà phê", price: 10000, image: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=100&h=100&fit=crop" },
+      { name: "Golden Boba", price: 12000, image: "https://images.unsplash.com/photo-1558857563-b371033873b8?w=100&h=100&fit=crop" },
+      { name: "Coffee Jelly", price: 10000, image: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=100&h=100&fit=crop" },
     ],
   });
 
-  // Trà Sữa Truyền Thống
+  // Traditional Milk Tea
   await prisma.product.createMany({
     data: [
       {
-        name: "Trà Sữa Iku Signature",
+        name: "Drinma Signature Milk Tea",
         slug: "tra-sua-iku-signature",
-        description: "Trà đen Ceylon pha sữa tươi nguyên chất, vị đậm đà hài hòa. Thức uống signature với công thức độc quyền, kèm trân châu hoàng kim.",
+        description: "Ceylon black tea blended with pure fresh milk for a rich, beautifully balanced cup. Our signature drink, made with a proprietary recipe and finished with golden boba.",
         basePrice: 45000,
         image: "https://images.unsplash.com/photo-1558857563-b371033873b8?w=600&h=600&fit=crop",
         categoryId: traSua.id,
         isBestSeller: true,
       },
       {
-        name: "Trà Sữa Trân Châu Hoàng Kim",
+        name: "Golden Boba Milk Tea",
         slug: "tra-sua-tran-chau-hoang-kim",
-        description: "Trà sữa đậm đà kết hợp trân châu hoàng kim dẻo thơm, phủ lớp kem cheese béo ngậy. Best seller tại tất cả chi nhánh.",
+        description: "Rich milk tea with chewy, fragrant golden boba and a layer of creamy cheese foam. The best seller at every branch.",
         basePrice: 55000,
         image: "https://images.unsplash.com/photo-1525803377221-4de0e3d3efec?w=600&h=600&fit=crop",
         categoryId: traSua.id,
@@ -99,33 +99,33 @@ async function main() {
         isNew: true,
       },
       {
-        name: "Hồng Trà Sữa",
+        name: "Classic Black Milk Tea",
         slug: "hong-tra-sua",
-        description: "Hồng trà Ceylon thượng hạng pha cùng sữa tươi Mộc Châu, hương thơm nhẹ nhàng thanh tao, vị ngọt dịu tự nhiên.",
+        description: "Premium Ceylon black tea brewed with Moc Chau fresh milk, a light, delicate aroma and gently natural sweetness.",
         basePrice: 42000,
         image: "https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=600&h=600&fit=crop",
         categoryId: traSua.id,
       },
       {
-        name: "Trà Sữa Ô Long Nướng",
+        name: "Roasted Oolong Milk Tea",
         slug: "tra-sua-o-long-nuong",
-        description: "Trà Ô Long Đài Loan rang nhẹ trên than hồng, kết hợp sữa tươi tạo nên hương vị thanh mát đặc trưng khó quên.",
+        description: "Taiwanese oolong lightly roasted over charcoal, combined with fresh milk for a distinctly fresh, unforgettable flavor.",
         basePrice: 48000,
         image: "https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=600&h=600&fit=crop",
         categoryId: traSua.id,
       },
       {
-        name: "Trà Sữa Socola Bỉ",
+        name: "Belgian Chocolate Milk Tea",
         slug: "tra-sua-socola-bi",
-        description: "Socola Bỉ Callebaut nguyên chất hòa quyện cùng trà sữa, đậm đà và ngọt ngào, thêm whipping cream.",
+        description: "Pure Callebaut Belgian chocolate blended into milk tea, rich and sweet, finished with whipped cream.",
         basePrice: 50000,
         image: "https://images.unsplash.com/photo-1577805947697-89e18249d767?w=600&h=600&fit=crop",
         categoryId: traSua.id,
       },
       {
-        name: "Trà Sữa Hokkaido",
+        name: "Hokkaido Milk Tea",
         slug: "tra-sua-hokkaido",
-        description: "Công thức trà sữa Nhật Bản với sữa Hokkaido béo ngậy, trà đen Assam đậm vị, caramel nhẹ.",
+        description: "A Japanese milk tea recipe with creamy Hokkaido milk, robust Assam black tea and a hint of caramel.",
         basePrice: 52000,
         image: "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=600&h=600&fit=crop",
         categoryId: traSua.id,
@@ -134,47 +134,47 @@ async function main() {
     ],
   });
 
-  // Trà Trái Cây
+  // Fruit Tea
   await prisma.product.createMany({
     data: [
       {
-        name: "Trà Đào Cam Sả",
+        name: "Peach Lemongrass Tea",
         slug: "tra-dao-cam-sa",
-        description: "Trà xanh kết hợp đào tươi miếng lớn, cam vàng tươi và sả thơm. Thanh mát, giải nhiệt tuyệt vời cho ngày hè.",
+        description: "Green tea with generous peach slices, fresh orange and fragrant lemongrass. Crisp and cooling, perfect for summer days.",
         basePrice: 45000,
         image: "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=600&h=600&fit=crop",
         categoryId: traTraiCay.id,
         isBestSeller: true,
       },
       {
-        name: "Trà Vải Lychee Rose",
+        name: "Lychee Rose Tea",
         slug: "tra-vai-lychee-rose",
-        description: "Trà hoa hồng Bulgaria kết hợp vải thiều tươi Bắc Giang, thơm ngát và ngọt thanh tự nhiên.",
+        description: "Bulgarian rose tea with fresh Bac Giang lychee, fragrant and naturally sweet.",
         basePrice: 48000,
         image: "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=600&h=600&fit=crop",
         categoryId: traTraiCay.id,
         isNew: true,
       },
       {
-        name: "Trà Chanh Dây Passion",
+        name: "Passion Fruit Tea",
         slug: "tra-chanh-day-passion",
-        description: "Chanh dây Đà Lạt tươi chua ngọt hài hòa, kết hợp trà xanh Thái Nguyên thanh mát, thêm hạt chia.",
+        description: "Fresh Da Lat passion fruit, perfectly balanced sweet and tart, with refreshing Thai Nguyen green tea and chia seeds.",
         basePrice: 42000,
         image: "https://images.unsplash.com/photo-1497534446932-c925b458314e?w=600&h=600&fit=crop",
         categoryId: traTraiCay.id,
       },
       {
-        name: "Trà Xoài Tropical",
+        name: "Mango Tropical Tea",
         slug: "tra-xoai-tropical",
-        description: "Xoài Cát Hòa Lộc chín mọng ngọt lịm kết hợp trà lài, mang hương vị nhiệt đới sảng khoái.",
+        description: "Ripe, honey-sweet Cat Hoa Loc mango paired with jasmine tea for a refreshing tropical taste.",
         basePrice: 45000,
         image: "https://images.unsplash.com/photo-1546173159-315724a31696?w=600&h=600&fit=crop",
         categoryId: traTraiCay.id,
       },
       {
-        name: "Trà Dâu Tây Tươi",
+        name: "Fresh Strawberry Tea",
         slug: "tra-dau-tay-tuoi",
-        description: "Dâu tây Đà Lạt tươi nguyên trái kết hợp trà hồng, vị chua nhẹ ngọt thanh, thêm thạch dâu.",
+        description: "Whole fresh Da Lat strawberries with black tea, lightly tart, gently sweet, with strawberry jelly.",
         basePrice: 48000,
         image: "https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=600&h=600&fit=crop",
         categoryId: traTraiCay.id,
@@ -183,13 +183,13 @@ async function main() {
     ],
   });
 
-  // Đặc Biệt
+  // Special
   await prisma.product.createMany({
     data: [
       {
         name: "Brown Sugar Boba Milk",
         slug: "brown-sugar-boba-milk",
-        description: "Sữa tươi nguyên chất với trân châu đường nâu caramel hóa thủ công, tạo vân hổ đặc trưng. Signature drink của Tiger Sugar.",
+        description: "Pure fresh milk with handmade caramelized brown sugar boba, creating the signature tiger stripes. The signature drink of Tiger Sugar.",
         basePrice: 55000,
         image: "https://images.unsplash.com/photo-1581636625402-29b2a704ef13?w=600&h=600&fit=crop",
         categoryId: dacBiet.id,
@@ -199,7 +199,7 @@ async function main() {
       {
         name: "Dirty Matcha Latte",
         slug: "dirty-matcha-latte",
-        description: "Matcha Uji Nhật Bản cao cấp kết hợp double espresso shot, tạo nên sự tương phản độc đáo giữa đắng và ngọt.",
+        description: "Premium Japanese Uji matcha with a double espresso shot, a striking contrast between bitter and sweet.",
         basePrice: 58000,
         image: "https://images.unsplash.com/photo-1515823064-d6e0c04616a7?w=600&h=600&fit=crop",
         categoryId: dacBiet.id,
@@ -208,16 +208,16 @@ async function main() {
       {
         name: "Taro Cream Cheese",
         slug: "taro-cream-cheese",
-        description: "Khoai môn Đà Lạt tím xay mịn, phủ lớp kem cheese mặn ngọt hài hòa. Topping trân châu tím đặc biệt.",
+        description: "Finely blended purple Da Lat taro topped with a perfectly balanced sweet and salty cheese foam, finished with special purple boba.",
         basePrice: 52000,
         image: "https://images.unsplash.com/photo-1627435601361-ec25f5b1d0e5?w=600&h=600&fit=crop",
         categoryId: dacBiet.id,
         isBestSeller: true,
       },
       {
-        name: "Iku Cloud Nine",
+        name: "Drinma Cloud Nine",
         slug: "iku-cloud-nine",
-        description: "Trà ô long đặc biệt với lớp foam kem tươi bồng bềnh như mây, rắc bột cacao Valrhona và caramel.",
+        description: "A special oolong tea crowned with cloud-soft cream foam, dusted with Valrhona cocoa and caramel.",
         basePrice: 55000,
         image: "https://images.unsplash.com/photo-1560023907-5f339617ea55?w=600&h=600&fit=crop",
         categoryId: dacBiet.id,
@@ -226,7 +226,7 @@ async function main() {
       {
         name: "Mochi Milk Tea",
         slug: "mochi-milk-tea",
-        description: "Trà sữa Nhật Bản với mochi dẻo mềm handmade, nhân đậu đỏ Hokkaido, rắc bột kinako.",
+        description: "Japanese milk tea with soft handmade mochi filled with Hokkaido red bean, dusted with kinako powder.",
         basePrice: 58000,
         image: "https://images.unsplash.com/photo-1558857563-b371033873b8?w=600&h=600&fit=crop&crop=top",
         categoryId: dacBiet.id,
@@ -235,30 +235,30 @@ async function main() {
     ],
   });
 
-  // Sữa Tươi & Kem
+  // Fresh Milk & Cream
   await prisma.product.createMany({
     data: [
       {
-        name: "Sữa Tươi Trân Châu Đường Nâu",
+        name: "Brown Sugar Boba Fresh Milk",
         slug: "sua-tuoi-tran-chau-duong-nau",
-        description: "Sữa tươi Mộc Châu nguyên chất 100% với trân châu đường nâu thủ công nấu mỗi ngày.",
+        description: "100% pure Moc Chau fresh milk with handmade brown sugar boba, cooked fresh every day.",
         basePrice: 45000,
         image: "https://images.unsplash.com/photo-1550583724-b2692b85b150?w=600&h=600&fit=crop",
         categoryId: suaTuoi.id,
         isBestSeller: true,
       },
       {
-        name: "Kem Sữa Dừa Tropical",
+        name: "Tropical Coconut Cream",
         slug: "kem-sua-dua-tropical",
-        description: "Kem dừa Bến Tre béo ngậy kết hợp sữa tươi, thêm nước cốt dừa thơm lừng và topping dừa nạo.",
+        description: "Creamy Ben Tre coconut ice cream with fresh milk, fragrant coconut milk and a shredded coconut topping.",
         basePrice: 48000,
         image: "https://images.unsplash.com/photo-1551024506-0bccd828d307?w=600&h=600&fit=crop",
         categoryId: suaTuoi.id,
       },
       {
-        name: "Smoothie Dâu Tây Yogurt",
+        name: "Strawberry Yogurt Smoothie",
         slug: "smoothie-dau-tay-yogurt",
-        description: "Dâu tây Đà Lạt tươi xay cùng yogurt Hy Lạp và đá, thêm whipping cream và granola.",
+        description: "Fresh Da Lat strawberries blended with Greek yogurt and ice, topped with whipped cream and granola.",
         basePrice: 52000,
         image: "https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=600&h=600&fit=crop",
         categoryId: suaTuoi.id,
@@ -267,7 +267,7 @@ async function main() {
       {
         name: "Oreo Cookie Cream",
         slug: "oreo-cookie-cream",
-        description: "Sữa tươi blend cùng Oreo cookies, thêm kem vanilla và chocolate chips. Thức uống yêu thích của giới trẻ.",
+        description: "Fresh milk blended with Oreo cookies, vanilla ice cream and chocolate chips. A favorite with the younger crowd.",
         basePrice: 50000,
         image: "https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=600&h=600&fit=crop",
         categoryId: suaTuoi.id,
@@ -275,30 +275,30 @@ async function main() {
     ],
   });
 
-  // Trà Xanh & Matcha
+  // Green Tea & Matcha
   await prisma.product.createMany({
     data: [
       {
         name: "Matcha Latte Premium",
         slug: "matcha-latte",
-        description: "Bột matcha Uji grade A đánh tan cùng sữa tươi Hokkaido. Có thể chọn nóng hoặc đá, thêm shot espresso.",
+        description: "Grade A Uji matcha powder whisked with Hokkaido fresh milk. Served hot or iced, with an optional espresso shot.",
         basePrice: 52000,
         image: "https://images.unsplash.com/photo-1536256263959-770b48d82b0a?w=600&h=600&fit=crop",
         categoryId: traXanh.id,
         isBestSeller: true,
       },
       {
-        name: "Trà Xanh Sữa Thái Nguyên",
+        name: "Thai Nguyen Green Milk Tea",
         slug: "tra-xanh-sua",
-        description: "Trà xanh Thái Nguyên hảo hạng pha sữa tươi, vị chát nhẹ hòa quyện béo ngậy, thêm đậu đỏ.",
+        description: "Premium Thai Nguyen green tea with fresh milk, a light astringency wrapped in creamy richness, with red beans.",
         basePrice: 42000,
         image: "https://images.unsplash.com/photo-1515823064-d6e0c04616a7?w=600&h=600&fit=crop",
         categoryId: traXanh.id,
       },
       {
-        name: "Matcha Đậu Đỏ Nhật Bản",
+        name: "Japanese Matcha Red Bean",
         slug: "matcha-dau-do",
-        description: "Matcha kết hợp đậu đỏ Hokkaido ninh mềm 8 tiếng, vị ngọt thanh kiểu Nhật Bản truyền thống.",
+        description: "Matcha with Hokkaido red beans simmered for 8 hours, the gentle sweetness of traditional Japan.",
         basePrice: 55000,
         image: "https://images.unsplash.com/photo-1582793988951-9aed5509eb97?w=600&h=600&fit=crop",
         categoryId: traXanh.id,
@@ -307,7 +307,7 @@ async function main() {
       {
         name: "Matcha Cream Cheese",
         slug: "matcha-cream-cheese",
-        description: "Matcha đậm vị phủ lớp cream cheese béo mặn, tạo sự cân bằng hoàn hảo giữa đắng-ngọt-mặn.",
+        description: "Bold matcha topped with rich, salty cream cheese, a perfect balance of bitter, sweet and savory.",
         basePrice: 55000,
         image: "https://images.unsplash.com/photo-1575487426842-f3e46e994c0a?w=600&h=600&fit=crop",
         categoryId: traXanh.id,

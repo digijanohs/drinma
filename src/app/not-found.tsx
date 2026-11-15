@@ -33,16 +33,16 @@ export default function NotFound() {
         </motion.div>
 
         <h1 className="text-6xl font-display font-bold text-brand-600 dark:text-brand-400 mb-3">404</h1>
-        <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-50 mb-2">Oops! Trang không tồn tại</h2>
+        <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-50 mb-2">Oops! This page doesn't exist</h2>
         <p className="text-gray-600 dark:text-gray-300 mb-8">
-          Có vẻ ly trà sữa này đã bị uống hết rồi. Hãy quay lại trang chủ nhé!
+          Looks like this milk tea has already been finished. Let's head back to the homepage!
         </p>
 
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <Link href="/">
             <Button className="bg-brand-600 hover:bg-brand-700 text-white rounded-full px-6 gap-2">
               <Home className="w-4 h-4" />
-              Về trang chủ
+              Back to home
             </Button>
           </Link>
           <Link href="/menu">

@@ -108,11 +108,10 @@ export default function GlobalError({ error, reset }: ErrorProps) {
           transition={{ duration: 0.45, delay: 0.15, ease: "easeOut" }}
         >
           <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-50 mb-2">
-            Ôi không! Có lỗi xảy ra
+            Oh no! Something went wrong
           </h1>
           <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-8">
-            Ly trà sữa của bạn bị đổ mất rồi. Đừng lo, hãy thử lại hoặc quay
-            về trang chủ nhé!
+            Your milk tea got spilled. Don't worry, just try again or head back to the home page!
           </p>
         </motion.div>
 
@@ -127,7 +126,7 @@ export default function GlobalError({ error, reset }: ErrorProps) {
             className="bg-brand-600 hover:bg-brand-700 text-white rounded-full px-6 gap-2"
           >
             <RefreshCw className="w-4 h-4" />
-            Thử lại
+            Try again
           </Button>
           <Link href="/">
             <Button
@@ -135,7 +134,7 @@ export default function GlobalError({ error, reset }: ErrorProps) {
               className="w-full rounded-full px-6 gap-2 border-brand-200 text-brand-700 hover:bg-brand-50"
             >
               <Home className="w-4 h-4" />
-              Về trang chủ
+              Back to home
             </Button>
           </Link>
         </motion.div>

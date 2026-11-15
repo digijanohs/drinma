@@ -102,3 +102,8 @@ TODO.md
 SCRATCH.md
 NOTES.md
 *.draft.md
+
+.npm-cache/
+next-env.d.ts
+*.db
+

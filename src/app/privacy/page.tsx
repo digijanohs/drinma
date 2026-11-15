@@ -4,8 +4,8 @@ import Footer from "@/components/Footer";
 import CartDrawer from "@/components/CartDrawer";
 
 export const metadata: Metadata = {
-  title: "Chính sách bảo mật | Iku Milk Tea",
-  description: "Chính sách bảo mật và quyền riêng tư của Iku Milk Tea",
+  title: "Privacy Policy | Drinma",
+  description: "Drinma privacy and data protection policy",
 };
 
 export default function PrivacyPage() {
@@ -16,80 +16,68 @@ export default function PrivacyPage() {
       <main className="pt-20 min-h-screen bg-cream-50 dark:bg-gray-900">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <h1 className="text-3xl font-display font-bold text-gray-900 dark:text-gray-50 mb-2">
-            Chính sách bảo mật
+            Privacy Policy
           </h1>
           <p className="text-gray-500 dark:text-gray-400 mb-10">
-            Cập nhật lần cuối: Tháng 5, 2024
+            Last updated: May 2024
           </p>
 
           <div className="space-y-8">
             <section>
               <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-3">
-                1. Thu thập thông tin
+                1. Information collection
               </h2>
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                Chúng tôi thu thập thông tin cá nhân khi bạn đặt hàng, đăng ký tài khoản, hoặc
-                liên hệ với chúng tôi. Thông tin bao gồm: họ tên, số điện thoại, địa chỉ email,
-                địa chỉ giao hàng và lịch sử giao dịch. Chúng tôi chỉ thu thập những thông tin
-                cần thiết để cung cấp dịch vụ tốt nhất cho bạn.
+                We collect personal information when you place an order, create an account, or contact us. This includes your name, phone number, email address, delivery address, and transaction history. We only collect what we need to give you the best possible service.
               </p>
             </section>
 
             <section>
               <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-3">
-                2. Sử dụng thông tin
+                2. How we use information
               </h2>
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                Thông tin của bạn được sử dụng để: xử lý và giao đơn hàng, liên hệ hỗ trợ khách
-                hàng, gửi thông tin khuyến mãi (nếu bạn đồng ý), cải thiện chất lượng dịch vụ và
-                cá nhân hóa trải nghiệm mua sắm. Chúng tôi không sử dụng thông tin của bạn cho
-                bất kỳ mục đích nào khác ngoài những mục đích đã nêu.
+                Your information is used to: process and deliver orders, provide customer support, send promotional updates (if you agree), improve service quality, and personalize your shopping experience. We never use your information for anything beyond these purposes.
               </p>
             </section>
 
             <section>
               <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-3">
-                3. Bảo mật dữ liệu
+                3. Data security
               </h2>
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                Chúng tôi áp dụng các biện pháp bảo mật tiêu chuẩn ngành để bảo vệ thông tin cá
-                nhân của bạn, bao gồm mã hóa SSL/TLS cho mọi kết nối, kiểm soát truy cập nghiêm
-                ngặt và giám sát hệ thống liên tục. Dữ liệu thanh toán được mã hóa và không lưu
-                trữ trực tiếp trên hệ thống của chúng tôi.
+                We apply industry-standard security measures to protect your personal information, including SSL/TLS encryption on every connection, strict access controls, and continuous system monitoring. Payment data is encrypted and never stored directly on our systems.
               </p>
             </section>
 
             <section>
               <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-3">
-                4. Quyền của bạn
+                4. Your rights
               </h2>
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                Bạn có đầy đủ quyền đối với dữ liệu cá nhân của mình, bao gồm: quyền xem và
-                chỉnh sửa thông tin, quyền yêu cầu xóa tài khoản và dữ liệu, quyền hủy đăng ký
-                nhận email marketing, và quyền yêu cầu xuất toàn bộ dữ liệu. Để thực hiện các
-                quyền này, vui lòng liên hệ với chúng tôi qua email bên dưới.
+                You have full rights over your personal data, including the right to view and correct your information, to request deletion of your account and data, to unsubscribe from marketing emails, and to request an export of all your data. To exercise these rights, contact us at the email below.
               </p>
             </section>
 
             <section>
               <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-3">
-                5. Liên hệ
+                5. Contact
               </h2>
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                Mọi thắc mắc về chính sách bảo mật, vui lòng liên hệ:
+                If you have any questions about our privacy policy, please contact us:
               </p>
               <ul className="mt-3 space-y-1 text-gray-600 dark:text-gray-400">
                 <li>
                   Email:{" "}
                   <a
-                    href="mailto:hello@milktea-iku.vn"
+                    href="mailto:hello@drinma.com"
                     className="text-brand-600 dark:text-brand-400 hover:underline"
                   >
-                    hello@milktea-iku.vn
+                    hello@drinma.com
                   </a>
                 </li>
                 <li>Hotline: 1900 1234</li>
-                <li>Địa chỉ: 123 Nguyễn Huệ, Quận 1, TP. Hồ Chí Minh</li>
+                <li>Address: 123 Nguyen Hue, District 1, Ho Chi Minh City</li>
               </ul>
             </section>
           </div>

@@ -20,17 +20,17 @@ export default function AppPromo() {
             className="text-white"
           >
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
-              Tải app Iku ngay
+              Download the Drinma app now
             </h2>
             <p className="text-brand-100 text-lg mb-8 max-w-md">
-              Đặt hàng nhanh hơn, nhận ưu đãi độc quyền và theo dõi đơn hàng real-time
+              Order faster, get exclusive deals and track your order in real time
             </p>
 
             <div className="space-y-4 mb-8">
               {[
-                { icon: Bell, text: "Thông báo khuyến mãi sớm nhất" },
-                { icon: Gift, text: "Ưu đãi độc quyền chỉ trên app" },
-                { icon: Star, text: "Tích điểm Iku Stars tự động" },
+                { icon: Bell, text: "First to know about promos" },
+                { icon: Gift, text: "Exclusive app-only deals" },
+                { icon: Star, text: "Automatic Drinma Stars points" },
               ].map((item, i) => (
                 <motion.div
                   key={item.text}
@@ -67,8 +67,8 @@ export default function AppPromo() {
             <div className="w-56 h-[420px] rounded-[2.5rem] bg-white/10 border border-white/20 backdrop-blur-sm flex items-center justify-center">
               <div className="text-center">
                 <Smartphone className="w-12 h-12 text-white/60 mx-auto mb-3" />
-                <p className="text-white/80 font-medium">Iku App</p>
-                <p className="text-white/50 text-sm mt-1">Sắp ra mắt</p>
+                <p className="text-white/80 font-medium">Drinma App</p>
+                <p className="text-white/50 text-sm mt-1">Coming soon</p>
               </div>
             </div>
           </motion.div>

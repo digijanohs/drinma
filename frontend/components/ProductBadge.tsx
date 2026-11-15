@@ -16,13 +16,13 @@ const badgeConfig = {
   },
   new: {
     icon: Sparkles,
-    label: "Mới",
+    label: "New",
     className: "bg-green-50 text-green-700 border-green-200",
     iconColor: "text-green-500",
   },
   limited: {
     icon: Clock,
-    label: "Giới hạn",
+    label: "Limited",
     className: "bg-red-50 text-red-700 border-red-200",
     iconColor: "text-red-500",
   },

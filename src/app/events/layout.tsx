@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Sự kiện | Iku Milk Tea",
-  description: "Các sự kiện và hoạt động sắp diễn ra của Iku Milk Tea",
+  title: "Events | Drinma",
+  description: "Upcoming events and activities at Drinma",
 };
 
 export default function EventsLayout({

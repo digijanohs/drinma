@@ -41,7 +41,7 @@ export default function GiftCardPage() {
               transition={{ delay: 0.1 }}
               className="text-4xl font-display font-bold text-gray-900 dark:text-gray-50 mb-4"
             >
-              Thẻ quà tặng Iku
+              Drinma Gift Card
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -49,7 +49,7 @@ export default function GiftCardPage() {
               transition={{ delay: 0.2 }}
               className="text-gray-500 dark:text-gray-400 text-lg"
             >
-              Tặng người thân yêu niềm vui thưởng thức trà sữa premium
+              Give someone you love the joy of premium milk tea
             </motion.p>
           </div>
         </section>
@@ -65,16 +65,16 @@ export default function GiftCardPage() {
                 <Send className="w-9 h-9 text-green-500" />
               </div>
               <h2 className="text-2xl font-display font-bold text-gray-900 dark:text-gray-50 mb-2">
-                Đã gửi thẻ quà tặng!
+                Gift card sent!
               </h2>
               <p className="text-gray-500 dark:text-gray-400 mb-6">
-                Thẻ quà tặng {selectedAmount.toLocaleString("vi-VN")}đ đã được gửi đến {recipientEmail}
+                A gift card worth {selectedAmount.toLocaleString("vi-VN")}đ was sent to {recipientEmail}
               </p>
               <button
                 onClick={() => setSent(false)}
                 className="px-6 py-3 bg-brand-600 hover:bg-brand-700 text-white rounded-xl font-medium transition-colors"
               >
-                Gửi thêm thẻ khác
+                Send another gift card
               </button>
             </motion.div>
           ) : (
@@ -86,7 +86,7 @@ export default function GiftCardPage() {
             >
               <div>
                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-3">
-                  Chọn mệnh giá
+                  Choose an amount
                 </label>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                   {amounts.map((amount) => (
@@ -109,7 +109,7 @@ export default function GiftCardPage() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1.5">
-                    Tên người nhận
+                    Recipient's name
                   </label>
                   <input
                     type="text"
@@ -117,12 +117,12 @@ export default function GiftCardPage() {
                     onChange={(e) => setRecipientName(e.target.value)}
                     required
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-50 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent text-sm placeholder-gray-400 dark:placeholder-gray-500"
-                    placeholder="Nguyễn Văn A"
+                    placeholder="Nguyen Van A"
                   />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1.5">
-                    Email người nhận
+                    Recipient's email
                   </label>
                   <input
                     type="email"
@@ -137,28 +137,28 @@ export default function GiftCardPage() {
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1.5">
-                  Lời nhắn (tùy chọn)
+                  Message (optional)
                 </label>
                 <textarea
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   rows={3}
                   className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-50 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent text-sm resize-none placeholder-gray-400 dark:placeholder-gray-500"
-                  placeholder="Chúc bạn ngày mới vui vẻ! Thưởng thức trà sữa nhé"
+                  placeholder="Have a great day! Enjoy your milk tea"
                 />
               </div>
 
               <div className="flex items-center justify-between pt-2">
                 <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
                   <CreditCard className="w-4 h-4" />
-                  <span>Thanh toán qua MoMo, ZaloPay, VNPay</span>
+                  <span>Pay via MoMo, ZaloPay, VNPay</span>
                 </div>
                 <button
                   type="submit"
                   className="flex items-center gap-2 px-6 py-3 bg-brand-600 hover:bg-brand-700 text-white rounded-xl font-medium transition-colors"
                 >
                   <ShoppingBag className="w-4 h-4" />
-                  Mua thẻ {selectedAmount.toLocaleString("vi-VN")}đ
+                  Buy a card for {selectedAmount.toLocaleString("vi-VN")}đ
                 </button>
               </div>
             </motion.form>

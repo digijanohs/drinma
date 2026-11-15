@@ -4,8 +4,8 @@ import CartDrawer from "@/components/CartDrawer";
 import CheckoutForm from "./CheckoutForm";
 
 export const metadata = {
-  title: "Thanh toán | MilkTea Iku",
-  description: "Hoàn tất đơn hàng trà sữa của bạn",
+  title: "Checkout | Drinma",
+  description: "Complete your milk tea order",
 };
 
 export default function CheckoutPage() {

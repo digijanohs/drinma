@@ -25,7 +25,7 @@ export function RatingStars({ rating, size = "md" }: RatingStarsProps) {
   return (
     <span
       className="inline-flex items-center gap-0.5"
-      aria-label={`Đánh giá ${clampedRating} trên 5 sao`}
+      aria-label={`Rated 5 out of 5 stars`}
       role="img"
     >
       {stars.map(({ filled, half }, i) => (

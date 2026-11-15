@@ -42,15 +42,15 @@ export default function CookieConsent() {
               </div>
               <div className="flex-1">
                 <p className="mb-1 text-sm font-semibold text-gray-900 dark:text-gray-50">
-                  Cookie &amp; Quyền riêng tư
+                  Cookies &amp; Privacy
                 </p>
                 <p className="mb-3 text-xs leading-relaxed text-gray-500 dark:text-gray-400">
-                  Chúng tôi dùng cookie để cải thiện trải nghiệm của bạn. Xem{" "}
+                  We use cookies to improve your experience. See{" "}
                   <a
                     href="/privacy"
                     className="text-brand-600 underline dark:text-brand-400 py-1"
                   >
-                    chính sách bảo mật
+                    privacy policy
                   </a>
                   .
                 </p>
@@ -59,13 +59,13 @@ export default function CookieConsent() {
                     onClick={accept}
                     className="rounded-lg bg-brand-600 px-4 py-2.5 text-xs font-medium text-white transition-colors hover:bg-brand-700 dark:bg-brand-500 dark:hover:bg-brand-600"
                   >
-                    Chấp nhận
+                    Accept
                   </button>
                   <button
                     onClick={decline}
                     className="rounded-lg border border-gray-200 px-4 py-2.5 text-xs font-medium text-gray-600 transition-colors hover:bg-gray-50 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-700"
                   >
-                    Từ chối
+                    Decline
                   </button>
                 </div>
               </div>

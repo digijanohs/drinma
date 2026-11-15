@@ -4,7 +4,7 @@ import { limiter } from "@/lib/rate-limit";
 export const dynamic = "force-dynamic";
 
 const FALLBACK_REPLY =
-  "Xin chào! Tôi là trợ lý ảo của MilkTea Iku. Hiện tại hệ thống chatbot đang được cấu hình. Vui lòng liên hệ hotline 1900-xxxx để được hỗ trợ.";
+  "Hi there! I'm the Drinma virtual assistant. Our chat is being set up right now, so please call our hotline 1900-xxxx for help.";
 
 const PRIVATE_HOSTS = [
   "localhost",
@@ -45,7 +45,7 @@ export async function POST(request: NextRequest) {
       await limiter.check(10, ip);
     } catch {
       return NextResponse.json(
-        { error: "Quá nhiều yêu cầu, vui lòng thử lại sau" },
+        { error: "Too many requests, please try again later" },
         { status: 429 }
       );
     }
@@ -55,14 +55,14 @@ export async function POST(request: NextRequest) {
 
     if (!message || typeof message !== "string" || message.trim().length === 0) {
       return NextResponse.json(
-        { error: "Tin nhắn không hợp lệ" },
+        { error: "Invalid message" },
         { status: 400 }
       );
     }
 
     if (message.length > 1000) {
       return NextResponse.json(
-        { error: "Tin nhắn quá dài" },
+        { error: "Message is too long" },
         { status: 400 }
       );
     }
@@ -89,7 +89,7 @@ export async function POST(request: NextRequest) {
 
       if (!n8nResponse.ok) {
         return NextResponse.json({
-          reply: "Xin lỗi, tôi không thể xử lý yêu cầu lúc này. Vui lòng thử lại sau.",
+          reply: "Sorry, I can't handle that request right now. Please try again later.",
           source: "error",
         });
       }
@@ -97,7 +97,7 @@ export async function POST(request: NextRequest) {
       const data = await n8nResponse.json();
 
       return NextResponse.json({
-        reply: data.reply || data.message || "Cảm ơn bạn đã liên hệ!",
+        reply: data.reply || data.message || "Thanks for getting in touch!",
         source: "n8n",
       });
     } finally {
@@ -105,7 +105,7 @@ export async function POST(request: NextRequest) {
     }
   } catch {
     return NextResponse.json(
-      { error: "Lỗi hệ thống chatbot" },
+      { error: "Chat system error" },
       { status: 500 }
     );
   }

@@ -9,6 +9,7 @@ import ThemeProvider from "@/components/ThemeProvider";
 import CookieConsent from "@/components/CookieConsent";
 import SkipLink from "@/components/SkipLink";
 import JsonLd from "@/components/JsonLd";
+import LocaleProvider from "@/components/LocaleProvider";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
@@ -23,37 +24,37 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://milktea-iku.vercel.app"),
-  title: "MilkTea Iku | Trà Sữa Premium",
+  metadataBase: new URL("https://drinmademo.vercel.app"),
+  title: "Drinma | Premium Milk Tea",
   description:
-    "Thưởng thức trà sữa cao cấp với nguyên liệu tươi ngon nhất. Đặt hàng online, giao tận nơi.",
-  keywords: ["trà sữa", "milk tea", "boba", "topping", "đặt hàng online"],
+    "Savor premium milk tea made with the freshest ingredients. Order online and we'll deliver it right to your door.",
+  keywords: ["milk tea", "bubble tea", "boba", "topping", "order online"],
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
   },
   openGraph: {
     type: "website",
-    locale: "vi_VN",
-    url: "https://milktea-iku.vercel.app",
-    siteName: "MilkTea Iku",
-    title: "MilkTea Iku | Trà Sữa Premium",
+    locale: "en_US",
+    url: "https://drinmademo.vercel.app",
+    siteName: "Drinma",
+    title: "Drinma | Premium Milk Tea",
     description:
-      "Thưởng thức trà sữa cao cấp với nguyên liệu tươi ngon nhất. Đặt hàng online, giao tận nơi.",
+      "Savor premium milk tea made with the freshest ingredients. Order online and we'll deliver it right to your door.",
     images: [
       {
         url: "https://images.unsplash.com/photo-1558857563-b371033873b8?w=1200&h=630&fit=crop&auto=format,compress",
         width: 1200,
         height: 630,
-        alt: "MilkTea Iku - Trà Sữa Premium",
+        alt: "Drinma - Premium Milk Tea",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "MilkTea Iku | Trà Sữa Premium",
+    title: "Drinma | Premium Milk Tea",
     description:
-      "Thưởng thức trà sữa cao cấp với nguyên liệu tươi ngon nhất. Đặt hàng online, giao tận nơi.",
+      "Savor premium milk tea made with the freshest ingredients. Order online and we'll deliver it right to your door.",
     images: ["https://images.unsplash.com/photo-1558857563-b371033873b8?w=1200&h=630&fit=crop&auto=format,compress"],
   },
 };
@@ -64,10 +65,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="vi" className={cn(inter.variable, playfair.variable, "font-sans overflow-x-hidden")} suppressHydrationWarning>
+    <html lang="en" className={cn(inter.variable, playfair.variable, "font-sans overflow-x-hidden")} suppressHydrationWarning>
       <body className="antialiased bg-cream-50 dark:bg-gray-900 overflow-x-hidden">
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           <JsonLd />
+          <LocaleProvider />
           <SkipLink />
           <PromoBanner />
           <div id="main-content">

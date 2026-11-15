@@ -13,11 +13,11 @@ import { Badge } from "@/components/ui/badge";
 const statusSteps = ["pending", "confirmed", "preparing", "delivering", "completed"];
 
 const statusMap: Record<string, { label: string; icon: React.ReactNode; color: string; bgColor: string }> = {
-  pending: { label: "Đang xác nhận", icon: <Clock className="w-5 h-5" />, color: "text-yellow-600", bgColor: "bg-yellow-100" },
-  confirmed: { label: "Đã xác nhận", icon: <CheckCircle className="w-5 h-5" />, color: "text-blue-600", bgColor: "bg-blue-100" },
-  preparing: { label: "Đang pha chế", icon: <ChefHat className="w-5 h-5" />, color: "text-purple-600", bgColor: "bg-purple-100" },
-  delivering: { label: "Đang giao", icon: <Truck className="w-5 h-5" />, color: "text-brand-600", bgColor: "bg-brand-100" },
-  completed: { label: "Hoàn thành", icon: <CheckCircle className="w-5 h-5" />, color: "text-green-600", bgColor: "bg-green-100" },
+  pending: { label: "Confirming", icon: <Clock className="w-5 h-5" />, color: "text-yellow-600", bgColor: "bg-yellow-100" },
+  confirmed: { label: "Confirmed", icon: <CheckCircle className="w-5 h-5" />, color: "text-blue-600", bgColor: "bg-blue-100" },
+  preparing: { label: "Being prepared", icon: <ChefHat className="w-5 h-5" />, color: "text-purple-600", bgColor: "bg-purple-100" },
+  delivering: { label: "Out for delivery", icon: <Truck className="w-5 h-5" />, color: "text-brand-600", bgColor: "bg-brand-100" },
+  completed: { label: "Completed", icon: <CheckCircle className="w-5 h-5" />, color: "text-green-600", bgColor: "bg-green-100" },
 };
 
 export default function OrderPage() {
@@ -67,10 +67,10 @@ export default function OrderPage() {
               <Package className="w-8 h-8 text-brand-600 dark:text-brand-300" />
             </div>
             <h1 className="text-3xl md:text-4xl font-display font-bold text-gray-900 dark:text-gray-50">
-              Tra cứu đơn hàng
+              Track Your Order
             </h1>
             <p className="text-gray-600 dark:text-gray-300 mt-2">
-              Nhập số điện thoại để theo dõi trạng thái đơn hàng của bạn
+              Enter your phone number to track your order status
             </p>
           </motion.div>
 
@@ -87,8 +87,8 @@ export default function OrderPage() {
                 type="tel"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
-                placeholder="Nhập số điện thoại..."
-                aria-label="Số điện thoại"
+                placeholder="Enter your phone number..."
+                aria-label="Phone number"
                 className="w-full pl-12 pr-4 py-4 rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-50 placeholder:text-gray-500 dark:placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 shadow-sm transition-shadow hover:shadow-md"
               />
             </div>
@@ -107,7 +107,7 @@ export default function OrderPage() {
               ) : (
                 <>
                   <Search className="w-5 h-5 mr-2" />
-                  Tìm
+                  Search
                 </>
               )}
             </Button>
@@ -127,8 +127,8 @@ export default function OrderPage() {
                       <div className="w-20 h-20 mx-auto mb-4 bg-gray-100 dark:bg-gray-700 rounded-full flex items-center justify-center">
                         <Package className="w-10 h-10 text-gray-400 dark:text-gray-500" />
                       </div>
-                      <p className="text-gray-700 dark:text-gray-200 text-lg font-medium">Không tìm thấy đơn hàng nào</p>
-                      <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">Vui lòng kiểm tra lại số điện thoại</p>
+                      <p className="text-gray-700 dark:text-gray-200 text-lg font-medium">No orders found</p>
+                      <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">Please check your phone number again</p>
                     </CardContent>
                   </Card>
                 ) : (
@@ -209,7 +209,7 @@ export default function OrderPage() {
                             </div>
 
                             <div className="border-t border-gray-100 dark:border-gray-700 mt-4 pt-4 flex justify-between items-center">
-                              <span className="text-sm text-gray-600 dark:text-gray-300">Tổng cộng</span>
+                              <span className="text-sm text-gray-600 dark:text-gray-300">Total</span>
                               <span className="text-lg font-bold text-brand-600 dark:text-brand-400">{formatPrice(order.total)}</span>
                             </div>
                           </CardContent>

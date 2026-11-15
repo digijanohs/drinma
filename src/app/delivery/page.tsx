@@ -8,20 +8,20 @@ import CartDrawer from "@/components/CartDrawer";
 
 const deliveryZones = [
   {
-    city: "TP. Hồ Chí Minh",
-    districts: ["Quận 1", "Quận 3", "Quận 7", "Bình Thạnh", "Phú Nhuận", "Tân Bình", "Gò Vấp"],
+    city: "Ho Chi Minh City",
+    districts: ["District 1", "District 3", "District 7", "Bình Thạnh", "Phú Nhuận", "Tân Bình", "Gò Vấp"],
   },
   {
-    city: "Hà Nội",
-    districts: ["Cầu Giấy", "Thanh Xuân", "Đống Đa", "Ba Đình", "Hoàn Kiếm", "Hai Bà Trưng"],
+    city: "Hanoi",
+    districts: ["Cau Giay District", "Thanh Xuan District", "Đống Đa", "Ba Đình", "Hoàn Kiếm", "Hai Bà Trưng"],
   },
 ];
 
 const feeTable = [
-  { range: "0 – 2 km", fee: "Miễn phí (đơn từ 100.000đ)", time: "15 – 20 phút" },
-  { range: "2 – 5 km", fee: "Miễn phí (đơn từ 100.000đ)", time: "25 – 35 phút" },
-  { range: "5 – 10 km", fee: "15.000đ", time: "35 – 50 phút" },
-  { range: "Trên 10 km", fee: "Liên hệ hotline", time: "Thoả thuận" },
+  { range: "0 – 2 km", fee: "Free (orders from 100.000đ)", time: "15 – 20 minutes" },
+  { range: "2 – 5 km", fee: "Free (orders from 100.000đ)", time: "25 – 35 minutes" },
+  { range: "5 – 10 km", fee: "15.000đ", time: "35 – 50 minutes" },
+  { range: "Over 10 km", fee: "Call our hotline", time: "On request" },
 ];
 
 export default function DeliveryPage() {
@@ -38,7 +38,7 @@ export default function DeliveryPage() {
               animate={{ opacity: 1, y: 0 }}
               className="inline-block px-4 py-1.5 bg-brand-100 dark:bg-brand-900/40 text-brand-700 dark:text-brand-300 rounded-full text-sm font-medium mb-5"
             >
-              Giao hàng
+              Delivery
             </motion.span>
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
@@ -46,8 +46,8 @@ export default function DeliveryPage() {
               transition={{ delay: 0.1 }}
               className="text-4xl md:text-5xl font-display font-bold text-gray-900 dark:text-gray-50 mb-4"
             >
-              Thông tin{" "}
-              <span className="text-brand-600 dark:text-brand-400">giao hàng</span>
+              Information{" "}
+              <span className="text-brand-600 dark:text-brand-400">delivery</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -55,7 +55,7 @@ export default function DeliveryPage() {
               transition={{ delay: 0.2 }}
               className="text-gray-500 dark:text-gray-400 text-lg"
             >
-              Nhận trà sữa tươi ngon tận nơi – nhanh chóng, an toàn và tiện lợi
+              Fresh, delicious milk tea delivered to your door – fast, safe and easy.
             </motion.p>
           </div>
         </section>
@@ -69,10 +69,10 @@ export default function DeliveryPage() {
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"
           >
             {[
-              { icon: Truck, label: "Giao hàng tận nơi", value: "Toàn quốc" },
-              { icon: Clock, label: "Thời gian trung bình", value: "30 phút" },
-              { icon: MapPin, label: "Bán kính freeship", value: "5 km" },
-              { icon: BadgeCheck, label: "Đơn tối thiểu freeship", value: "100.000đ" },
+              { icon: Truck, label: "Door-to-door delivery", value: "Nationwide" },
+              { icon: Clock, label: "Average time", value: "30 minutes" },
+              { icon: MapPin, label: "Free delivery radius", value: "5 km" },
+              { icon: BadgeCheck, label: "Minimum order for free delivery", value: "100.000đ" },
             ].map(({ icon: Icon, label, value }, i) => (
               <motion.div
                 key={label}
@@ -95,20 +95,20 @@ export default function DeliveryPage() {
             viewport={{ once: true }}
           >
             <h2 className="text-2xl font-display font-bold text-gray-900 dark:text-gray-50 mb-6">
-              Phí giao hàng
+              Delivery fee
             </h2>
             <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 shadow-sm overflow-hidden">
               <table className="w-full text-sm">
                 <thead>
                   <tr className="bg-cream-50 dark:bg-gray-700/50 border-b border-gray-100 dark:border-gray-700">
                     <th className="text-left px-6 py-3 font-semibold text-gray-700 dark:text-gray-300">
-                      Khoảng cách
+                      Distance
                     </th>
                     <th className="text-left px-6 py-3 font-semibold text-gray-700 dark:text-gray-300">
-                      Phí giao hàng
+                      Delivery fee
                     </th>
                     <th className="text-left px-6 py-3 font-semibold text-gray-700 dark:text-gray-300">
-                      Thời gian dự kiến
+                      Estimated time
                     </th>
                   </tr>
                 </thead>
@@ -139,7 +139,7 @@ export default function DeliveryPage() {
             viewport={{ once: true }}
           >
             <h2 className="text-2xl font-display font-bold text-gray-900 dark:text-gray-50 mb-6">
-              Khu vực giao hàng
+              Delivery areas
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {deliveryZones.map((zone) => (
@@ -176,12 +176,10 @@ export default function DeliveryPage() {
             <BadgeCheck className="w-12 h-12 text-brand-600 dark:text-brand-400 shrink-0" />
             <div>
               <h3 className="text-xl font-display font-bold text-gray-900 dark:text-gray-50 mb-1">
-                Miễn phí giao hàng
+                Free shipping
               </h3>
               <p className="text-gray-600 dark:text-gray-400">
-                Đơn hàng từ <strong>100.000đ</strong> trong bán kính <strong>5km</strong> được
-                miễn phí giao hàng hoàn toàn. Áp dụng cho tất cả các chi nhánh Iku trên toàn
-                quốc.
+                Orders from <strong>100.000đ</strong> within radius <strong>5km</strong> get completely free delivery. Valid at all Drinma stores nationwide.
               </p>
             </div>
           </motion.div>

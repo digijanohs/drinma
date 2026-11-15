@@ -16,10 +16,10 @@ interface TrackingStep {
 }
 
 const mockSteps: TrackingStep[] = [
-  { id: 1, label: "Đơn hàng đã xác nhận", time: "14:30", icon: CheckCircle2, completed: true },
-  { id: 2, label: "Đang pha chế", time: "14:35", icon: Clock, completed: true },
-  { id: 3, label: "Đang giao hàng", time: "14:45", icon: Truck, completed: true },
-  { id: 4, label: "Đã giao thành công", time: "~15:00", icon: Package, completed: false },
+  { id: 1, label: "Order confirmed", time: "14:30", icon: CheckCircle2, completed: true },
+  { id: 2, label: "Being prepared", time: "14:35", icon: Clock, completed: true },
+  { id: 3, label: "Out for delivery", time: "14:45", icon: Truck, completed: true },
+  { id: 4, label: "Delivered successfully", time: "~15:00", icon: Package, completed: false },
 ];
 
 export default function TrackingPage() {
@@ -43,7 +43,7 @@ export default function TrackingPage() {
               animate={{ opacity: 1, y: 0 }}
               className="text-3xl md:text-4xl font-display font-bold text-gray-900 dark:text-gray-50 mb-4"
             >
-              Theo dõi đơn hàng
+              Track order
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -51,7 +51,7 @@ export default function TrackingPage() {
               transition={{ delay: 0.1 }}
               className="text-gray-500 dark:text-gray-400 mb-8"
             >
-              Nhập mã đơn hàng để xem trạng thái giao hàng
+              Enter your order number to see the delivery status
             </motion.p>
 
             <motion.form
@@ -65,14 +65,14 @@ export default function TrackingPage() {
                 type="text"
                 value={orderId}
                 onChange={(e) => setOrderId(e.target.value)}
-                placeholder="VD: IKU-2024-001234"
+                placeholder="VD: DRINMA-2024-001234"
                 className="flex-1 px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-50 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent text-sm placeholder-gray-400 dark:placeholder-gray-500"
               />
               <button
                 type="submit"
                 className="px-6 py-3 bg-brand-600 hover:bg-brand-700 text-white rounded-xl font-medium text-sm transition-colors"
               >
-                Tra cứu
+                Track
               </button>
             </motion.form>
           </div>
@@ -87,11 +87,11 @@ export default function TrackingPage() {
             <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 shadow-sm p-6 md:p-8">
               <div className="flex items-center justify-between mb-6 pb-4 border-b border-gray-100 dark:border-gray-700">
                 <div>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">Mã đơn hàng</p>
-                  <p className="font-semibold text-gray-900 dark:text-gray-50">{orderId || "IKU-2024-001234"}</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">Order number</p>
+                  <p className="font-semibold text-gray-900 dark:text-gray-50">{orderId || "DRINMA-2024-001234"}</p>
                 </div>
                 <span className="px-3 py-1 bg-green-50 text-green-700 text-sm font-medium rounded-full border border-green-200">
-                  Đang giao
+                  Out for delivery
                 </span>
               </div>
 

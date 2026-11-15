@@ -7,14 +7,14 @@ import Footer from "@/components/Footer";
 import CartDrawer from "@/components/CartDrawer";
 
 const achievements = [
-  { id: 1, title: "Người mới", description: "Đặt đơn hàng đầu tiên", icon: <PartyPopper className="w-6 h-6" />, unlocked: true },
-  { id: 2, title: "Tín đồ trà sữa", description: "Đặt 10 đơn hàng", icon: <Coffee className="w-6 h-6" />, unlocked: true },
-  { id: 3, title: "Sành điệu", description: "Thử 5 loại trà khác nhau", icon: <Sparkles className="w-6 h-6" />, unlocked: true },
-  { id: 4, title: "Topping Master", description: "Thử tất cả topping", icon: <Trophy className="w-6 h-6" />, unlocked: false },
-  { id: 5, title: "VIP", description: "Chi tiêu trên 1 triệu", icon: <Crown className="w-6 h-6" />, unlocked: false },
-  { id: 6, title: "Chia sẻ yêu thương", description: "Giới thiệu 3 bạn bè", icon: <Heart className="w-6 h-6" />, unlocked: false },
-  { id: 7, title: "Đánh giá viên", description: "Viết 5 đánh giá", icon: <Star className="w-6 h-6" />, unlocked: true },
-  { id: 8, title: "Collector", description: "Sưu tập 20 Stars", icon: <Gem className="w-6 h-6" />, unlocked: false },
+  { id: 1, title: "Newcomer", description: "Place your first order", icon: <PartyPopper className="w-6 h-6" />, unlocked: true },
+  { id: 2, title: "Milk Tea Fan", description: "Place 10 orders", icon: <Coffee className="w-6 h-6" />, unlocked: true },
+  { id: 3, title: "Connoisseur", description: "Try 5 different teas", icon: <Sparkles className="w-6 h-6" />, unlocked: true },
+  { id: 4, title: "Topping Master", description: "Try every topping", icon: <Trophy className="w-6 h-6" />, unlocked: false },
+  { id: 5, title: "VIP", description: "Spend over 1 million", icon: <Crown className="w-6 h-6" />, unlocked: false },
+  { id: 6, title: "Share the Love", description: "Refer 3 friends", icon: <Heart className="w-6 h-6" />, unlocked: false },
+  { id: 7, title: "Reviewer", description: "Write 5 reviews", icon: <Star className="w-6 h-6" />, unlocked: true },
+  { id: 8, title: "Collector", description: "Collect 20 Stars", icon: <Gem className="w-6 h-6" />, unlocked: false },
 ];
 
 export default function AchievementsPage() {
@@ -40,7 +40,7 @@ export default function AchievementsPage() {
               transition={{ delay: 0.1 }}
               className="text-4xl font-display font-bold text-gray-900 dark:text-gray-50 mb-4"
             >
-              Thành tựu
+              Achievements
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -48,7 +48,7 @@ export default function AchievementsPage() {
               transition={{ delay: 0.2 }}
               className="text-gray-500 dark:text-gray-400 text-lg"
             >
-              Đã mở khóa {unlockedCount}/{achievements.length} thành tựu
+              Unlocked {unlockedCount}/{achievements.length} achievements
             </motion.p>
           </div>
         </section>
@@ -76,7 +76,7 @@ export default function AchievementsPage() {
                 </div>
                 {achievement.unlocked && (
                   <span className="text-[10px] font-medium text-brand-600 bg-brand-50 px-2 py-1 rounded-full">
-                    Đã mở
+                    Unlocked
                   </span>
                 )}
               </motion.div>

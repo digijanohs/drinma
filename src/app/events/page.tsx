@@ -19,32 +19,32 @@ interface Event {
 const events: Event[] = [
   {
     id: 1,
-    title: "Workshop Pha Chế Trà Sữa",
+    title: "Milk Tea Mixology Workshop",
     date: "25/05/2024",
     time: "14:00 – 16:00",
-    location: "Iku Nguyễn Huệ, Q.1, TP.HCM",
+    location: "Drinma Nguyen Hue, District 1, Ho Chi Minh City",
     description:
-      "Học cách pha chế trà sữa chuẩn vị từ barista chuyên nghiệp của Iku. Tham gia để khám phá bí quyết tạo nên ly trà sữa hoàn hảo và mang về công thức độc quyền.",
+      "Learn to brew milk tea the authentic way from Drinma's expert baristas. Join us to uncover the secrets behind the perfect cup and take home an exclusive recipe.",
     gradient: "from-pink-400 via-rose-300 to-orange-300",
   },
   {
     id: 2,
-    title: "Iku Tasting Night",
+    title: "Drinma Tasting Night",
     date: "01/06/2024",
     time: "18:00 – 20:00",
-    location: "Iku Phạm Ngọc Thạch, Q.3, TP.HCM",
+    location: "Drinma Pham Ngoc Thach, District 3, Ho Chi Minh City",
     description:
-      "Thử trước menu mới mùa hè với các vị trà trái cây độc quyền chưa từng ra mắt. Cơ hội đặc biệt để trải nghiệm và đóng góp ý kiến cho bộ sưu tập mới nhất của Iku.",
+      "Be the first to taste our summer menu, with exclusive fruit tea flavors never served before. A special chance to try them and share your thoughts on Drinma's latest collection.",
     gradient: "from-violet-400 via-purple-300 to-pink-300",
   },
   {
     id: 3,
-    title: "Iku x Local Artists",
+    title: "Drinma x Local Artists",
     date: "15/06/2024",
     time: "10:00 – 18:00",
-    location: "Iku Lê Văn Sỹ, Q.3, TP.HCM",
+    location: "Drinma Le Van Sy, District 3, Ho Chi Minh City",
     description:
-      "Triển lãm nghệ thuật kết hợp thưởng thức trà sữa cùng các nghệ sĩ địa phương tài năng. Không gian sáng tạo, âm nhạc acoustic và những tác phẩm nghệ thuật độc đáo.",
+      "An art exhibition paired with milk tea tastings alongside talented local artists. A creative space, acoustic music and one-of-a-kind artworks.",
     gradient: "from-teal-400 via-cyan-300 to-sky-300",
   },
 ];
@@ -63,7 +63,7 @@ export default function EventsPage() {
               animate={{ opacity: 1, y: 0 }}
               className="inline-block px-4 py-1.5 bg-brand-100 dark:bg-brand-900/40 text-brand-700 dark:text-brand-300 rounded-full text-sm font-medium mb-5"
             >
-              Sự kiện
+              Events
             </motion.span>
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
@@ -72,7 +72,7 @@ export default function EventsPage() {
               className="text-4xl md:text-5xl font-display font-bold text-gray-900 dark:text-gray-50 mb-4"
             >
               Sự kiện &amp;{" "}
-              <span className="text-brand-600 dark:text-brand-400">Hoạt động</span>
+              <span className="text-brand-600 dark:text-brand-400">Activities</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -80,7 +80,7 @@ export default function EventsPage() {
               transition={{ delay: 0.2 }}
               className="text-gray-500 dark:text-gray-400 text-lg"
             >
-              Tham gia các sự kiện thú vị và kết nối cùng cộng đồng Iku
+              Join fun events and connect with the Drinma community
             </motion.p>
           </div>
         </section>
@@ -129,7 +129,7 @@ export default function EventsPage() {
                   </div>
 
                   <button className="px-5 py-2 bg-brand-600 hover:bg-brand-700 dark:bg-brand-500 dark:hover:bg-brand-600 text-white rounded-xl text-sm font-medium transition-colors">
-                    Đăng ký tham gia
+                    Sign up
                   </button>
                 </div>
               </motion.div>

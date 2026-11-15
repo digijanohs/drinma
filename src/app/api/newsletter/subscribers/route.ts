@@ -38,6 +38,6 @@ export async function GET(request: NextRequest) {
     return paginatedResponse(subscribers, total, page, limit);
   } catch (error) {
     console.error("[GET /api/newsletter/subscribers]", error);
-    return errorResponse("Không thể tải danh sách người đăng ký", 500);
+    return errorResponse("Couldn't load the subscriber list", 500);
   }
 }

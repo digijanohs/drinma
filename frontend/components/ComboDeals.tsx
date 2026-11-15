@@ -6,9 +6,9 @@ import { BobaCupIcon } from "@/components/icons";
 import Link from "next/link";
 
 const combos = [
-  { id: 1, name: "Combo Đôi", items: "2 ly bất kỳ size M", price: 89000, originalPrice: 110000 },
-  { id: 2, name: "Combo Gia Đình", items: "4 ly bất kỳ size M + 2 topping", price: 169000, originalPrice: 230000 },
-  { id: 3, name: "Combo Văn Phòng", items: "5 ly bất kỳ size L", price: 245000, originalPrice: 325000 },
+  { id: 1, name: "Duo Combo", items: "Any 2 medium drinks", price: 89000, originalPrice: 110000 },
+  { id: 2, name: "Family Combo", items: "Any 4 medium drinks + 2 toppings", price: 169000, originalPrice: 230000 },
+  { id: 3, name: "Office Combo", items: "Any 5 large drinks", price: 245000, originalPrice: 325000 },
 ];
 
 export default function ComboDeals() {
@@ -19,10 +19,10 @@ export default function ComboDeals() {
           <div>
             <div className="flex items-center gap-2 mb-2">
               <Sparkles className="w-5 h-5 text-brand-500" />
-              <span className="text-sm font-medium text-brand-600">Tiết kiệm hơn</span>
+              <span className="text-sm font-medium text-brand-600">Save more</span>
             </div>
             <h2 className="text-3xl font-display font-bold text-gray-900 dark:text-gray-50">
-              Combo ưu đãi
+              Special combo
             </h2>
           </div>
           <Link href="/menu" className="text-sm text-brand-600 font-medium hover:text-brand-700 flex items-center gap-1">
@@ -58,7 +58,7 @@ export default function ComboDeals() {
                 </span>
               </div>
               <button className="w-full mt-4 py-2.5 bg-brand-600 text-white rounded-xl text-sm font-medium hover:bg-brand-700 transition-colors">
-                Thêm vào giỏ
+                Add to cart
               </button>
             </motion.div>
           ))}

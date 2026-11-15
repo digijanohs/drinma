@@ -47,10 +47,10 @@ export default async function Home() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-display font-bold text-gray-900 dark:text-gray-50">
-                Khám phá danh mục
+                Explore categories
               </h2>
               <p className="text-gray-500 dark:text-gray-400 mt-2">
-                Đa dạng hương vị cho mọi sở thích
+                A flavor for every taste
               </p>
             </div>
 
@@ -97,14 +97,14 @@ export default async function Home() {
                   Best Sellers
                 </h2>
                 <p className="text-gray-500 dark:text-gray-400 mt-2">
-                  Những món được yêu thích nhất
+                  Customer favorites
                 </p>
               </div>
               <Link
                 href="/menu"
                 className="text-brand-600 dark:text-brand-400 font-medium hover:text-brand-700 dark:hover:text-brand-300 transition-colors"
               >
-                Xem tất cả →
+                View all →
               </Link>
             </div>
 
@@ -132,16 +132,16 @@ export default async function Home() {
         <section className="py-20 bg-gradient-to-r from-brand-600 to-brand-800 text-white">
           <div className="max-w-4xl mx-auto px-4 text-center">
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
-              Đặt hàng ngay hôm nay
+              Order today
             </h2>
             <p className="text-brand-100 text-lg mb-8">
-              Giao hàng miễn phí cho đơn từ 100.000đ trong bán kính 5km
+              Free delivery on orders from 100.000đ within 5km
             </p>
             <Link
               href="/menu"
               className="inline-flex items-center px-8 py-4 bg-white text-brand-700 rounded-full font-semibold hover:bg-cream-100 transition-colors shadow-lg"
             >
-              Đặt hàng ngay
+              Order now
             </Link>
           </div>
         </section>

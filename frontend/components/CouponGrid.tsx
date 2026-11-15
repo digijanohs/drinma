@@ -19,11 +19,11 @@ interface Coupon {
 const coupons: Coupon[] = [
   {
     id: 1,
-    code: "IKUFIRST",
-    title: "Giảm 20% đơn đầu",
-    description: "Áp dụng cho khách hàng mới",
+    code: "DRINMAFIRST",
+    title: "20% off your first order",
+    description: "For new customers only",
     discount: "20%",
-    minOrder: "Không giới hạn",
+    minOrder: "No limit",
     expiry: "31/12/2024",
     icon: Gift,
     color: "from-brand-500 to-brand-700",
@@ -31,8 +31,8 @@ const coupons: Coupon[] = [
   {
     id: 2,
     code: "FREESHIP",
-    title: "Miễn phí giao hàng",
-    description: "Đơn từ 80.000đ nội thành",
+    title: "Free shipping",
+    description: "On city orders from 80.000đ",
     discount: "Free ship",
     minOrder: "80.000đ",
     expiry: "30/06/2024",
@@ -42,19 +42,19 @@ const coupons: Coupon[] = [
   {
     id: 3,
     code: "WEEKEND3",
-    title: "Mua 2 tặng 1",
-    description: "Áp dụng thứ 7 & CN",
-    discount: "Tặng 1",
-    minOrder: "2 sản phẩm",
+    title: "Buy 2, Get 1 Free",
+    description: "Valid Sat & Sun",
+    discount: "Get 1 Free",
+    minOrder: "2 items",
     expiry: "31/12/2024",
     icon: Percent,
     color: "from-purple-500 to-purple-700",
   },
   {
     id: 4,
-    code: "IKUSTAR50",
-    title: "Giảm 50K cho thành viên",
-    description: "Hạng Gold trở lên",
+    code: "DRINMASTAR50",
+    title: "50K off for members",
+    description: "Gold tier and above",
     discount: "50.000đ",
     minOrder: "150.000đ",
     expiry: "31/12/2024",
@@ -113,7 +113,7 @@ export default function CouponGrid() {
               </code>
               <button
                 onClick={() => copyCode(coupon.id, coupon.code)}
-                aria-label={copiedId === coupon.id ? `Đã sao chép mã ${coupon.code}` : `Sao chép mã ${coupon.code}`}
+                aria-label={copiedId === coupon.id ? `Coupon code copied` : `Copy code`}
                 className={`min-w-11 min-h-11 px-3 py-2 rounded-lg text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-gray-800 ${
                   copiedId === coupon.id
                     ? "bg-green-50 text-green-700 border border-green-200 dark:bg-green-900/30 dark:text-green-300 dark:border-green-800"

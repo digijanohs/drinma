@@ -14,8 +14,8 @@ const coupons = [
   {
     id: 1,
     code: "WELCOME20",
-    title: "Giảm 20% đơn đầu tiên",
-    description: "Áp dụng cho thành viên mới, đơn tối thiểu 50.000đ",
+    title: "20% off your first order",
+    description: "For new members, minimum order 50.000đ",
     discount: "20%",
     minOrder: 50000,
     expiry: "31/12/2024",
@@ -26,8 +26,8 @@ const coupons = [
   {
     id: 2,
     code: "FREESHIP",
-    title: "Miễn phí giao hàng",
-    description: "Áp dụng cho đơn từ 100.000đ trong bán kính 5km",
+    title: "Free shipping",
+    description: "On orders from 100.000đ within 5km",
     discount: "Free Ship",
     minOrder: 100000,
     expiry: "30/06/2025",
@@ -38,11 +38,11 @@ const coupons = [
   {
     id: 3,
     code: "BUY2GET1",
-    title: "Mua 2 tặng 1",
-    description: "Mua 2 ly bất kỳ, tặng 1 ly size S cùng loại",
-    discount: "Tặng 1",
+    title: "Buy 2, Get 1 Free",
+    description: "Buy any 2 drinks, get 1 small of the same kind free",
+    discount: "Get 1 Free",
     minOrder: 0,
-    expiry: "Mỗi thứ 3",
+    expiry: "Every Tuesday",
     color: "from-purple-500 to-purple-700",
     icon: Tag,
     isNew: false,
@@ -50,11 +50,11 @@ const coupons = [
   {
     id: 4,
     code: "BIRTHDAY",
-    title: "Sinh nhật vui vẻ",
-    description: "Giảm 30% trong tháng sinh nhật (cần đăng ký thành viên)",
+    title: "Happy birthday",
+    description: "30% off during your birthday month (membership required)",
     discount: "30%",
     minOrder: 0,
-    expiry: "Tháng sinh nhật",
+    expiry: "Birthday month",
     color: "from-pink-500 to-rose-700",
     icon: Gift,
     isNew: true,
@@ -63,7 +63,7 @@ const coupons = [
     id: 5,
     code: "TOPPING0",
     title: "Free topping",
-    description: "Miễn phí 1 topping bất kỳ cho đơn từ 45.000đ",
+    description: "One free topping on orders from 45.000đ",
     discount: "Free Topping",
     minOrder: 45000,
     expiry: "15/07/2025",
@@ -74,8 +74,8 @@ const coupons = [
   {
     id: 6,
     code: "COMBO50K",
-    title: "Combo tiết kiệm",
-    description: "Giảm 50.000đ cho combo 3 ly trở lên",
+    title: "Value combo",
+    description: "50.000đ off combos of 3 drinks or more",
     discount: "-50K",
     minOrder: 150000,
     expiry: "31/08/2025",
@@ -107,13 +107,13 @@ export default function PromotionsPage() {
           >
             <Badge className="bg-brand-100 text-brand-700 border-0 mb-4">
               <Sparkles className="w-3 h-3 mr-1" />
-              Ưu đãi đặc biệt
+              Special offer
             </Badge>
             <h1 className="text-3xl md:text-4xl font-display font-bold text-gray-900 dark:text-gray-50">
-              Khuyến mãi & Mã giảm giá
+              Deals & Discount Codes
             </h1>
             <p className="text-gray-500 dark:text-gray-400 mt-3 max-w-md mx-auto">
-              Sử dụng mã giảm giá khi thanh toán để nhận ưu đãi hấp dẫn
+              Use a discount code at checkout to unlock great deals
             </p>
           </motion.div>
 
@@ -133,7 +133,7 @@ export default function PromotionsPage() {
                         <coupon.icon className="w-5 h-5 text-white" />
                       </div>
                       {coupon.isNew && (
-                        <Badge className="bg-red-100 text-red-600 border-0 text-xs">Mới</Badge>
+                        <Badge className="bg-red-100 text-red-600 border-0 text-xs">New</Badge>
                       )}
                     </div>
 
@@ -143,7 +143,7 @@ export default function PromotionsPage() {
                     <div className="flex items-center justify-between mb-3">
                       <div className="flex items-center gap-1.5 text-xs text-gray-500 dark:text-gray-400">
                         <Clock className="w-3.5 h-3.5" />
-                        <span>HSD: {coupon.expiry}</span>
+                        <span>Expires: {coupon.expiry}</span>
                       </div>
                       <span className="text-lg font-bold text-brand-600">{coupon.discount}</span>
                     </div>
@@ -161,12 +161,12 @@ export default function PromotionsPage() {
                         {copiedId === coupon.id ? (
                           <>
                             <Check className="w-3.5 h-3.5 mr-1 text-green-600" />
-                            <span className="text-green-600">Đã sao chép</span>
+                            <span className="text-green-600">Copied</span>
                           </>
                         ) : (
                           <>
                             <Copy className="w-3.5 h-3.5 mr-1" />
-                            Sao chép
+                            Copy
                           </>
                         )}
                       </Button>
@@ -184,13 +184,13 @@ export default function PromotionsPage() {
             className="mt-16 text-center p-8 bg-brand-50 rounded-3xl border border-brand-100"
           >
             <h3 className="text-xl font-display font-bold text-gray-900 dark:text-gray-50 mb-2">
-              Nhận thêm ưu đãi?
+              Want more deals?
             </h3>
             <p className="text-gray-500 dark:text-gray-400 text-sm mb-4">
-              Đăng ký thành viên Iku để nhận mã giảm giá độc quyền mỗi tuần
+              Sign up for Drinma membership and get exclusive discount codes every week
             </p>
             <Button className="bg-brand-600 hover:bg-brand-700 text-white rounded-full px-8">
-              Đăng ký thành viên
+              Become a member
             </Button>
           </motion.div>
         </div>

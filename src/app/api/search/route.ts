@@ -45,6 +45,6 @@ export async function GET(request: NextRequest) {
     return successResponse(data);
   } catch (error) {
     console.error("[GET /api/search]", error);
-    return errorResponse("Không thể tìm kiếm sản phẩm", 500);
+    return errorResponse("Product search failed", 500);
   }
 }

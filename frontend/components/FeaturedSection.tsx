@@ -42,10 +42,10 @@ export default function FeaturedSection({ products }: FeaturedSectionProps) {
           className="text-center mb-12"
         >
           <span className="inline-block px-4 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded-full text-sm font-medium mb-4">
-            Mới ra mắt
+            New
           </span>
           <h2 className="text-3xl font-display font-bold text-gray-900 dark:text-gray-50">
-            Sản phẩm mới
+            New Arrivals
           </h2>
         </motion.div>
 

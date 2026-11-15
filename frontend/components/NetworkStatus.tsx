@@ -27,7 +27,7 @@ export function NetworkStatus({ children }: NetworkStatusProps) {
     <>
       {!isOnline && (
         <div className="fixed top-0 left-0 right-0 z-[9999] bg-amber-500 text-white text-center py-2 text-sm font-medium">
-          Bạn đang offline. Một số tính năng có thể không hoạt động.
+          You're offline. Some features may not work.
         </div>
       )}
       {children}

@@ -9,39 +9,39 @@ import CartDrawer from "@/components/CartDrawer";
 const ingredients = [
   {
     icon: Leaf,
-    title: "Trà nhập khẩu",
-    origin: "Đài Loan & Nhật Bản",
-    description: "Lá trà Oolong, Assam, Matcha được chọn lọc từ những vùng trà nổi tiếng nhất.",
+    title: "Imported tea",
+    origin: "Taiwan & Japan",
+    description: "Oolong, Assam and Matcha leaves selected from the world's most renowned tea regions.",
   },
   {
     icon: Droplets,
-    title: "Sữa tươi organic",
-    origin: "Hokkaido, Nhật Bản",
-    description: "Sữa tươi nguyên chất không chất bảo quản, béo ngậy tự nhiên.",
+    title: "Organic fresh milk",
+    origin: "Hokkaido, Japan",
+    description: "Pure fresh milk with no preservatives — naturally rich and creamy.",
   },
   {
     icon: Mountain,
-    title: "Đường mía thủ công",
-    origin: "Okinawa, Nhật Bản",
-    description: "Đường nâu Okinawa lên men tự nhiên, tạo vị caramel đặc trưng.",
+    title: "Handcrafted cane sugar",
+    origin: "Okinawa, Japan",
+    description: "Okinawa brown sugar, naturally fermented for that signature caramel taste.",
   },
   {
     icon: Award,
-    title: "Trân châu tươi",
-    origin: "Làm tại cửa hàng",
-    description: "Trân châu được nấu mới mỗi 4 giờ, đảm bảo độ dai mềm hoàn hảo.",
+    title: "Fresh tapioca pearls",
+    origin: "Made in-store",
+    description: "Pearls are cooked fresh every 4 hours for that perfect chewy bite.",
   },
   {
     icon: Heart,
-    title: "Trái cây tươi",
-    origin: "Vườn Đà Lạt & Bến Tre",
-    description: "Đào, vải, chanh dây, dừa tươi được giao mỗi sáng từ vườn.",
+    title: "Fresh fruit",
+    origin: "Da Lat & Ben Tre orchards",
+    description: "Peach, lychee, passion fruit and fresh coconut delivered from the orchard every morning.",
   },
   {
     icon: Sparkles,
     title: "Cream cheese",
     origin: "New Zealand",
-    description: "Cream cheese nhập khẩu, đánh bông mịn với công thức riêng của Iku.",
+    description: "Imported cream cheese, whipped silky smooth with Drinma's own recipe.",
   },
 ];
 
@@ -58,7 +58,7 @@ export default function IngredientsPage() {
               animate={{ opacity: 1, y: 0 }}
               className="inline-block px-4 py-1.5 bg-green-100 text-green-700 rounded-full text-sm font-medium mb-5"
             >
-              Nguyên liệu
+              Ingredients
             </motion.span>
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
@@ -66,7 +66,7 @@ export default function IngredientsPage() {
               transition={{ delay: 0.1 }}
               className="text-4xl md:text-5xl font-display font-bold text-gray-900 dark:text-gray-50 mb-4"
             >
-              Nguyên liệu <span className="text-brand-600">tươi sạch</span>
+              Ingredients <span className="text-brand-600">fresh & clean</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -74,7 +74,7 @@ export default function IngredientsPage() {
               transition={{ delay: 0.2 }}
               className="text-gray-500 dark:text-gray-400 text-lg max-w-xl mx-auto"
             >
-              Chúng tôi chỉ sử dụng nguyên liệu cao cấp nhập khẩu trực tiếp, không chất bảo quản
+              We use only premium ingredients, imported directly — never any preservatives
             </motion.p>
           </div>
         </section>
@@ -107,26 +107,25 @@ export default function IngredientsPage() {
             className="mt-14 bg-gradient-to-r from-green-600 to-green-800 rounded-3xl p-10 text-center text-white"
           >
             <h3 className="text-2xl font-display font-bold mb-3">
-              Cam kết chất lượng
+              Quality promise
             </h3>
             <p className="text-green-100 max-w-lg mx-auto mb-6">
-              100% nguyên liệu có chứng nhận an toàn thực phẩm. Kiểm tra chất lượng nghiêm ngặt
-              từ nguồn cung đến ly trà sữa trên tay bạn.
+              100% food-safety-certified ingredients. Strict quality checks from the supplier all the way to the cup in your hand.
             </p>
             <div className="flex items-center justify-center gap-8 text-sm">
               <div>
                 <p className="text-2xl font-bold">100%</p>
-                <p className="text-green-200">Tự nhiên</p>
+                <p className="text-green-200">Natural</p>
               </div>
               <div className="w-px h-10 bg-green-400/30" />
               <div>
                 <p className="text-2xl font-bold">0</p>
-                <p className="text-green-200">Chất bảo quản</p>
+                <p className="text-green-200">Preservatives</p>
               </div>
               <div className="w-px h-10 bg-green-400/30" />
               <div>
                 <p className="text-2xl font-bold">6+</p>
-                <p className="text-green-200">Quốc gia nhập khẩu</p>
+                <p className="text-green-200">Country of import</p>
               </div>
             </div>
           </motion.div>

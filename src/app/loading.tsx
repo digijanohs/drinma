@@ -6,7 +6,7 @@ export default function Loading() {
           <div className="absolute inset-0 rounded-full border-4 border-brand-200 dark:border-brand-900" />
           <div className="absolute inset-0 rounded-full border-4 border-brand-600 dark:border-brand-400 border-t-transparent animate-spin" />
         </div>
-        <p className="text-gray-600 dark:text-gray-300 text-sm animate-pulse">Đang tải...</p>
+        <p className="text-gray-600 dark:text-gray-300 text-sm animate-pulse">Loading...</p>
       </div>
     </div>
   );

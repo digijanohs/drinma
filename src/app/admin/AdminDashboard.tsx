@@ -34,11 +34,11 @@ interface AdminDashboardProps {
 
 const statusOptions = ["pending", "confirmed", "preparing", "delivering", "completed"];
 const statusConfig: Record<string, { label: string; icon: React.ReactNode; color: string; bgColor: string }> = {
-  pending: { label: "Chờ xác nhận", icon: <Clock className="w-4 h-4" />, color: "text-yellow-700", bgColor: "bg-yellow-100" },
-  confirmed: { label: "Đã xác nhận", icon: <CheckCircle className="w-4 h-4" />, color: "text-blue-700", bgColor: "bg-blue-100" },
-  preparing: { label: "Đang pha chế", icon: <ChefHat className="w-4 h-4" />, color: "text-purple-700", bgColor: "bg-purple-100" },
-  delivering: { label: "Đang giao", icon: <Truck className="w-4 h-4" />, color: "text-orange-700", bgColor: "bg-orange-100" },
-  completed: { label: "Hoàn thành", icon: <CheckCircle className="w-4 h-4" />, color: "text-green-700", bgColor: "bg-green-100" },
+  pending: { label: "Awaiting confirmation", icon: <Clock className="w-4 h-4" />, color: "text-yellow-700", bgColor: "bg-yellow-100" },
+  confirmed: { label: "Confirmed", icon: <CheckCircle className="w-4 h-4" />, color: "text-blue-700", bgColor: "bg-blue-100" },
+  preparing: { label: "Being prepared", icon: <ChefHat className="w-4 h-4" />, color: "text-purple-700", bgColor: "bg-purple-100" },
+  delivering: { label: "Out for delivery", icon: <Truck className="w-4 h-4" />, color: "text-orange-700", bgColor: "bg-orange-100" },
+  completed: { label: "Completed", icon: <CheckCircle className="w-4 h-4" />, color: "text-green-700", bgColor: "bg-green-100" },
 };
 
 export default function AdminDashboard({ stats, recentOrders }: AdminDashboardProps) {
@@ -65,10 +65,10 @@ export default function AdminDashboard({ stats, recentOrders }: AdminDashboardPr
     : orders.filter((o) => o.status === filterStatus);
 
   const statCards = [
-    { label: "Sản phẩm", value: stats.products.toString(), icon: Package, color: "text-brand-600", bg: "bg-brand-100", trend: "+3 tuần này" },
-    { label: "Đơn hàng", value: stats.orders.toString(), icon: ShoppingCart, color: "text-blue-600", bg: "bg-blue-100", trend: "+12 hôm nay" },
-    { label: "Doanh thu", value: formatPrice(stats.revenue), icon: DollarSign, color: "text-green-600", bg: "bg-green-100", trend: "+18% so với tuần trước" },
-    { label: "Tỷ lệ hoàn thành", value: "94%", icon: TrendingUp, color: "text-purple-600", bg: "bg-purple-100", trend: "Tốt" },
+    { label: "Products", value: stats.products.toString(), icon: Package, color: "text-brand-600", bg: "bg-brand-100", trend: "+3 this week" },
+    { label: "Order", value: stats.orders.toString(), icon: ShoppingCart, color: "text-blue-600", bg: "bg-blue-100", trend: "+12 today" },
+    { label: "Doanh thu", value: formatPrice(stats.revenue), icon: DollarSign, color: "text-green-600", bg: "bg-green-100", trend: "+18% vs. last week" },
+    { label: "Completion Rate", value: "94%", icon: TrendingUp, color: "text-purple-600", bg: "bg-purple-100", trend: "Good" },
   ];
 
   return (
@@ -79,11 +79,11 @@ export default function AdminDashboard({ stats, recentOrders }: AdminDashboardPr
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-50">Admin Dashboard</h1>
-              <p className="text-gray-500 dark:text-gray-400 text-sm mt-0.5">Quản lý đơn hàng MilkTea Iku</p>
+              <p className="text-gray-500 dark:text-gray-400 text-sm mt-0.5">Drinma Order Management</p>
             </div>
             <Badge className="bg-green-100 text-green-700 border-0 gap-1.5">
               <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-              Đang hoạt động
+              Active
             </Badge>
           </div>
         </div>
@@ -119,7 +119,7 @@ export default function AdminDashboard({ stats, recentOrders }: AdminDashboardPr
         <Card>
           <CardHeader className="pb-4">
             <div className="flex items-center justify-between">
-              <CardTitle className="text-lg">Đơn hàng gần đây</CardTitle>
+              <CardTitle className="text-lg">Recent Orders</CardTitle>
               <div className="flex items-center gap-2">
                 <Filter className="w-4 h-4 text-gray-400" />
                 <select
@@ -127,7 +127,7 @@ export default function AdminDashboard({ stats, recentOrders }: AdminDashboardPr
                   onChange={(e) => setFilterStatus(e.target.value)}
                   className="text-sm border rounded-lg px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-brand-500/20 bg-white dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200"
                 >
-                  <option value="all">Tất cả ({orders.length})</option>
+                  <option value="all">All ({orders.length})</option>
                   {statusOptions.map((s) => (
                     <option key={s} value={s}>
                       {statusConfig[s].label} ({orders.filter((o) => o.status === s).length})
@@ -141,7 +141,7 @@ export default function AdminDashboard({ stats, recentOrders }: AdminDashboardPr
             {filteredOrders.length === 0 ? (
               <div className="p-12 text-center text-gray-500 dark:text-gray-400">
                 <Package className="w-12 h-12 text-gray-200 mx-auto mb-3" />
-                <p>Không có đơn hàng nào</p>
+                <p>No orders yet</p>
               </div>
             ) : (
               <div className="divide-y">
@@ -193,7 +193,7 @@ export default function AdminDashboard({ stats, recentOrders }: AdminDashboardPr
                           animate={{ opacity: 1, height: "auto" }}
                           className="mt-3 ml-12 p-4 bg-gray-50 dark:bg-gray-700 rounded-xl"
                         >
-                          <p className="text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">Chi tiết đơn hàng:</p>
+                          <p className="text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">Order details:</p>
                           <div className="space-y-1.5">
                             {order.items.map((item, i) => (
                               <div key={i} className="flex justify-between text-sm">

@@ -8,11 +8,11 @@ import { usePathname } from "next/navigation";
 import { useCartStore } from "@/store/cart";
 
 const navItems = [
-  { href: "/", icon: Home, label: "Trang chủ" },
+  { href: "/", icon: Home, label: "Home" },
   { href: "/menu", icon: Grid3X3, label: "Menu" },
-  { href: "/promotions", icon: ShoppingBag, label: "Ưu đãi" },
-  { href: "/tracking", icon: ClipboardList, label: "Đơn hàng" },
-  { href: "/stores", icon: MapPin, label: "Cửa hàng" },
+  { href: "/promotions", icon: ShoppingBag, label: "Deals" },
+  { href: "/tracking", icon: ClipboardList, label: "Order" },
+  { href: "/stores", icon: MapPin, label: "Store" },
 ];
 
 export default function MobileNav() {

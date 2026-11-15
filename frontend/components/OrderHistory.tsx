@@ -14,22 +14,22 @@ interface Order {
 
 const STATUS_CONFIG = {
   completed: {
-    label: "Hoàn thành",
+    label: "Completed",
     icon: CheckCircle2,
     className: "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400",
   },
   delivering: {
-    label: "Đang giao",
+    label: "Out for delivery",
     icon: Truck,
     className: "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400",
   },
   cancelled: {
-    label: "Đã huỷ",
+    label: "Cancelled",
     icon: XCircle,
     className: "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400",
   },
   processing: {
-    label: "Đang xử lý",
+    label: "Processing",
     icon: Clock,
     className: "bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400",
   },
@@ -37,23 +37,23 @@ const STATUS_CONFIG = {
 
 const SAMPLE_ORDERS: Order[] = [
   {
-    id: "IKU-20240512-001",
+    id: "DRINMA-20240512-001",
     date: "12/05/2024",
     total: 135000,
     status: "completed",
     itemsCount: 3,
-    items: ["Trà Sữa Truyền Thống", "Matcha Latte", "Trân châu đen"],
+    items: ["Traditional Milk Tea", "Matcha Latte", "Black Tapioca Pearls"],
   },
   {
-    id: "IKU-20240510-002",
+    id: "DRINMA-20240510-002",
     date: "10/05/2024",
     total: 85000,
     status: "delivering",
     itemsCount: 2,
-    items: ["Hồng Trà Sữa", "Pudding"],
+    items: ["Classic Black Milk Tea", "Pudding"],
   },
   {
-    id: "IKU-20240508-003",
+    id: "DRINMA-20240508-003",
     date: "08/05/2024",
     total: 65000,
     status: "cancelled",
@@ -61,12 +61,12 @@ const SAMPLE_ORDERS: Order[] = [
     items: ["Matcha Latte Premium"],
   },
   {
-    id: "IKU-20240505-004",
+    id: "DRINMA-20240505-004",
     date: "05/05/2024",
     total: 210000,
     status: "completed",
     itemsCount: 4,
-    items: ["Trà Đào", "Trà Vải", "Trà Sữa Truyền Thống", "Kem cheese"],
+    items: ["Peach Tea", "Lychee Tea", "Traditional Milk Tea", "Kem cheese"],
   },
 ];
 
@@ -97,10 +97,10 @@ export default function OrderHistory({
       <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-md p-12 text-center max-w-lg w-full">
         <ShoppingBag className="w-14 h-14 text-gray-300 dark:text-gray-600 mx-auto mb-4" />
         <h3 className="font-display font-bold text-gray-700 dark:text-gray-300 text-lg mb-2">
-          Chưa có đơn hàng nào
+          No orders yet
         </h3>
         <p className="text-sm text-gray-400 dark:text-gray-500">
-          Hãy đặt đơn đầu tiên và tận hưởng trà sữa Iku ngay hôm nay!
+          Place your first order and enjoy Drinma milk tea today!
         </p>
       </div>
     );
@@ -109,7 +109,7 @@ export default function OrderHistory({
   return (
     <div className="max-w-2xl w-full">
       <h3 className="font-display font-bold text-gray-900 dark:text-white text-xl mb-5">
-        Lịch sử đơn hàng
+        Order History
       </h3>
       <motion.ul
         variants={containerVariants}
@@ -148,7 +148,7 @@ export default function OrderHistory({
                   <div className="flex items-center gap-3 mt-2 text-xs text-gray-400 dark:text-gray-500">
                     <span>{order.date}</span>
                     <span>·</span>
-                    <span>{order.itemsCount} món</span>
+                    <span>{order.itemsCount} items</span>
                     <span>·</span>
                     <span className="font-semibold text-gray-700 dark:text-gray-300">
                       {order.total.toLocaleString("vi-VN")}đ
@@ -164,7 +164,7 @@ export default function OrderHistory({
                     className="flex-shrink-0 inline-flex items-center gap-1.5 text-xs font-semibold text-brand-600 dark:text-brand-400 border border-brand-300 dark:border-brand-700 px-3 py-1.5 rounded-full hover:bg-brand-50 dark:hover:bg-brand-900/30 transition-colors"
                   >
                     <RotateCcw className="w-3 h-3" />
-                    Đặt lại
+                    Order again
                   </motion.button>
                 )}
               </div>

@@ -10,7 +10,7 @@ interface Recipe {
   id: number;
   title: string;
   description: string;
-  difficulty: "Dễ" | "Trung bình" | "Khó";
+  difficulty: "Easy" | "Medium" | "Hard";
   time: string;
   ingredients: number;
   gradient: string;
@@ -22,9 +22,9 @@ const recipes: Recipe[] = [
     id: 1,
     title: "Brown Sugar Milk Tea",
     description:
-      "Trà sữa đường nâu với trân châu tiger thơm ngon, béo ngậy — công thức chuẩn vị Iku ngay tại nhà.",
-    difficulty: "Trung bình",
-    time: "45 phút",
+      "Brown sugar milk tea with chewy tiger boba, rich and creamy — the authentic Drinma recipe, made at home.",
+    difficulty: "Medium",
+    time: "45 min",
     ingredients: 8,
     gradient: "from-amber-200 to-orange-300",
     emoji: "cup",
@@ -33,9 +33,9 @@ const recipes: Recipe[] = [
     id: 2,
     title: "Matcha Latte",
     description:
-      "Matcha latte mát lạnh từ bột matcha Uji Nhật Bản, kết hợp sữa tươi và đá viên — thanh mát, dễ làm.",
-    difficulty: "Dễ",
-    time: "10 phút",
+      "Iced matcha latte made with Japanese Uji matcha, fresh milk and ice — refreshing and easy to make.",
+    difficulty: "Easy",
+    time: "10 min",
     ingredients: 5,
     gradient: "from-green-200 to-emerald-300",
     emoji: "leaf",
@@ -44,9 +44,9 @@ const recipes: Recipe[] = [
     id: 3,
     title: "Taro Milk Tea",
     description:
-      "Trà sữa khoai môn béo ngậy từ khoai môn tươi xay nhuyễn, thơm lừng và đẹp mắt với màu tím tự nhiên.",
-    difficulty: "Khó",
-    time: "60 phút",
+      "Creamy taro milk tea made from freshly puréed taro — fragrant and gorgeous with its natural purple color.",
+    difficulty: "Hard",
+    time: "60 min",
     ingredients: 7,
     gradient: "from-purple-200 to-violet-300",
     emoji: "berry",
@@ -57,18 +57,18 @@ const difficultyConfig: Record<
   Recipe["difficulty"],
   { label: string; classes: string }
 > = {
-  Dễ: {
-    label: "Dễ",
+  Easy: {
+    label: "Easy",
     classes:
       "bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-300",
   },
-  "Trung bình": {
-    label: "Trung bình",
+  "Medium": {
+    label: "Medium",
     classes:
       "bg-yellow-100 text-yellow-700 dark:bg-yellow-900/40 dark:text-yellow-300",
   },
-  Khó: {
-    label: "Khó",
+  Hard: {
+    label: "Hard",
     classes: "bg-red-100 text-red-700 dark:bg-red-900/40 dark:text-red-300",
   },
 };
@@ -87,7 +87,7 @@ export default function RecipesPage() {
               animate={{ opacity: 1, y: 0 }}
               className="text-4xl md:text-5xl font-display font-bold text-gray-900 dark:text-white mb-4"
             >
-              Công thức tại nhà
+              Make it at home
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -95,7 +95,7 @@ export default function RecipesPage() {
               transition={{ delay: 0.1 }}
               className="text-gray-500 dark:text-gray-400 text-lg"
             >
-              Tự tay pha chế trà sữa Iku ngay tại nhà
+              Brew Drinma milk tea yourself at home
             </motion.p>
           </div>
         </section>
@@ -134,7 +134,7 @@ export default function RecipesPage() {
                     </span>
                     <span className="flex items-center gap-1 text-xs text-gray-400 dark:text-gray-500">
                       <ListChecks className="w-3 h-3" />
-                      {recipe.ingredients} nguyên liệu
+                      {recipe.ingredients} ingredients
                     </span>
                   </div>
 
@@ -146,7 +146,7 @@ export default function RecipesPage() {
                   </p>
 
                   <button className="mt-4 w-full py-2.5 rounded-xl border border-brand-200 dark:border-brand-700 text-brand-600 dark:text-brand-400 text-sm font-medium hover:bg-brand-50 dark:hover:bg-brand-900/30 transition-colors">
-                    Xem công thức
+                    View recipe
                   </button>
                 </div>
               </motion.div>

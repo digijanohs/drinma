@@ -56,7 +56,7 @@ export async function GET(request: NextRequest) {
   } catch (error) {
     console.error("[GET /api/stats]", error);
     return NextResponse.json(
-      { error: "Không thể tải thống kê" },
+      { error: "Couldn't load statistics" },
       { status: 500 }
     );
   }

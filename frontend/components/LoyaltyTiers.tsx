@@ -17,7 +17,7 @@ const tiers: Tier[] = [
     name: "Silver",
     icon: Star,
     minStars: 0,
-    benefits: ["Tích điểm 1x", "Ưu đãi sinh nhật", "Thông báo khuyến mãi sớm"],
+    benefits: ["Earn 1x points", "Birthday Treat", "Early promo alerts"],
     color: "text-gray-500",
     bgColor: "bg-gray-100",
   },
@@ -25,7 +25,7 @@ const tiers: Tier[] = [
     name: "Gold",
     icon: Crown,
     minStars: 100,
-    benefits: ["Tích điểm 1.5x", "Giảm 10% mỗi đơn", "Free topping", "Ưu đãi sinh nhật x2"],
+    benefits: ["Earn 1.5x points", "10% off every order", "Free topping", "2x birthday bonus"],
     color: "text-yellow-600",
     bgColor: "bg-yellow-50",
   },
@@ -33,7 +33,7 @@ const tiers: Tier[] = [
     name: "Diamond",
     icon: Gem,
     minStars: 300,
-    benefits: ["Tích điểm 2x", "Giảm 15% mỗi đơn", "Free ship mọi đơn", "Quà tặng hàng tháng", "Ưu tiên giao hàng"],
+    benefits: ["Earn 2x points", "15% off every order", "Free shipping on every order", "Monthly gifts", "Priority delivery"],
     color: "text-purple-600",
     bgColor: "bg-purple-50",
   },
@@ -54,7 +54,7 @@ export default function LoyaltyTiers() {
           {i === 2 && (
             <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-brand-600 text-white text-xs font-semibold rounded-full flex items-center gap-1">
               <Sparkles className="w-3 h-3" />
-              Cao nhất
+              Top tier
             </div>
           )}
           <div className={`w-14 h-14 rounded-2xl ${tier.bgColor} flex items-center justify-center mb-4`}>

@@ -6,9 +6,9 @@ import { X } from "lucide-react";
 import Link from "next/link";
 
 const promos = [
-  "Miễn phí giao hàng cho đơn từ 100K",
-  "Mua 2 tặng 1 mỗi thứ 3 hàng tuần",
-  "Thành viên mới giảm 20% đơn đầu tiên",
+  "Free shipping on orders from 100K",
+  "Buy 2, get 1 free every Tuesday",
+  "New members get 20% off their first order",
 ];
 
 export default function PromoBanner() {

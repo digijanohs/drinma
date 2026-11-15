@@ -14,7 +14,7 @@ export async function GET(
 
     if (!slug) {
       return NextResponse.json(
-        { error: "Slug sản phẩm không hợp lệ" },
+        { error: "Invalid product slug" },
         { status: 400 }
       );
     }
@@ -29,7 +29,7 @@ export async function GET(
 
     if (!product) {
       return NextResponse.json(
-        { error: "Không tìm thấy sản phẩm" },
+        { error: "Product not found" },
         { status: 404 }
       );
     }
@@ -38,7 +38,7 @@ export async function GET(
   } catch (error) {
     console.error("[GET /api/products/[slug]]", error);
     return NextResponse.json(
-      { error: "Không thể tải thông tin sản phẩm" },
+      { error: "Couldn't load product details" },
       { status: 500 }
     );
   }

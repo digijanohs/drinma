@@ -19,12 +19,12 @@ interface Review {
 }
 
 const reviews: Review[] = [
-  { id: 1, user: "Minh Anh", avatar: "MA", rating: 5, date: "14/05/2024", product: "Brown Sugar Boba", comment: "Trân châu dẻo mềm, đường nâu thơm lừng. Ly nào cũng ngon như ly đầu tiên!", likes: 12, replies: 2 },
-  { id: 2, user: "Thanh Hà", avatar: "TH", rating: 5, date: "13/05/2024", product: "Matcha Latte", comment: "Matcha đậm vị, không bị đắng. Uống lạnh hay nóng đều tuyệt. Sẽ order lại!", likes: 8, replies: 1 },
-  { id: 3, user: "Đức Phong", avatar: "DP", rating: 4, date: "12/05/2024", product: "Taro Milk Tea", comment: "Vị khoai môn béo ngậy, topping đa dạng. Chỉ hơi ngọt một chút so với khẩu vị mình.", likes: 5, replies: 0 },
-  { id: 4, user: "Ngọc Trâm", avatar: "NT", rating: 5, date: "11/05/2024", product: "Trà Đào Cam Sả", comment: "Mát lạnh, chua ngọt vừa phải. Uống mùa hè là chuẩn bài!", likes: 15, replies: 3 },
-  { id: 5, user: "Hoàng Nam", avatar: "HN", rating: 5, date: "10/05/2024", product: "Oolong Milk Tea", comment: "Trà oolong thơm, sữa béo vừa. Giao hàng nhanh, đóng gói cẩn thận.", likes: 7, replies: 1 },
-  { id: 6, user: "Phương Linh", avatar: "PL", rating: 4, date: "09/05/2024", product: "Strawberry Smoothie", comment: "Dâu tươi ngon, blend mịn. Hơi ít so với giá nhưng chất lượng ổn.", likes: 3, replies: 0 },
+  { id: 1, user: "Minh Anh", avatar: "MA", rating: 5, date: "14/05/2024", product: "Brown Sugar Boba", comment: "Soft, chewy boba and fragrant brown sugar. Every cup tastes as good as the first!", likes: 12, replies: 2 },
+  { id: 2, user: "Thanh Ha", avatar: "TH", rating: 5, date: "13/05/2024", product: "Matcha Latte", comment: "Rich matcha flavor without the bitterness. Great iced or hot. I'll order again!", likes: 8, replies: 1 },
+  { id: 3, user: "Duc Phong", avatar: "DP", rating: 4, date: "12/05/2024", product: "Taro Milk Tea", comment: "Creamy taro flavor and plenty of topping options. Just a little sweeter than I usually like.", likes: 5, replies: 0 },
+  { id: 4, user: "Ngoc Tram", avatar: "NT", rating: 5, date: "11/05/2024", product: "Peach Lemongrass Tea", comment: "Ice cold with the perfect sweet-and-sour balance. The ultimate summer drink!", likes: 15, replies: 3 },
+  { id: 5, user: "Hoang Nam", avatar: "HN", rating: 5, date: "10/05/2024", product: "Oolong Milk Tea", comment: "Fragrant oolong tea with just the right amount of creamy milk. Fast delivery, carefully packed.", likes: 7, replies: 1 },
+  { id: 6, user: "Phuong Linh", avatar: "PL", rating: 4, date: "09/05/2024", product: "Strawberry Smoothie", comment: "Fresh, tasty strawberries and a smooth blend. A bit small for the price, but the quality is solid.", likes: 3, replies: 0 },
 ];
 
 export default function ReviewsPage() {
@@ -40,7 +40,7 @@ export default function ReviewsPage() {
               animate={{ opacity: 1, y: 0 }}
               className="text-4xl font-display font-bold text-gray-900 dark:text-gray-50 mb-4"
             >
-              Đánh giá từ khách hàng
+              What Our Customers Say
             </motion.h1>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -53,7 +53,7 @@ export default function ReviewsPage() {
                   <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
                 ))}
               </div>
-              <span className="text-gray-500 dark:text-gray-400">4.9/5 từ 2,000+ đánh giá</span>
+              <span className="text-gray-500 dark:text-gray-400">4.9/5 from 2,000+ reviews</span>
             </motion.div>
           </div>
         </section>

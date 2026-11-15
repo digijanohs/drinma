@@ -4,7 +4,7 @@ import { MetadataRoute } from "next";
 export const dynamic = "force-dynamic";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = "https://milktea-iku.vercel.app";
+  const baseUrl = "https://drinmademo.vercel.app";
 
   const products = await prisma.product.findMany({
     where: { isAvailable: true },

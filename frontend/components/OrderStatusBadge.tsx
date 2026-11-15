@@ -11,12 +11,12 @@ interface OrderStatusBadgeProps {
 }
 
 const statusConfig: Record<OrderStatus, { label: string; icon: typeof Package; color: string; bg: string }> = {
-  pending: { label: "Chờ xác nhận", icon: Clock, color: "text-yellow-700", bg: "bg-yellow-50 border-yellow-200" },
-  confirmed: { label: "Đã xác nhận", icon: CheckCircle2, color: "text-blue-700", bg: "bg-blue-50 border-blue-200" },
-  preparing: { label: "Đang pha chế", icon: Package, color: "text-orange-700", bg: "bg-orange-50 border-orange-200" },
-  delivering: { label: "Đang giao", icon: Truck, color: "text-purple-700", bg: "bg-purple-50 border-purple-200" },
-  delivered: { label: "Đã giao", icon: CheckCircle2, color: "text-green-700", bg: "bg-green-50 border-green-200" },
-  cancelled: { label: "Đã hủy", icon: XCircle, color: "text-red-700", bg: "bg-red-50 border-red-200" },
+  pending: { label: "Awaiting confirmation", icon: Clock, color: "text-yellow-700", bg: "bg-yellow-50 border-yellow-200" },
+  confirmed: { label: "Confirmed", icon: CheckCircle2, color: "text-blue-700", bg: "bg-blue-50 border-blue-200" },
+  preparing: { label: "Being prepared", icon: Package, color: "text-orange-700", bg: "bg-orange-50 border-orange-200" },
+  delivering: { label: "Out for delivery", icon: Truck, color: "text-purple-700", bg: "bg-purple-50 border-purple-200" },
+  delivered: { label: "Delivered", icon: CheckCircle2, color: "text-green-700", bg: "bg-green-50 border-green-200" },
+  cancelled: { label: "Cancelled", icon: XCircle, color: "text-red-700", bg: "bg-red-50 border-red-200" },
 };
 
 export default function OrderStatusBadge({ status, size = "md" }: OrderStatusBadgeProps) {

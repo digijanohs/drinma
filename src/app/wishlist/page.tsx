@@ -4,8 +4,8 @@ import CartDrawer from "@/components/CartDrawer";
 import WishlistContent from "./WishlistContent";
 
 export const metadata = {
-  title: "Yêu thích | MilkTea Iku",
-  description: "Danh sách sản phẩm yêu thích của bạn tại MilkTea Iku",
+  title: "Favorites | Drinma",
+  description: "Your favorite products at Drinma",
 };
 
 export default function WishlistPage() {

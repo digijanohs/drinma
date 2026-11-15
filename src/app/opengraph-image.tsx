@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
 
-export const alt = "MilkTea Iku - Trà Sữa Premium";
+export const alt = "Drinma - Premium Milk Tea";
 export const size = {
   width: 1200,
   height: 630,
@@ -65,7 +65,7 @@ export default async function Image() {
             boxShadow: "0 12px 40px rgba(212,121,42,0.35)",
           }}
         >
-          <span style={{ fontSize: 52, color: "#fdf9f0" }}>IKU</span>
+          <span style={{ fontSize: 52, color: "#fdf9f0" }}>DRINMA</span>
         </div>
 
         {/* Brand name */}
@@ -79,7 +79,7 @@ export default async function Image() {
             marginBottom: 16,
           }}
         >
-          MilkTea Iku
+          Drinma
         </div>
 
         {/* Tagline */}
@@ -91,7 +91,7 @@ export default async function Image() {
             opacity: 0.85,
           }}
         >
-          Trà Sữa Premium · Mỗi ngụm là một trải nghiệm
+          Premium Milk Tea · Every sip is an experience
         </div>
 
         {/* Bottom accent bar */}

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Tuyển dụng | Iku Milk Tea",
-  description: "Gia nhập đội ngũ Iku Milk Tea – nơi đam mê trà sữa gặp gỡ cơ hội nghề nghiệp",
+  title: "Careers | Drinma",
+  description: "Join the Drinma team – where milk tea passion meets career opportunities",
 };
 
 export default function CareersLayout({

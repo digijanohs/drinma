@@ -33,9 +33,9 @@ interface MenuClientProps {
 type SortOption = "newest" | "price-asc" | "price-desc";
 
 const SORT_LABELS: Record<SortOption, string> = {
-  newest: "Mới nhất",
-  "price-asc": "Giá tăng dần",
-  "price-desc": "Giá giảm dần",
+  newest: "Newest",
+  "price-asc": "Price: Low to High",
+  "price-desc": "Price: High to Low",
 };
 
 // ── Skeleton card ──────────────────────────────────────────────────────────────
@@ -111,12 +111,12 @@ function EmptyState({ query }: { query: string }) {
       </svg>
 
       <h3 className="text-xl font-semibold text-gray-700 dark:text-gray-200 mb-2">
-        Không tìm thấy sản phẩm
+        Product not found
       </h3>
       <p className="text-gray-500 dark:text-gray-400 text-sm max-w-xs leading-relaxed">
         {query
-          ? `Không có kết quả nào cho "${query}". Thử tìm kiếm với từ khóa khác nhé!`
-          : "Danh mục này chưa có sản phẩm. Hãy khám phá các danh mục khác!"}
+          ? `No results found. Try a different keyword!`
+          : "No products in this category yet. Explore our other categories!"}
       </p>
     </motion.div>
   );
@@ -133,7 +133,7 @@ export default function MenuClient({
   const [sortBy, setSortBy] = useState<SortOption>("newest");
   const isLoading = false;
 
-  const allCategories = [{ id: "all", name: "Tất cả", slug: "all" }, ...categories];
+  const allCategories = [{ id: "all", name: "All", slug: "all" }, ...categories];
 
   const filteredProducts = useMemo(() => {
     let result = products.filter((p) => {
@@ -165,7 +165,7 @@ export default function MenuClient({
           <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-brand-400 pointer-events-none" />
           <input
             type="text"
-            placeholder="Tìm kiếm món yêu thích..."
+            placeholder="Search your favorite drinks..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="w-full pl-11 pr-10 py-3 rounded-2xl border border-cream-200 dark:border-gray-700 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm text-sm text-gray-700 dark:text-gray-100 placeholder:text-gray-500 dark:placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-400/30 focus:border-brand-400 transition-all shadow-sm"
@@ -179,7 +179,7 @@ export default function MenuClient({
                 transition={{ duration: 0.15 }}
                 onClick={() => setSearchQuery("")}
                 className="absolute right-3 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-brand-100 dark:hover:bg-brand-900/40 flex items-center justify-center transition-colors"
-                aria-label="Xóa tìm kiếm"
+                aria-label="Clear search"
               >
                 <X className="w-3.5 h-3.5 text-gray-500 dark:text-gray-400" />
               </motion.button>
@@ -249,11 +249,11 @@ export default function MenuClient({
             transition={{ duration: 0.2 }}
             className="text-sm text-gray-600 dark:text-gray-300"
           >
-            Hiển thị{" "}
+            Showing{" "}
             <span className="font-semibold text-brand-600 dark:text-brand-400">
               {filteredProducts.length}
             </span>{" "}
-            sản phẩm
+            products
           </motion.p>
         )}
       </AnimatePresence>

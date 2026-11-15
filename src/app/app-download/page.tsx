@@ -7,9 +7,9 @@ import Footer from "@/components/Footer";
 import CartDrawer from "@/components/CartDrawer";
 
 const features = [
-  { icon: Zap, title: "Đặt hàng nhanh", description: "Chỉ 3 bước để hoàn tất đơn hàng" },
-  { icon: Star, title: "Tích điểm tự động", description: "Iku Stars tích lũy mỗi đơn" },
-  { icon: Shield, title: "Thanh toán an toàn", description: "Mã hóa SSL, bảo mật tuyệt đối" },
+  { icon: Zap, title: "Quick order", description: "Just 3 steps to complete your order" },
+  { icon: Star, title: "Automatic points", description: "Drinma Stars on every order" },
+  { icon: Shield, title: "Secure checkout", description: "SSL encrypted, fully secure" },
 ];
 
 export default function AppDownloadPage() {
@@ -27,14 +27,14 @@ export default function AppDownloadPage() {
                 transition={{ duration: 0.6 }}
               >
                 <span className="inline-block px-4 py-1.5 bg-brand-100 text-brand-700 rounded-full text-sm font-medium mb-5">
-                  Ứng dụng di động
+                  Mobile app
                 </span>
                 <h1 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-5 leading-tight">
-                  Đặt trà sữa <br />
-                  <span className="text-brand-600">mọi lúc, mọi nơi</span>
+                  Order milk tea <br />
+                  <span className="text-brand-600">anytime, anywhere</span>
                 </h1>
                 <p className="text-gray-500 text-lg mb-8 max-w-md">
-                  Tải app Iku để đặt hàng nhanh hơn, nhận ưu đãi độc quyền và theo dõi đơn hàng real-time.
+                  Get the Drinma app for faster ordering, exclusive deals and real-time order tracking.
                 </p>
 
                 <div className="space-y-4 mb-8">
@@ -85,8 +85,8 @@ export default function AppDownloadPage() {
                   <div className="w-64 h-[500px] rounded-[3rem] bg-gradient-to-b from-brand-100 to-cream-200 border-8 border-gray-900 shadow-2xl flex items-center justify-center">
                     <div className="text-center px-6">
                       <Smartphone className="w-16 h-16 text-brand-400 mx-auto mb-4" />
-                      <p className="text-brand-700 font-display font-bold text-xl mb-2">Iku App</p>
-                      <p className="text-sm text-brand-500">Sắp ra mắt</p>
+                      <p className="text-brand-700 font-display font-bold text-xl mb-2">Drinma App</p>
+                      <p className="text-sm text-brand-500">Coming soon</p>
                     </div>
                   </div>
                   <div className="absolute -top-4 -right-4 w-20 h-20 bg-brand-500 rounded-2xl flex items-center justify-center shadow-lg rotate-12">

@@ -4,12 +4,12 @@ import { motion } from "framer-motion";
 import { Truck, Shield, Leaf, Clock, Award, Headphones } from "lucide-react";
 
 const promises = [
-  { icon: Leaf, title: "100% tự nhiên", description: "Không chất bảo quản, không hương liệu nhân tạo" },
-  { icon: Clock, title: "Tươi mỗi ngày", description: "Nguyên liệu nhập mới mỗi sáng" },
-  { icon: Shield, title: "An toàn thực phẩm", description: "Chứng nhận HACCP và ISO 22000" },
-  { icon: Truck, title: "Giao nhanh 30'", description: "Cam kết giao đúng giờ hoặc hoàn tiền" },
-  { icon: Award, title: "Đảm bảo hài lòng", description: "Đổi trả miễn phí nếu không đúng yêu cầu" },
-  { icon: Headphones, title: "Hỗ trợ 24/7", description: "Đội ngũ CSKH luôn sẵn sàng hỗ trợ" },
+  { icon: Leaf, title: "100% Natural", description: "No preservatives, no artificial flavors" },
+  { icon: Clock, title: "Fresh Every Day", description: "Fresh ingredients delivered every morning" },
+  { icon: Shield, title: "Food Safety", description: "HACCP and ISO 22000 certified" },
+  { icon: Truck, title: "Giao nhanh 30'", description: "On-time delivery or your money back" },
+  { icon: Award, title: "Satisfaction Guaranteed", description: "Free returns if your order isn't right" },
+  { icon: Headphones, title: "24/7 Support", description: "Our support team is always here for you" },
 ];
 
 export default function QualityPromise() {
@@ -18,10 +18,10 @@ export default function QualityPromise() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-display font-bold text-gray-900 dark:text-gray-50 mb-3">
-            Cam kết của Iku
+            The Drinma Promise
           </h2>
           <p className="text-gray-600 dark:text-gray-400 max-w-md mx-auto">
-            6 cam kết vàng mà chúng tôi luôn giữ vững
+            Six golden promises we always keep
           </p>
         </div>
 

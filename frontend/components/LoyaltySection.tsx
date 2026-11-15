@@ -22,10 +22,10 @@ import {
 const tiers = [
   {
     id: "bronze",
-    name: "Đồng",
+    name: "Bronze",
     nameEn: "Bronze",
     emoji: "🥉",
-    pointRange: "0 – 500 điểm",
+    pointRange: "0 – 500 points",
     minPoints: 0,
     maxPoints: 500,
     discount: "5%",
@@ -39,17 +39,17 @@ const tiers = [
       bar: "bg-amber-400",
     },
     benefits: [
-      { icon: Star, text: "Giảm 5% mỗi đơn hàng" },
-      { icon: Gift, text: "Tích điểm mỗi lần mua" },
-      { icon: ShoppingBag, text: "Ưu đãi sinh nhật" },
+      { icon: Star, text: "5% off every order" },
+      { icon: Gift, text: "Earn points on every purchase" },
+      { icon: ShoppingBag, text: "Birthday Treat" },
     ],
   },
   {
     id: "silver",
-    name: "Bạc",
+    name: "Silver",
     nameEn: "Silver",
     emoji: "🥈",
-    pointRange: "500 – 2.000 điểm",
+    pointRange: "500 – 2.000 points",
     minPoints: 500,
     maxPoints: 2000,
     discount: "10%",
@@ -63,18 +63,18 @@ const tiers = [
       bar: "bg-slate-400",
     },
     benefits: [
-      { icon: Star, text: "Giảm 10% mỗi đơn hàng" },
-      { icon: Truck, text: "Miễn phí giao hàng" },
-      { icon: Gift, text: "Ưu đãi sinh nhật đặc biệt" },
+      { icon: Star, text: "10% off every order" },
+      { icon: Truck, text: "Free shipping" },
+      { icon: Gift, text: "Special birthday treat" },
     ],
     popular: true,
   },
   {
     id: "gold",
-    name: "Vàng",
+    name: "Yellow",
     nameEn: "Gold",
     emoji: "🥇",
-    pointRange: "2.000+ điểm",
+    pointRange: "2.000+ points",
     minPoints: 2000,
     maxPoints: null,
     discount: "15%",
@@ -88,9 +88,9 @@ const tiers = [
       bar: "bg-yellow-400",
     },
     benefits: [
-      { icon: Star, text: "Giảm 15% mỗi đơn hàng" },
-      { icon: Truck, text: "Miễn phí giao hàng" },
-      { icon: Gift, text: "Quà tặng sinh nhật cao cấp" },
+      { icon: Star, text: "15% off every order" },
+      { icon: Truck, text: "Free shipping" },
+      { icon: Gift, text: "Premium birthday gift" },
     ],
   },
 ];
@@ -98,29 +98,29 @@ const tiers = [
 const steps = [
   {
     icon: ShoppingBag,
-    label: "Đặt hàng",
-    desc: "Mua bất kỳ sản phẩm nào",
+    label: "Order",
+    desc: "Buy any product",
     color: "bg-brand-100 text-brand-600",
     num: "01",
   },
   {
     icon: Star,
-    label: "Tích điểm",
-    desc: "1.000đ = 1 điểm thưởng",
+    label: "Earn points",
+    desc: "1.000đ = 1 reward point",
     color: "bg-amber-100 text-amber-600",
     num: "02",
   },
   {
     icon: TrendingUp,
-    label: "Lên hạng",
-    desc: "Tự động nâng cấp thành viên",
+    label: "Level up",
+    desc: "Automatic membership upgrade",
     color: "bg-emerald-100 text-emerald-600",
     num: "03",
   },
   {
     icon: Trophy,
-    label: "Nhận thưởng",
-    desc: "Tận hưởng đặc quyền hạng cao",
+    label: "Get rewards",
+    desc: "Enjoy top-tier perks",
     color: "bg-purple-100 text-purple-600",
     num: "04",
   },
@@ -185,7 +185,7 @@ function TierCard({
         <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 z-10">
           <span className="inline-flex items-center gap-1 px-3 py-1 bg-brand-500 text-white text-xs font-semibold rounded-full shadow-md">
             <Sparkles className="w-3 h-3" />
-            Phổ biến nhất
+            Most popular
           </span>
         </div>
       )}
@@ -208,7 +208,7 @@ function TierCard({
             <div>
               <div className="text-3xl mb-1">{tier.emoji}</div>
               <h3 className="text-xl font-display font-bold text-gray-900 dark:text-gray-50">
-                Hạng {tier.name}
+                Tier {tier.name}
               </h3>
               <p className={`text-sm font-medium mt-0.5 ${tier.color.accent}`}>
                 {tier.pointRange}
@@ -229,7 +229,7 @@ function TierCard({
               className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-semibold ${tier.color.badge}`}
             >
               <Star className="w-3.5 h-3.5 fill-current" />
-              Giảm {tier.discount} mỗi đơn
+              Save {tier.discount} mỗi orders
             </span>
           </div>
 
@@ -251,8 +251,8 @@ function TierCard({
           <div className="mt-5 pt-4 border-t border-gray-200/60 dark:border-gray-700/60">
             <p className="text-xs text-gray-500 dark:text-gray-400 text-center">
               {tier.maxPoints
-                ? `Đạt ${tier.minPoints.toLocaleString("vi-VN")} – ${tier.maxPoints.toLocaleString("vi-VN")} điểm`
-                : `Từ ${tier.minPoints.toLocaleString("vi-VN")} điểm trở lên`}
+                ? `Earn [min] – [max] points`
+                : `From [min] points and up`}
             </p>
           </div>
         </div>
@@ -367,16 +367,15 @@ export default function LoyaltySection() {
             className="inline-flex items-center gap-2 px-4 py-1.5 bg-amber-400/20 border border-amber-400/30 text-amber-300 rounded-full text-sm font-medium mb-5"
           >
             <Trophy className="w-4 h-4" />
-            Chương trình thành viên
+            Membership program
           </motion.div>
 
           <h2 className="text-4xl md:text-5xl font-display font-bold text-white leading-tight">
-            Chương trình thành viên{" "}
-            <span className="text-amber-400">Iku</span>
+            Membership program{" "}
+            <span className="text-amber-400">Drinma</span>
           </h2>
           <p className="text-brand-200 mt-4 max-w-xl mx-auto text-lg leading-relaxed">
-            Mỗi ngụm trà sữa là một điểm thưởng. Tích lũy, lên hạng và tận
-            hưởng đặc quyền dành riêng cho bạn.
+            Every sip of milk tea earns you a reward point. Collect them, level up and unlock perks made just for you.
           </p>
         </motion.div>
 
@@ -401,10 +400,10 @@ export default function LoyaltySection() {
         >
           <div className="text-center mb-10">
             <h3 className="text-2xl font-display font-bold text-white">
-              Cách thức hoạt động
+              How it works
             </h3>
             <p className="text-brand-200 mt-2 text-sm">
-              Chỉ 4 bước đơn giản để bắt đầu hành trình thành viên
+              Just 4 simple steps to start your membership journey
             </p>
           </div>
 
@@ -422,9 +421,9 @@ export default function LoyaltySection() {
           {/* Points info strip */}
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             {[
-              { label: "1.000đ", value: "= 1 điểm" },
-              { label: "500 điểm", value: "→ Hạng Bạc" },
-              { label: "2.000 điểm", value: "→ Hạng Vàng" },
+              { label: "1.000đ", value: "= 1 point" },
+              { label: "500 points", value: "→ Silver tier" },
+              { label: "2.000 points", value: "→ Gold tier" },
             ].map((info) => (
               <div
                 key={info.label}
@@ -459,13 +458,13 @@ export default function LoyaltySection() {
               variant="outline"
               className="border-white/30 text-white hover:bg-white/10 hover:border-white/50 px-8 py-6 text-base rounded-2xl backdrop-blur-sm transition-all duration-300"
             >
-              Tìm hiểu thêm
+              Learn more
               <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
           </div>
 
           <p className="text-brand-300 text-sm mt-5">
-            Đăng ký miễn phí · Tích điểm ngay từ đơn đầu tiên
+            Free to join · Start earning points on your very first order
           </p>
         </motion.div>
       </div>

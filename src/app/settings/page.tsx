@@ -9,18 +9,18 @@ import Link from "next/link";
 
 const settingsGroups = [
   {
-    title: "Giao diện",
+    title: "Appearance",
     items: [
-      { icon: Sun, label: "Chế độ sáng", description: "Giao diện mặc định", active: true },
-      { icon: Moon, label: "Chế độ tối", description: "Dễ chịu cho mắt vào ban đêm", active: false },
+      { icon: Sun, label: "Light mode", description: "Default theme", active: true },
+      { icon: Moon, label: "Dark mode", description: "Easy on the eyes at night", active: false },
     ],
   },
   {
-    title: "Tài khoản",
+    title: "Account",
     items: [
-      { icon: Globe, label: "Ngôn ngữ", description: "Tiếng Việt", active: true },
-      { icon: Bell, label: "Thông báo", description: "Quản lý cài đặt thông báo", href: "/notifications" },
-      { icon: Shield, label: "Bảo mật", description: "Mật khẩu và xác thực 2 lớp" },
+      { icon: Globe, label: "Language", description: "Vietnamese", active: true },
+      { icon: Bell, label: "Notifications", description: "Manage notification settings", href: "/notifications" },
+      { icon: Shield, label: "Security", description: "Password and two-factor authentication" },
     ],
   },
 ];
@@ -46,7 +46,7 @@ export default function SettingsPage() {
               transition={{ delay: 0.1 }}
               className="text-4xl font-display font-bold text-gray-900 dark:text-gray-50 mb-4"
             >
-              Cài đặt
+              Settings
             </motion.h1>
           </div>
         </section>
@@ -99,7 +99,7 @@ export default function SettingsPage() {
               className="w-full flex items-center justify-center gap-2 py-3 bg-white rounded-2xl border border-red-100 text-red-600 font-medium text-sm hover:bg-red-50 transition-colors"
             >
               <LogOut className="w-4 h-4" />
-              Đăng xuất
+              Log out
             </motion.button>
           </div>
         </div>

@@ -21,48 +21,48 @@ const sampleReviews: Review[] = [
     name: "Minh Anh",
     avatar: "MA",
     rating: 5,
-    date: "2 ngày trước",
-    comment: "Trà sữa ở đây ngon lắm! Trân châu dai mềm, vị trà thơm đậm đà. Sẽ quay lại mua tiếp.",
+    date: "2 days ago",
+    comment: "The milk tea here is so good! The boba is perfectly chewy and the tea is rich and fragrant. I'll definitely be back.",
     likes: 12,
     verified: true,
   },
   {
     id: 2,
-    name: "Thanh Hương",
+    name: "Thanh Huong",
     avatar: "TH",
     rating: 5,
-    date: "5 ngày trước",
-    comment: "Matcha latte tuyệt vời, không quá ngọt mà vẫn đậm vị matcha. Đóng gói cẩn thận, giao hàng nhanh.",
+    date: "5 days ago",
+    comment: "Amazing matcha latte – not too sweet but still full of matcha flavor. Carefully packed and delivered fast.",
     likes: 8,
     verified: true,
   },
   {
     id: 3,
-    name: "Đức Phong",
+    name: "Duc Phong",
     avatar: "DP",
     rating: 4,
-    date: "1 tuần trước",
-    comment: "Trà đào cam sả rất tươi mát, uống vào mùa hè cực đã. Giá hơi cao nhưng chất lượng xứng đáng.",
+    date: "1 week ago",
+    comment: "The peach lemongrass tea is so refreshing – perfect for summer. A bit pricey, but the quality is worth it.",
     likes: 5,
     verified: false,
   },
   {
     id: 4,
-    name: "Ngọc Trâm",
+    name: "Ngoc Tram",
     avatar: "NT",
     rating: 5,
-    date: "1 tuần trước",
-    comment: "Đã thử hết menu rồi, món nào cũng ngon. Đặc biệt là Brown Sugar Boba, caramel thơm lừng!",
+    date: "1 week ago",
+    comment: "I've tried the whole menu and everything tastes great. The Brown Sugar Boba is the star – that caramel aroma!",
     likes: 15,
     verified: true,
   },
   {
     id: 5,
-    name: "Hoàng Nam",
+    name: "Hoang Nam",
     avatar: "HN",
     rating: 4,
-    date: "2 tuần trước",
-    comment: "Ứng dụng đặt hàng tiện lợi, giao hàng đúng giờ. Trà sữa truyền thống vẫn là best seller.",
+    date: "2 weeks ago",
+    comment: "The app makes ordering easy and delivery is always on time. The traditional milk tea is still the best seller.",
     likes: 3,
     verified: true,
   },
@@ -106,7 +106,7 @@ export default function ProductReviews() {
       <div className="flex items-center justify-between mb-8">
         <div>
           <h3 className="text-2xl font-display font-bold text-gray-900">
-            Đánh giá từ khách hàng
+            What Our Customers Say
           </h3>
           <div className="flex items-center gap-3 mt-2">
             <StarRating rating={Math.round(avgRating)} size="md" />
@@ -114,13 +114,13 @@ export default function ProductReviews() {
               {avgRating.toFixed(1)}
             </span>
             <span className="text-sm text-gray-500">
-              ({sampleReviews.length} đánh giá)
+              ({sampleReviews.length} reviews)
             </span>
           </div>
         </div>
         <div className="flex items-center gap-2 text-sm text-gray-500">
           <MessageCircle className="w-4 h-4" />
-          <span>{sampleReviews.length} nhận xét</span>
+          <span>{sampleReviews.length} reviews</span>
         </div>
       </div>
 
@@ -145,7 +145,7 @@ export default function ProductReviews() {
                     </span>
                     {review.verified && (
                       <span className="text-[10px] font-medium px-1.5 py-0.5 bg-green-50 text-green-600 rounded-full border border-green-100">
-                        Đã mua hàng
+                        Verified purchase
                       </span>
                     )}
                     <span className="text-xs text-gray-400 ml-auto">
@@ -167,7 +167,7 @@ export default function ProductReviews() {
                     }`}
                   >
                     <ThumbsUp className={`w-3.5 h-3.5 ${likedReviews.has(review.id) ? "fill-brand-600" : ""}`} />
-                    <span>Hữu ích ({review.likes + (likedReviews.has(review.id) ? 1 : 0)})</span>
+                    <span>Helpful ({review.likes + (likedReviews.has(review.id) ? 1 : 0)})</span>
                   </button>
                 </div>
               </div>
@@ -186,7 +186,7 @@ export default function ProductReviews() {
             onClick={() => setVisibleCount(sampleReviews.length)}
             className="px-6 py-2.5 text-sm font-medium text-brand-600 border border-brand-200 rounded-full hover:bg-brand-50 transition-colors"
           >
-            Xem thêm đánh giá
+            See more reviews
           </button>
         </motion.div>
       )}

@@ -33,16 +33,16 @@ export class ErrorBoundary extends Component<Props, State> {
               </svg>
             </div>
             <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">
-              Đã xảy ra lỗi
+              Something went wrong
             </h3>
             <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
-              Vui lòng tải lại trang hoặc thử lại sau
+              Please reload the page or try again later
             </p>
             <button
               onClick={() => this.setState({ hasError: false, error: undefined })}
               className="px-4 py-2 bg-primary text-white rounded-xl hover:opacity-90 transition-opacity"
             >
-              Thử lại
+              Try again
             </button>
           </div>
         )

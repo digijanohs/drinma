@@ -18,41 +18,41 @@ import CartDrawer from "@/components/CartDrawer";
 const benefits = [
   {
     icon: Award,
-    title: "Thương hiệu uy tín",
+    title: "Trusted brand",
     description:
-      "Hơn 5 năm xây dựng thương hiệu với hàng triệu khách hàng trung thành trên toàn quốc.",
+      "Over 5 years of brand building with millions of loyal customers nationwide.",
     color: "bg-amber-50 text-amber-600 dark:bg-amber-900/30 dark:text-amber-400",
   },
   {
     icon: BookOpen,
-    title: "Đào tạo toàn diện",
+    title: "Full training",
     description:
-      "Chương trình đào tạo bài bản từ pha chế, vận hành đến quản lý nhân sự và chăm sóc khách hàng.",
+      "Structured training covering everything from drink prep and daily operations to staff management and customer care.",
     color: "bg-blue-50 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400",
   },
   {
     icon: Megaphone,
-    title: "Hỗ trợ marketing",
+    title: "Marketing support",
     description:
-      "Chiến dịch marketing quốc gia, tài liệu truyền thông và hỗ trợ khai trương cửa hàng.",
+      "National marketing campaigns, ready-to-use brand materials and support for your grand opening.",
     color: "bg-purple-50 text-purple-600 dark:bg-purple-900/30 dark:text-purple-400",
   },
   {
     icon: TrendingUp,
-    title: "Lợi nhuận hấp dẫn",
+    title: "Attractive returns",
     description:
-      "Biên lợi nhuận gộp trung bình 60–70%, hoàn vốn trong 12–18 tháng với mô hình đã được kiểm chứng.",
+      "Average gross margin of 60–70% and payback within 12–18 months with a proven model.",
     color: "bg-green-50 text-green-600 dark:bg-green-900/30 dark:text-green-400",
   },
 ];
 
 const investmentItems = [
-  { label: "Phí nhượng quyền", value: "150.000.000 đ" },
-  { label: "Chi phí thiết bị & nội thất", value: "200.000.000 đ" },
-  { label: "Vốn lưu động ban đầu", value: "50.000.000 đ" },
-  { label: "Tổng đầu tư ước tính", value: "400.000.000 đ", highlight: true },
-  { label: "Thời gian hoàn vốn", value: "12 – 18 tháng" },
-  { label: "Thời hạn hợp đồng", value: "5 năm (gia hạn được)" },
+  { label: "Franchise fee", value: "150.000.000 đ" },
+  { label: "Equipment & interior costs", value: "200.000.000 đ" },
+  { label: "Initial working capital", value: "50.000.000 đ" },
+  { label: "Estimated total investment", value: "400.000.000 đ", highlight: true },
+  { label: "Payback period", value: "12 – 18 months" },
+  { label: "Contract term", value: "5 years (renewable)" },
 ];
 
 type FormState = {
@@ -67,18 +67,18 @@ type Errors = Partial<Record<keyof FormState, string>>;
 
 function validate(form: FormState): Errors {
   const errors: Errors = {};
-  if (!form.name.trim()) errors.name = "Vui lòng nhập họ tên.";
+  if (!form.name.trim()) errors.name = "Please enter your full name.";
   if (!form.email.trim()) {
-    errors.email = "Vui lòng nhập email.";
+    errors.email = "Please enter your email.";
   } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
-    errors.email = "Email không hợp lệ.";
+    errors.email = "That email doesn't look right.";
   }
   if (!form.phone.trim()) {
-    errors.phone = "Vui lòng nhập số điện thoại.";
+    errors.phone = "Please enter your phone number.";
   } else if (!/^[0-9+\s\-()]{7,15}$/.test(form.phone)) {
-    errors.phone = "Số điện thoại không hợp lệ.";
+    errors.phone = "That phone number doesn't look right.";
   }
-  if (!form.city.trim()) errors.city = "Vui lòng nhập tỉnh/thành phố.";
+  if (!form.city.trim()) errors.city = "Please enter your province or city.";
   return errors;
 }
 
@@ -136,7 +136,7 @@ export default function FranchisePage() {
               className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-brand-100 dark:bg-brand-900/40 text-brand-700 dark:text-brand-300 rounded-full text-sm font-medium mb-5"
             >
               <Award className="w-3.5 h-3.5" />
-              Nhượng quyền
+              Franchise
             </motion.span>
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
@@ -144,9 +144,9 @@ export default function FranchisePage() {
               transition={{ delay: 0.1 }}
               className="text-4xl md:text-5xl font-display font-bold text-gray-900 dark:text-white mb-4"
             >
-              Nhượng quyền{" "}
+              Franchise{" "}
               <span className="text-brand-600 dark:text-brand-400">
-                thương hiệu
+                brand
               </span>
             </motion.h1>
             <motion.p
@@ -155,8 +155,7 @@ export default function FranchisePage() {
               transition={{ delay: 0.2 }}
               className="text-gray-500 dark:text-gray-400 text-lg max-w-xl mx-auto"
             >
-              Cùng Iku mở rộng hệ thống — kinh doanh thành công với thương hiệu
-              trà sữa được yêu thích nhất Việt Nam
+              Grow with Drinma — build a successful business with Vietnam's best-loved milk tea brand
             </motion.p>
           </div>
         </section>
@@ -169,7 +168,7 @@ export default function FranchisePage() {
             transition={{ delay: 0.3 }}
           >
             <h2 className="text-2xl font-display font-bold text-gray-900 dark:text-white text-center mb-8">
-              Tại sao chọn Iku?
+              Why choose Drinma?
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {benefits.map((item, i) => (
@@ -203,7 +202,7 @@ export default function FranchisePage() {
             viewport={{ once: true }}
           >
             <h2 className="text-2xl font-display font-bold text-gray-900 dark:text-white text-center mb-8">
-              Thông tin đầu tư
+              Investment details
             </h2>
             <div className="bg-white dark:bg-gray-800 rounded-3xl border border-gray-100 dark:border-gray-700 shadow-sm overflow-hidden max-w-2xl mx-auto">
               {investmentItems.map((item, i) => (
@@ -241,7 +240,7 @@ export default function FranchisePage() {
               ))}
             </div>
             <p className="text-center text-xs text-gray-400 dark:text-gray-500 mt-3">
-              * Chi phí có thể thay đổi tùy theo vị trí và quy mô cửa hàng
+              * Costs vary depending on location and store size
             </p>
           </motion.section>
 
@@ -252,7 +251,7 @@ export default function FranchisePage() {
             viewport={{ once: true }}
           >
             <h2 className="text-2xl font-display font-bold text-gray-900 dark:text-white text-center mb-8">
-              Đăng ký tư vấn nhượng quyền
+              Request a franchise consultation
             </h2>
             <div className="max-w-xl mx-auto bg-white dark:bg-gray-800 rounded-3xl border border-gray-100 dark:border-gray-700 shadow-sm p-8">
               <AnimatePresence mode="wait">
@@ -268,11 +267,10 @@ export default function FranchisePage() {
                       <CheckCircle className="w-8 h-8 text-green-500" />
                     </div>
                     <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
-                      Đăng ký thành công!
+                      Request received!
                     </h3>
                     <p className="text-gray-500 dark:text-gray-400 text-sm max-w-xs">
-                      Đội ngũ tư vấn nhượng quyền sẽ liên hệ với bạn trong vòng
-                      24 giờ làm việc.
+                      Our franchise team will reach out within 24 business hours.
                     </p>
                     <button
                       onClick={() => {
@@ -281,7 +279,7 @@ export default function FranchisePage() {
                       }}
                       className="mt-6 px-5 py-2 rounded-full border border-brand-300 dark:border-brand-600 text-brand-600 dark:text-brand-400 text-sm hover:bg-brand-50 dark:hover:bg-brand-900/30 transition-colors"
                     >
-                      Gửi yêu cầu khác
+                      Send another request
                     </button>
                   </motion.div>
                 ) : (
@@ -297,14 +295,14 @@ export default function FranchisePage() {
                     <div className="grid sm:grid-cols-2 gap-4">
                       <div>
                         <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
-                          Họ và tên <span className="text-red-400">*</span>
+                          Full name <span className="text-red-400">*</span>
                         </label>
                         <input
                           type="text"
                           name="name"
                           value={form.name}
                           onChange={handleChange}
-                          placeholder="Nguyễn Văn A"
+                          placeholder="Nguyen Van A"
                           className={errors.name ? inputError : inputNormal}
                         />
                         {errors.name && (
@@ -313,7 +311,7 @@ export default function FranchisePage() {
                       </div>
                       <div>
                         <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
-                          Số điện thoại <span className="text-red-400">*</span>
+                          Phone number <span className="text-red-400">*</span>
                         </label>
                         <input
                           type="tel"
@@ -348,14 +346,14 @@ export default function FranchisePage() {
 
                     <div>
                       <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
-                        Tỉnh / Thành phố dự kiến mở <span className="text-red-400">*</span>
+                        Planned province / city <span className="text-red-400">*</span>
                       </label>
                       <input
                         type="text"
                         name="city"
                         value={form.city}
                         onChange={handleChange}
-                        placeholder="TP. Hồ Chí Minh"
+                        placeholder="Ho Chi Minh City"
                         className={errors.city ? inputError : inputNormal}
                       />
                       {errors.city && (
@@ -365,14 +363,14 @@ export default function FranchisePage() {
 
                     <div>
                       <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
-                        Ghi chú thêm
+                        Additional notes
                       </label>
                       <textarea
                         name="message"
                         value={form.message}
                         onChange={handleChange}
                         rows={3}
-                        placeholder="Kinh nghiệm kinh doanh, vốn dự kiến, câu hỏi..."
+                        placeholder="Business experience, planned investment, questions..."
                         className={`${inputNormal} resize-none`}
                       />
                     </div>
@@ -390,12 +388,12 @@ export default function FranchisePage() {
                             transition={{ repeat: Infinity, duration: 0.8, ease: "linear" }}
                             className="w-5 h-5 border-2 border-white border-t-transparent rounded-full inline-block"
                           />
-                          Đang gửi...
+                          Sending...
                         </>
                       ) : (
                         <>
                           <Send className="w-4 h-4" />
-                          Gửi đăng ký
+                          Submit request
                           <ChevronRight className="w-4 h-4" />
                         </>
                       )}

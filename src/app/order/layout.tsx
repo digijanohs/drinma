@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Tra cứu đơn hàng | MilkTea Iku",
+  title: "Order Tracking | Drinma",
   description:
-    "Theo dõi trạng thái đơn hàng trà sữa của bạn theo thời gian thực. Nhập số điện thoại để kiểm tra đơn hàng.",
+    "Track your milk tea order in real time. Enter your phone number to check your order.",
 };
 
 export default function OrderLayout({

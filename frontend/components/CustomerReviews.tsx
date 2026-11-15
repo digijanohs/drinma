@@ -5,32 +5,32 @@ import { Star } from "lucide-react";
 
 const reviews = [
   {
-    name: "Ngọc Bích",
+    name: "Ngoc Bich",
     rating: 5,
-    text: "Trà sữa Iku thật sự tuyệt vời! Mình đặt Brown Sugar Boba và không thể tin được trân châu lại dẻo và thơm đến vậy. Giao hàng đúng giờ, đóng gói cẩn thận.",
+    text: "Drinma milk tea is truly amazing! I ordered the Brown Sugar Boba and couldn't believe how chewy and fragrant the pearls were. Delivery was right on time and everything was packed with care.",
     date: "12/05/2025",
     drink: "Brown Sugar Boba Milk",
   },
   {
-    name: "Trọng Khải",
+    name: "Trong Khai",
     rating: 5,
-    text: "Lần đầu thử Dirty Matcha Latte và đã nghiện ngay. Vị matcha đậm đà kết hợp espresso rất độc đáo. Sẽ order thêm nhiều lần nữa!",
+    text: "Tried the Dirty Matcha Latte for the first time and got hooked instantly. The rich matcha paired with espresso is such a unique combo. I'll definitely be ordering again!",
     date: "08/05/2025",
     drink: "Dirty Matcha Latte",
   },
   {
-    name: "Lan Phương",
+    name: "Lan Phuong",
     rating: 4,
-    text: "Taro Milk Tea ngon, topping phô mai tươi béo ngậy. Chỉ tiếc là hôm đó giao hơi trễ 10 phút nhưng nhân viên có xin lỗi và tặng voucher. Dịch vụ tốt!",
+    text: "The Taro Milk Tea is delicious and the fresh cheese topping is so creamy. Only downside: delivery was about 10 minutes late that day, but the staff apologized and gave me a voucher. Great service!",
     date: "03/05/2025",
     drink: "Taro Milk Tea",
   },
   {
     name: "Minh Tuấn",
     rating: 5,
-    text: "Trà đào cam sả là thức uống mùa hè hoàn hảo. Vị chua ngọt tự nhiên, không bị ngọt gắt. App đặt hàng rất dễ dùng, tích điểm nhanh lắm.",
+    text: "The Peach Lemongrass Tea is the perfect summer drink. Naturally sweet and tangy, never cloying. The ordering app is super easy to use and the points add up fast.",
     date: "28/04/2025",
-    drink: "Trà Đào Cam Sả",
+    drink: "Peach Lemongrass Tea",
   },
 ];
 
@@ -76,10 +76,10 @@ export default function CustomerReviews() {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-900 dark:text-gray-50">
-            Đánh giá từ <span className="text-brand-500">khách hàng</span>
+            Reviews from <span className="text-brand-500">customers</span>
           </h2>
           <p className="text-gray-500 dark:text-gray-400 mt-3">
-            Những trải nghiệm thực tế từ cộng đồng yêu Iku
+            Real experiences from the Drinma community
           </p>
         </motion.div>
 

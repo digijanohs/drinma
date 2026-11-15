@@ -33,7 +33,7 @@ export default function ShareButton({ title, url }: ShareButtonProps) {
       action: () => window.open(`https://zalo.me/share?url=${encodeURIComponent(shareUrl)}`, "_blank"),
     },
     {
-      name: copied ? "Đã copy!" : "Copy link",
+      name: copied ? "Copied!" : "Copy link",
       icon: copied ? Check : Link2,
       action: copyLink,
     },
@@ -43,12 +43,12 @@ export default function ShareButton({ title, url }: ShareButtonProps) {
     <div className="relative">
       <button
         onClick={() => setShowMenu(!showMenu)}
-        aria-label="Chia sẻ"
+        aria-label="Share"
         aria-expanded={showMenu}
         className="flex items-center gap-1.5 px-3 py-2 min-h-11 text-sm text-gray-600 dark:text-gray-300 hover:text-brand-600 dark:hover:text-brand-300 rounded-lg hover:bg-brand-50 dark:hover:bg-brand-900/30 transition-colors"
       >
         <Share2 className="w-4 h-4" />
-        <span>Chia sẻ</span>
+        <span>Share</span>
       </button>
 
       {showMenu && (
@@ -64,7 +64,7 @@ export default function ShareButton({ title, url }: ShareButtonProps) {
                 key={option.name}
                 onClick={() => {
                   option.action();
-                  if (option.name !== "Copy link" && option.name !== "Đã copy!") setShowMenu(false);
+                  if (option.name !== "Copy link" && option.name !== "Copied!") setShowMenu(false);
                 }}
                 className="w-full flex items-center gap-2.5 px-3 py-2.5 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition-colors"
               >

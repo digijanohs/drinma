@@ -16,7 +16,7 @@ interface RecommendationsProps {
   title?: string;
 }
 
-export default function Recommendations({ products, title = "Có thể bạn sẽ thích" }: RecommendationsProps) {
+export default function Recommendations({ products, title = "You might also like" }: RecommendationsProps) {
   if (products.length === 0) return null;
 
   return (
@@ -30,7 +30,7 @@ export default function Recommendations({ products, title = "Có thể bạn s�
           href="/menu"
           className="text-sm text-brand-600 font-medium hover:text-brand-700 flex items-center gap-1"
         >
-          Xem tất cả
+          View All
           <ArrowRight className="w-3.5 h-3.5" />
         </Link>
       </div>

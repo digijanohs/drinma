@@ -55,10 +55,10 @@ export default function GlobalError({ error, reset }: GlobalErrorProps) {
           </svg>
 
           <h1 style={{ fontSize: "1.5rem", fontWeight: 700, color: "#1a1a1a", marginBottom: "0.5rem" }}>
-            Ôi không! Có lỗi xảy ra
+            Oh no! Something went wrong
           </h1>
           <p style={{ color: "#555", fontSize: "0.9rem", lineHeight: 1.6, marginBottom: "1.5rem" }}>
-            Ly trà sữa của bạn bị đổ mất rồi. Đừng lo, hãy thử lại hoặc quay về trang chủ nhé!
+            Your milk tea got spilled. Don't worry, just try again or head back to the home page!
           </p>
 
           <div style={{ display: "flex", gap: "0.75rem", justifyContent: "center", flexWrap: "wrap" }}>
@@ -75,7 +75,7 @@ export default function GlobalError({ error, reset }: GlobalErrorProps) {
                 fontWeight: 600,
               }}
             >
-              Thử lại
+              Try again
             </button>
             <a
               href="/"
@@ -90,7 +90,7 @@ export default function GlobalError({ error, reset }: GlobalErrorProps) {
                 fontWeight: 600,
               }}
             >
-              Về trang chủ
+              Back to home
             </a>
           </div>
         </div>

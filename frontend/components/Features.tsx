@@ -6,43 +6,43 @@ import { Truck, Clock, Shield, Leaf, Sparkles, Heart } from "lucide-react";
 const features = [
   {
     icon: Truck,
-    title: "Giao hàng nhanh",
-    desc: "Giao trong 30 phút nội thành",
+    title: "Fast delivery",
+    desc: "Delivered in 30 minutes city-wide",
     color: "from-orange-100 to-amber-50",
     iconColor: "text-orange-600",
   },
   {
     icon: Clock,
-    title: "Pha chế tươi",
-    desc: "Mỗi ly được pha khi có đơn",
+    title: "Freshly brewed",
+    desc: "Every cup is made to order",
     color: "from-green-100 to-emerald-50",
     iconColor: "text-green-600",
   },
   {
     icon: Shield,
-    title: "An toàn vệ sinh",
-    desc: "Đạt chuẩn ATTP nghiêm ngặt",
+    title: "Safe and hygienic",
+    desc: "Strict food-safety standards",
     color: "from-blue-100 to-sky-50",
     iconColor: "text-blue-600",
   },
   {
     icon: Leaf,
-    title: "Nguyên liệu sạch",
-    desc: "100% tự nhiên, không phụ gia",
+    title: "Clean ingredients",
+    desc: "100% natural, no additives",
     color: "from-emerald-100 to-teal-50",
     iconColor: "text-emerald-600",
   },
   {
     icon: Sparkles,
-    title: "Công thức độc quyền",
-    desc: "Hương vị riêng biệt, khó quên",
+    title: "Signature recipe",
+    desc: "A taste you won't forget",
     color: "from-purple-100 to-violet-50",
     iconColor: "text-purple-600",
   },
   {
     icon: Heart,
-    title: "Yêu thương từng ly",
-    desc: "Tận tâm trong mỗi sản phẩm",
+    title: "Love in every cup",
+    desc: "Care in every product",
     color: "from-pink-100 to-rose-50",
     iconColor: "text-pink-600",
   },
@@ -77,10 +77,10 @@ export default function Features() {
           className="text-center mb-14"
         >
           <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-900 dark:text-gray-50">
-            Tại sao chọn <span className="text-brand-500">Iku</span>?
+            Why choose us <span className="text-brand-500">Drinma</span>?
           </h2>
           <p className="text-gray-500 dark:text-gray-400 mt-3 max-w-lg mx-auto">
-            Chúng tôi cam kết mang đến trải nghiệm trà sữa tốt nhất cho bạn
+            We're committed to giving you the best milk tea experience
           </p>
         </motion.div>
 

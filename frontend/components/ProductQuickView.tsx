@@ -39,9 +39,7 @@ export default function ProductQuickView({
   }, [isOpen, onClose]);
 
   const formatPrice = (price: number) =>
-    new Intl.NumberFormat("vi-VN").format(price) + "đ";
-
-  return (
+    new Intl.NumberFormat("vi-VN").format(price) + "đ"; return (
     <AnimatePresence>
       {isOpen && (
         <>
@@ -73,7 +71,7 @@ export default function ProductQuickView({
               {/* Close button */}
               <button
                 onClick={onClose}
-                aria-label="Đóng"
+                aria-label="Close"
                 className="absolute right-4 top-4 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-gray-100 text-gray-500 transition-colors hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600"
               >
                 <X className="h-4 w-4" />
@@ -106,7 +104,7 @@ export default function ProductQuickView({
                     className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-brand-600 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand-700 dark:bg-brand-500 dark:hover:bg-brand-600"
                   >
                     <ShoppingCart className="h-4 w-4" />
-                    Thêm vào giỏ
+                    Add to cart
                   </button>
 
                   <Link
@@ -114,7 +112,7 @@ export default function ProductQuickView({
                     onClick={onClose}
                     className="flex items-center justify-center gap-1.5 rounded-xl border border-gray-200 px-4 py-2.5 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50 dark:border-gray-600 dark:text-gray-200 dark:hover:bg-gray-700"
                   >
-                    Xem chi tiết
+                    View Details
                     <ArrowRight className="h-3.5 w-3.5" />
                   </Link>
                 </div>

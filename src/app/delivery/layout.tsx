@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Thông tin giao hàng | Iku Milk Tea",
-  description: "Khu vực giao hàng, phí giao hàng và thời gian giao hàng của Iku Milk Tea",
+  title: "Delivery information | Drinma",
+  description: "Drinma delivery areas, fees and times",
 };
 
 export default function DeliveryLayout({

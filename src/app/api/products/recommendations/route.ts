@@ -42,6 +42,6 @@ export async function GET(request: NextRequest) {
     return successResponse(recommendations);
   } catch (error) {
     console.error("[GET /api/products/recommendations]", error);
-    return errorResponse("Không thể tải sản phẩm gợi ý", 500);
+    return errorResponse("Couldn't load recommended products", 500);
   }
 }

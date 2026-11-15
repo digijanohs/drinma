@@ -5,9 +5,9 @@ import { limiter } from "@/lib/rate-limit";
 
 const reviewSchema = z.object({
   productId: z.string(),
-  name: z.string().min(2, "Tên phải có ít nhất 2 ký tự"),
+  name: z.string().min(2, "Name must be at least 2 characters"),
   rating: z.number().min(1).max(5),
-  comment: z.string().min(10, "Nhận xét phải có ít nhất 10 ký tự"),
+  comment: z.string().min(10, "Your review must be at least 10 characters"),
 });
 
 export async function GET(request: NextRequest) {
@@ -16,7 +16,7 @@ export async function GET(request: NextRequest) {
 
   if (!productId) {
     return NextResponse.json(
-      { error: "Thiếu productId" },
+      { error: "Missing productId" },
       { status: 400 }
     );
   }
@@ -43,7 +43,7 @@ export async function GET(request: NextRequest) {
     });
   } catch {
     return NextResponse.json(
-      { error: "Không thể tải đánh giá" },
+      { error: "Couldn't load reviews" },
       { status: 500 }
     );
   }
@@ -56,7 +56,7 @@ export async function POST(request: NextRequest) {
       await limiter.check(5, ip);
     } catch {
       return NextResponse.json(
-        { error: "Quá nhiều yêu cầu, vui lòng thử lại sau" },
+        { error: "Too many requests, please try again later" },
         { status: 429 }
       );
     }
@@ -77,12 +77,12 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     if (error instanceof z.ZodError) {
       return NextResponse.json(
-        { error: "Dữ liệu không hợp lệ", details: error.errors },
+        { error: "Invalid data", details: error.errors },
         { status: 400 }
       );
     }
     return NextResponse.json(
-      { error: "Không thể gửi đánh giá" },
+      { error: "Couldn't submit your review" },
       { status: 500 }
     );
   }

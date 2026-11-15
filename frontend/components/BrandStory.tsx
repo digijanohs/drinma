@@ -16,29 +16,25 @@ export default function BrandStory() {
             transition={{ duration: 0.6 }}
           >
             <span className="inline-block px-3 py-1 bg-brand-50 text-brand-600 rounded-full text-xs font-medium mb-4">
-              Câu chuyện thương hiệu
+              Our Brand Story
             </span>
             <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-900 dark:text-gray-50 mb-6">
-              Từ đam mê đến <span className="text-brand-600">hương vị</span>
+              From passion to <span className="text-brand-600">flavor</span>
             </h2>
             <div className="space-y-4 text-gray-600 dark:text-gray-300 leading-relaxed">
               <p>
-                Iku ra đời từ niềm đam mê mãnh liệt với trà sữa và mong muốn mang đến
-                những ly trà chất lượng nhất cho người Việt. Mỗi công thức đều được nghiên
-                cứu kỹ lưỡng, kết hợp giữa truyền thống Á Đông và sáng tạo hiện đại.
+                Drinma was born from a fierce passion for milk tea and the wish to serve the very best cups to tea lovers in Vietnam. Every recipe is carefully developed, blending East Asian tradition with modern creativity.
               </p>
               <p>
-                Chúng tôi chọn lọc nguyên liệu từ những vùng trà nổi tiếng: matcha Uji từ
-                Kyoto, trà oolong từ Đài Loan, và đường nâu thủ công từ Okinawa. Mỗi ly Iku
-                là một hành trình hương vị.
+                We source ingredients from renowned tea regions: Uji matcha from Kyoto, oolong from Taiwan and handcrafted brown sugar from Okinawa. Every Drinma cup is a journey of flavor.
               </p>
             </div>
 
             <div className="grid grid-cols-3 gap-6 mt-8">
               {[
-                { value: "50+", label: "Công thức" },
-                { value: "10K+", label: "Khách hàng" },
-                { value: "4.9★", label: "Đánh giá" },
+                { value: "50+", label: "The Recipe" },
+                { value: "10K+", label: "Customer" },
+                { value: "4.9★", label: "Reviews" },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
                   <div className="text-2xl font-bold text-brand-600">{stat.value}</div>

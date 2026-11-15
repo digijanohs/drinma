@@ -20,13 +20,13 @@ export default function InstagramFeed() {
         <div className="text-center mb-10">
           <div className="flex items-center justify-center gap-2 mb-3">
             <Instagram className="w-5 h-5 text-brand-600" />
-            <span className="text-sm font-medium text-brand-600">@milkteaiku</span>
+            <span className="text-sm font-medium text-brand-600">@drinma</span>
           </div>
           <h2 className="text-3xl font-display font-bold text-gray-900 dark:text-gray-50">
-            Theo dõi chúng tôi
+            Follow us
           </h2>
           <p className="text-gray-500 dark:text-gray-400 mt-2">
-            Cập nhật hình ảnh mới nhất từ Iku
+            Catch the latest photos from Drinma
           </p>
         </div>
 
@@ -34,7 +34,7 @@ export default function InstagramFeed() {
           {posts.map((post, i) => (
             <motion.a
               key={post.id}
-              href="https://instagram.com/milkteaiku"
+              href="https://instagram.com/drinma"
               target="_blank"
               rel="noopener noreferrer"
               initial={{ opacity: 0, scale: 0.9 }}

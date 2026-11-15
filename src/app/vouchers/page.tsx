@@ -19,10 +19,10 @@ interface Voucher {
 }
 
 const vouchers: Voucher[] = [
-  { id: 1, code: "IKU20", title: "Giảm 20%", description: "Áp dụng cho đơn từ 100K", discount: "20%", minOrder: "100.000đ", expiry: "31/05/2024", isUsed: false },
-  { id: 2, code: "FREESHIP", title: "Miễn phí ship", description: "Đơn hàng từ 50K", discount: "Free ship", minOrder: "50.000đ", expiry: "30/06/2024", isUsed: false },
-  { id: 3, code: "NEWBIE30", title: "Giảm 30K", description: "Dành cho khách hàng mới", discount: "30.000đ", minOrder: "80.000đ", expiry: "15/06/2024", isUsed: false },
-  { id: 4, code: "BOGO", title: "Mua 1 tặng 1", description: "Áp dụng Brown Sugar Boba", discount: "Buy 1 Get 1", minOrder: "0đ", expiry: "20/05/2024", isUsed: true },
+  { id: 1, code: "DRINMA20", title: "20% off", description: "On orders from 100K", discount: "20%", minOrder: "100.000đ", expiry: "31/05/2024", isUsed: false },
+  { id: 2, code: "FREESHIP", title: "Free shipping", description: "On orders from 50K", discount: "Free ship", minOrder: "50.000đ", expiry: "30/06/2024", isUsed: false },
+  { id: 3, code: "NEWBIE30", title: "30K off", description: "For new customers", discount: "30.000đ", minOrder: "80.000đ", expiry: "15/06/2024", isUsed: false },
+  { id: 4, code: "BOGO", title: "Buy 1, get 1 free", description: "Valid on Brown Sugar Boba", discount: "Buy 1 Get 1", minOrder: "0đ", expiry: "20/05/2024", isUsed: true },
 ];
 
 export default function VouchersPage() {
@@ -54,7 +54,7 @@ export default function VouchersPage() {
               transition={{ delay: 0.1 }}
               className="text-4xl font-display font-bold text-gray-900 dark:text-gray-50 mb-4"
             >
-              Voucher của tôi
+              My vouchers
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -62,7 +62,7 @@ export default function VouchersPage() {
               transition={{ delay: 0.2 }}
               className="text-gray-500 dark:text-gray-400 text-lg"
             >
-              Sử dụng voucher để tiết kiệm hơn
+              Use vouchers to save more
             </motion.p>
           </div>
         </section>
@@ -93,7 +93,7 @@ export default function VouchersPage() {
                         <h3 className="font-semibold text-gray-900 dark:text-gray-50 text-sm">{voucher.title}</h3>
                         <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">{voucher.description}</p>
                         <p className="text-[10px] text-gray-500 dark:text-gray-400 mt-2">
-                          Đơn tối thiểu: {voucher.minOrder} • HSD: {voucher.expiry}
+                          Min. order: {voucher.minOrder} • Expires: {voucher.expiry}
                         </p>
                       </div>
                       {!voucher.isUsed && (
@@ -104,7 +104,7 @@ export default function VouchersPage() {
                           {copiedId === voucher.id ? (
                             <>
                               <CheckCircle className="w-3 h-3" />
-                              Đã copy
+                              Copied
                             </>
                           ) : (
                             <>
@@ -115,7 +115,7 @@ export default function VouchersPage() {
                         </button>
                       )}
                       {voucher.isUsed && (
-                        <span className="text-xs text-gray-500 dark:text-gray-400 font-medium">Đã dùng</span>
+                        <span className="text-xs text-gray-500 dark:text-gray-400 font-medium">Used</span>
                       )}
                     </div>
                   </div>

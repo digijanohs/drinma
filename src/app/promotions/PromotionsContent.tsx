@@ -10,26 +10,26 @@ import CouponGrid from "@/components/CouponGrid";
 const highlights = [
   {
     icon: Percent,
-    title: "Giảm đến 50%",
-    description: "Ưu đãi hấp dẫn mỗi tuần",
+    title: "Up to 50% off",
+    description: "Great deals every week",
     color: "bg-red-50 text-red-600",
   },
   {
     icon: Gift,
-    title: "Quà tặng miễn phí",
-    description: "Khi đạt hạng Gold trở lên",
+    title: "Free gift",
+    description: "When you reach Gold tier or higher",
     color: "bg-purple-50 text-purple-600",
   },
   {
     icon: Truck,
     title: "Free ship",
-    description: "Đơn từ 80.000đ nội thành",
+    description: "On city orders from 80.000đ",
     color: "bg-green-50 text-green-600",
   },
   {
     icon: Users,
-    title: "Ưu đãi nhóm",
-    description: "Mua 5 tặng 1 cho nhóm",
+    title: "Group deals",
+    description: "Buy 5, get 1 free for groups",
     color: "bg-blue-50 text-blue-600",
   },
 ];
@@ -48,7 +48,7 @@ export default function PromotionsPageContent() {
               className="inline-block px-4 py-1.5 bg-red-100 text-red-700 rounded-full text-sm font-medium mb-5"
             >
               <Sparkles className="w-3.5 h-3.5 inline mr-1" />
-              Khuyến mãi
+              Promotions
             </motion.span>
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
@@ -56,7 +56,7 @@ export default function PromotionsPageContent() {
               transition={{ delay: 0.1 }}
               className="text-4xl md:text-5xl font-display font-bold text-gray-900 dark:text-gray-50 mb-4"
             >
-              Ưu đãi <span className="text-brand-600">đặc biệt</span>
+              Deals <span className="text-brand-600">special</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -64,7 +64,7 @@ export default function PromotionsPageContent() {
               transition={{ delay: 0.2 }}
               className="text-gray-500 dark:text-gray-400 text-lg max-w-xl mx-auto"
             >
-              Nhập mã giảm giá khi thanh toán để nhận ưu đãi hấp dẫn
+              Enter your promo code at checkout to unlock great deals
             </motion.p>
           </div>
         </section>
@@ -99,7 +99,7 @@ export default function PromotionsPageContent() {
             transition={{ delay: 0.5 }}
           >
             <h2 className="text-2xl font-display font-bold text-gray-900 dark:text-gray-50 mb-6">
-              Mã giảm giá hiện có
+              Available promo codes
             </h2>
             <CouponGrid />
           </motion.div>
@@ -111,16 +111,16 @@ export default function PromotionsPageContent() {
             className="mt-14 bg-gradient-to-r from-brand-600 to-brand-800 rounded-3xl p-10 text-center text-white"
           >
             <h3 className="text-2xl font-display font-bold mb-3">
-              Đăng ký nhận ưu đãi
+              Sign up for deals
             </h3>
             <p className="text-brand-100 max-w-md mx-auto mb-6">
-              Nhận thông báo khuyến mãi mới nhất qua email. Không spam, chỉ ưu đãi thật sự.
+              Get the latest promotions by email. No spam, just real deals.
             </p>
             <a
               href="/menu"
               className="inline-flex items-center gap-2 px-6 py-3 bg-white text-brand-700 rounded-xl font-medium hover:bg-cream-100 transition-colors"
             >
-              Đặt hàng ngay
+              Order now
               <ArrowRight className="w-4 h-4" />
             </a>
           </motion.div>

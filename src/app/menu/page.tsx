@@ -7,8 +7,8 @@ import MenuClient from "./MenuClient";
 export const dynamic = "force-dynamic";
 
 export const metadata = {
-  title: "Menu | MilkTea Iku",
-  description: "Khám phá menu trà sữa đa dạng với hơn 20 hương vị độc đáo",
+  title: "Menu | Drinma",
+  description: "Discover a wide range of milk teas with over 20 unique flavors",
 };
 
 export default async function MenuPage({
@@ -45,7 +45,7 @@ export default async function MenuPage({
               Menu
             </h1>
             <p className="text-gray-600 dark:text-gray-300 mt-2">
-              Chọn hương vị yêu thích của bạn
+              Pick your favorite flavor
             </p>
           </div>
 

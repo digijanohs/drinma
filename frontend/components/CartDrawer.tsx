@@ -81,10 +81,10 @@ export default function CartDrawer() {
             <div className="w-8 h-8 rounded-full bg-brand-100 dark:bg-brand-900/40 flex items-center justify-center shrink-0">
               <ShoppingBag className="w-4 h-4 text-brand-600 dark:text-brand-300" />
             </div>
-            <span className="font-semibold text-gray-900 dark:text-gray-50">Giỏ hàng</span>
+            <span className="font-semibold text-gray-900 dark:text-gray-50">Cart</span>
             {totalItems > 0 && (
               <span className="ml-auto text-sm font-normal text-gray-500 dark:text-gray-400 pr-8">
-                {totalItems} món
+                {totalItems} items
               </span>
             )}
           </SheetTitle>
@@ -98,9 +98,9 @@ export default function CartDrawer() {
                 <BobaCupIllustration />
               </div>
               <div className="space-y-1">
-                <p className="font-semibold text-gray-700 dark:text-gray-300 text-lg">Giỏ hàng trống</p>
+                <p className="font-semibold text-gray-700 dark:text-gray-300 text-lg">Your cart is empty</p>
                 <p className="text-sm text-gray-400">
-                  Hãy thêm món yêu thích vào giỏ hàng nhé!
+                  Add your favorites to the cart!
                 </p>
               </div>
               <Button
@@ -108,7 +108,7 @@ export default function CartDrawer() {
                 className="mt-1 border-brand-300 text-brand-600 hover:bg-brand-50 hover:text-brand-700 rounded-full"
                 onClick={closeCart}
               >
-                Khám phá thực đơn
+                Explore the menu
               </Button>
             </div>
           ) : (
@@ -141,7 +141,7 @@ export default function CartDrawer() {
                         {item.name}
                       </h4>
                       <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
-                        Size {item.size} · Đường {item.sugarLevel}% · Đá {item.iceLevel}%
+                        Size {item.size} · Sugar {item.sugarLevel}% · Ice {item.iceLevel}%
                       </p>
                       {item.toppings.length > 0 && (
                         <p className="text-xs text-brand-500 dark:text-brand-300 mt-0.5 truncate">
@@ -159,7 +159,7 @@ export default function CartDrawer() {
                           <button
                             onClick={() => updateQuantity(item.id, item.quantity - 1)}
                             className="min-w-11 min-h-11 sm:min-w-9 sm:min-h-9 w-9 h-9 sm:w-8 sm:h-8 rounded-full bg-brand-50 dark:bg-brand-900/30 border border-brand-200 dark:border-brand-800 flex items-center justify-center hover:bg-brand-100 dark:hover:bg-brand-800/50 transition-colors"
-                            aria-label="Giảm số lượng"
+                            aria-label="Decrease quantity"
                           >
                             <Minus className="w-3.5 h-3.5 text-brand-600 dark:text-brand-300" />
                           </button>
@@ -183,7 +183,7 @@ export default function CartDrawer() {
                           <button
                             onClick={() => updateQuantity(item.id, item.quantity + 1)}
                             className="min-w-11 min-h-11 sm:min-w-9 sm:min-h-9 w-9 h-9 sm:w-8 sm:h-8 rounded-full bg-brand-50 dark:bg-brand-900/30 border border-brand-200 dark:border-brand-800 flex items-center justify-center hover:bg-brand-100 dark:hover:bg-brand-800/50 transition-colors"
-                            aria-label="Tăng số lượng"
+                            aria-label="Increase quantity"
                           >
                             <Plus className="w-3.5 h-3.5 text-brand-600 dark:text-brand-300" />
                           </button>
@@ -191,7 +191,7 @@ export default function CartDrawer() {
                           <button
                             onClick={() => removeItem(item.id)}
                             className="min-w-11 min-h-11 sm:min-w-9 sm:min-h-9 w-9 h-9 sm:w-8 sm:h-8 rounded-full bg-red-50 dark:bg-red-900/30 border border-red-100 dark:border-red-800 flex items-center justify-center hover:bg-red-100 dark:hover:bg-red-800/50 transition-colors ml-0.5"
-                            aria-label="Xóa sản phẩm"
+                            aria-label="Remove item"
                           >
                             <Trash2 className="w-3.5 h-3.5 text-red-500 dark:text-red-300" />
                           </button>
@@ -211,24 +211,24 @@ export default function CartDrawer() {
             {/* Price breakdown */}
             <div className="px-5 pt-4 pb-2 space-y-2">
               <div className="flex items-center justify-between text-sm">
-                <span className="text-gray-600 dark:text-gray-400">Tạm tính</span>
+                <span className="text-gray-600 dark:text-gray-400">Subtotal</span>
                 <span className="font-medium text-gray-800 dark:text-gray-100">{formatPrice(subtotal)}</span>
               </div>
               <div className="flex items-center justify-between text-sm">
-                <span className="text-gray-600 dark:text-gray-400">Phí giao hàng</span>
+                <span className="text-gray-600 dark:text-gray-400">Delivery fee</span>
                 {deliveryFee === 0 ? (
-                  <span className="text-green-600 dark:text-green-400 font-medium">Miễn phí</span>
+                  <span className="text-green-600 dark:text-green-400 font-medium">Free</span>
                 ) : (
                   <span className="font-medium text-gray-800 dark:text-gray-100">{formatPrice(deliveryFee)}</span>
                 )}
               </div>
               {deliveryFee > 0 && (
                 <p className="text-xs text-brand-500 dark:text-brand-300">
-                  Mua thêm{" "}
+                  Add more{" "}
                   <span className="font-medium text-brand-600 dark:text-brand-400">
                     {formatPrice(FREE_DELIVERY_THRESHOLD - subtotal)}
                   </span>{" "}
-                  để được miễn phí giao hàng
+                  to get free delivery
                 </p>
               )}
             </div>
@@ -237,7 +237,7 @@ export default function CartDrawer() {
 
             {/* Grand total */}
             <div className="px-5 py-3 flex items-center justify-between">
-              <span className="font-semibold text-gray-900 dark:text-gray-50">Tổng cộng</span>
+              <span className="font-semibold text-gray-900 dark:text-gray-50">Total</span>
               <motion.span
                 key={grandTotal}
                 initial={{ scale: 0.92, opacity: 0.6 }}
@@ -256,7 +256,7 @@ export default function CartDrawer() {
                 onClick={closeCart}
                 className="w-full h-12 rounded-full bg-brand-600 hover:bg-brand-700 text-white font-semibold text-base shadow-md shadow-brand-200/60 transition-all flex items-center justify-center"
               >
-                Thanh toán
+                Checkout
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Link>
 
@@ -264,7 +264,7 @@ export default function CartDrawer() {
                 onClick={closeCart}
                 className="w-full text-sm text-center text-brand-500 hover:text-brand-700 py-1 transition-colors"
               >
-                Tiếp tục mua sắm
+                Continue shopping
               </button>
             </div>
           </SheetFooter>

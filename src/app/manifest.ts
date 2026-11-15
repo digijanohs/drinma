@@ -2,9 +2,9 @@ import { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "MilkTea Iku - Trà Sữa Premium",
-    short_name: "Iku",
-    description: "Đặt trà sữa premium online, giao tận nơi. Nguyên liệu tươi, hương vị đậm đà.",
+    name: "Drinma - Premium Milk Tea",
+    short_name: "Drinma",
+    description: "Order premium milk tea online, delivered to your door. Fresh ingredients, rich flavor.",
     start_url: "/",
     display: "standalone",
     background_color: "#fdf6ee",
@@ -30,13 +30,13 @@ export default function manifest(): MetadataRoute.Manifest {
         name: "Menu",
         short_name: "Menu",
         url: "/menu",
-        description: "Xem menu trà sữa",
+        description: "View the milk tea menu",
       },
       {
-        name: "Đặt hàng",
+        name: "Order",
         short_name: "Order",
         url: "/checkout",
-        description: "Đặt hàng nhanh",
+        description: "Quick order",
       },
     ],
   };

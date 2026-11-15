@@ -7,6 +7,7 @@ import { ShoppingBag, Menu } from "lucide-react";
 import { useCartStore } from "@/store/cart";
 import { Badge } from "@/components/ui/badge";
 import ThemeToggle from "@/components/ThemeToggle";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 import {
   Sheet,
   SheetContent,
@@ -17,10 +18,10 @@ import {
 import { Separator } from "@/components/ui/separator";
 
 const navLinks = [
-  { href: "/", label: "Trang chủ" },
+  { href: "/", label: "Home" },
   { href: "/menu", label: "Menu" },
-  { href: "/about", label: "Về chúng tôi" },
-  { href: "/order", label: "Đặt hàng" },
+  { href: "/about", label: "About us" },
+  { href: "/order", label: "Order" },
 ];
 
 function MilkTeaLogo() {
@@ -94,10 +95,10 @@ export default function Header() {
             </motion.div>
             <div className="flex flex-col leading-none">
               <span className="font-display text-xl font-bold text-brand-800 group-hover:text-brand-600 transition-colors duration-200">
-                Iku
+                Drinma
               </span>
               <span className="text-[9px] font-semibold tracking-[0.2em] text-brand-400 uppercase">
-                Milk Tea
+                Bubble Tea
               </span>
             </div>
           </Link>
@@ -123,6 +124,7 @@ export default function Header() {
 
           {/* ── Actions ── */}
           <div className="flex items-center gap-2">
+            <LanguageSwitcher />
             <ThemeToggle />
 
             {/* Cart button */}
@@ -130,11 +132,11 @@ export default function Header() {
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.96 }}
               onClick={toggleCart}
-              aria-label="Giỏ hàng"
+              aria-label="Cart"
               className="relative flex items-center gap-2 pl-3 pr-3.5 py-2 rounded-full bg-brand-500 hover:bg-brand-600 active:bg-brand-700 text-white transition-colors duration-200 shadow-sm shadow-brand-500/25"
             >
               <ShoppingBag className="w-4 h-4 flex-shrink-0" />
-              <span className="hidden sm:inline text-sm font-medium">Giỏ hàng</span>
+              <span className="hidden sm:inline text-sm font-medium">Cart</span>
               {count > 0 && (
                 <motion.div
                   key={count}
@@ -153,7 +155,7 @@ export default function Header() {
             <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
               <SheetTrigger
                 className="md:hidden p-2 rounded-full text-brand-800 hover:bg-brand-500/10 transition-colors duration-200"
-                aria-label="Mở menu"
+                aria-label="Open menu"
               >
                 <Menu className="w-5 h-5" />
               </SheetTrigger>
@@ -168,10 +170,10 @@ export default function Header() {
                     <MilkTeaLogo />
                     <div className="flex flex-col leading-none">
                       <SheetTitle className="font-display text-xl font-bold text-brand-800">
-                        Iku
+                        Drinma
                       </SheetTitle>
                       <span className="text-[9px] font-semibold tracking-[0.2em] text-brand-400 uppercase">
-                        Milk Tea
+                        Bubble Tea
                       </span>
                     </div>
                   </div>
@@ -212,7 +214,7 @@ export default function Header() {
                     className="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-brand-500 hover:bg-brand-600 active:bg-brand-700 text-white font-medium transition-colors duration-200 shadow-sm shadow-brand-500/20"
                   >
                     <ShoppingBag className="w-4 h-4" />
-                    <span>Giỏ hàng</span>
+                    <span>Cart</span>
                     {count > 0 && (
                       <Badge className="bg-white text-brand-600 border-0 font-bold h-5 min-w-[1.25rem] px-1.5 text-xs ml-0.5">
                         {count > 99 ? "99+" : count}

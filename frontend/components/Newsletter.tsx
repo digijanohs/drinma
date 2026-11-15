@@ -27,9 +27,9 @@ const sparkles = [
 ];
 
 function validateEmail(value: string): string {
-  if (!value.trim()) return "Vui lòng nhập email của bạn.";
+  if (!value.trim()) return "Please enter your email.";
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value))
-    return "Địa chỉ email không hợp lệ.";
+    return "That email address isn't valid.";
   return "";
 }
 
@@ -116,7 +116,7 @@ export default function Newsletter() {
           {/* Badge */}
           <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-brand-100 border border-brand-200 text-brand-700 rounded-full text-sm font-medium mb-6 shadow-sm">
             <span className="w-2 h-2 rounded-full bg-brand-500 animate-pulse" aria-hidden="true" />
-            Bản tin hàng tuần
+            Weekly newsletter
           </span>
 
           {/* Headline */}
@@ -124,16 +124,15 @@ export default function Newsletter() {
             id="newsletter-heading"
             className="font-display text-4xl sm:text-5xl font-bold text-gray-900 dark:text-gray-50 leading-tight tracking-tight mb-4"
           >
-            Nhận ưu đãi{" "}
+            Get offers{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 via-brand-600 to-brand-700">
-              mỗi tuần
+              every week
             </span>
           </h2>
 
           {/* Subtext */}
           <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-10 max-w-md mx-auto">
-            Đăng ký để nhận ưu đãi độc quyền, thông báo sản phẩm mới và bí quyết
-            pha trà sữa ngay trong hộp thư của bạn.
+            Sign up for exclusive deals, new product drops and milk tea tips straight to your inbox.
           </p>
 
           {/* ── Form / Success ── */}
@@ -196,10 +195,10 @@ export default function Newsletter() {
 
                 <div>
                   <p className="text-xl font-bold text-gray-900 dark:text-gray-50">
-                    Cảm ơn bạn đã đăng ký!
+                    Thanks for subscribing!
                   </p>
                   <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-                    Kiểm tra hộp thư để nhận ưu đãi đầu tiên của bạn
+                    Check your inbox for your first treat
                   </p>
                 </div>
               </motion.div>
@@ -219,7 +218,7 @@ export default function Newsletter() {
                   {/* Email input */}
                   <div className="flex-1 flex flex-col gap-1.5 text-left">
                     <label htmlFor={inputId} className="sr-only">
-                      Địa chỉ email
+                      Email address
                     </label>
                     <input
                       id={inputId}
@@ -267,7 +266,7 @@ export default function Newsletter() {
                       "disabled:opacity-70 disabled:cursor-not-allowed disabled:translate-y-0",
                       "sm:self-start",
                     ].join(" ")}
-                    aria-label={loading ? "Đang xử lý..." : "Đăng ký nhận bản tin"}
+                    aria-label={loading ? "Processing..." : "Join our newsletter"}
                   >
                     {loading ? (
                       <span className="flex items-center gap-2">
@@ -277,16 +276,16 @@ export default function Newsletter() {
                           transition={{ duration: 0.75, repeat: Infinity, ease: "linear" }}
                           aria-hidden="true"
                         />
-                        Đang xử lý...
+                        Processing...
                       </span>
                     ) : (
-                      "Đăng ký"
+                      "Sign Up"
                     )}
                   </Button>
                 </div>
 
                 <p className="mt-3 text-xs text-gray-500 dark:text-gray-400">
-                  Không spam. Hủy đăng ký bất cứ lúc nào.
+                  No spam. Unsubscribe anytime.
                 </p>
               </motion.form>
             )}

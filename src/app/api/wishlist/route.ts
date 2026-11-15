@@ -6,7 +6,7 @@ const DISABLED_RESPONSE = {
   success: false,
   error:
     "Wishlist API is disabled until per-user authentication is implemented. " +
-    "Wishlist hiện được lưu cục bộ trong trình duyệt qua zustand. Xem docs/HONEST_SCOPE.md.",
+    "Wishlist is currently stored locally in your browser via zustand. See docs/HONEST_SCOPE.md.",
 };
 
 export async function GET() {

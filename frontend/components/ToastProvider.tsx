@@ -74,7 +74,7 @@ function ToastItem({ toast }: { toast: Toast }) {
       {/* Close button */}
       <button
         onClick={() => removeToast(toast.id)}
-        aria-label="Đóng thông báo"
+        aria-label="Dismiss notification"
         className="mt-0.5 text-gray-400 hover:text-gray-600 transition-colors shrink-0"
       >
         <X className="w-4 h-4" />
@@ -98,7 +98,7 @@ export default function ToastProvider() {
 
   return (
     <div
-      aria-label="Thông báo"
+      aria-label="Notifications"
       className="fixed bottom-5 right-5 z-[9999] flex flex-col-reverse gap-3 pointer-events-none"
     >
       <AnimatePresence initial={false} mode="sync">

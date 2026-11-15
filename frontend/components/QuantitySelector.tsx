@@ -28,7 +28,7 @@ export default function QuantitySelector({
         onClick={() => onChange(Math.max(min, value - 1))}
         disabled={value <= min}
         className={`${buttonSize} rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 flex items-center justify-center text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 disabled:opacity-30 disabled:cursor-not-allowed transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500`}
-        aria-label="Giảm số lượng"
+        aria-label="Decrease quantity"
       >
         <Minus className="w-4 h-4" />
       </motion.button>
@@ -40,7 +40,7 @@ export default function QuantitySelector({
         onClick={() => onChange(Math.min(max, value + 1))}
         disabled={value >= max}
         className={`${buttonSize} rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 flex items-center justify-center text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 disabled:opacity-30 disabled:cursor-not-allowed transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500`}
-        aria-label="Tăng số lượng"
+        aria-label="Increase quantity"
       >
         <Plus className="w-4 h-4" />
       </motion.button>

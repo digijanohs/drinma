@@ -22,9 +22,9 @@ const bobaPearls = [
 ];
 
 const trustItems: { icon: React.ReactNode; value: string; label: string }[] = [
-  { icon: <ShoppingBag className="w-5 h-5 text-brand-600" />, value: "1000+", label: "đơn hàng mỗi ngày" },
-  { icon: <Leaf className="w-5 h-5 text-brand-600" />, value: "100%", label: "Nguyên liệu tươi" },
-  { icon: <Zap className="w-5 h-5 text-brand-600" />, value: "30 phút", label: "Giao hàng nhanh" },
+  { icon: <ShoppingBag className="w-5 h-5 text-brand-600" />, value: "1000+", label: "orders every day" },
+  { icon: <Leaf className="w-5 h-5 text-brand-600" />, value: "100%", label: "Fresh ingredients" },
+  { icon: <Zap className="w-5 h-5 text-brand-600" />, value: "30 minutes", label: "Fast delivery" },
 ];
 
 const containerVariants = {
@@ -116,7 +116,7 @@ export default function Hero() {
               <motion.div variants={itemVariants}>
                 <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-brand-100 dark:bg-brand-900/50 border border-brand-200 dark:border-brand-600 text-brand-700 dark:text-brand-200 rounded-full text-sm font-medium mb-6 shadow-sm">
                   <span className="w-2 h-2 rounded-full bg-brand-500 animate-pulse" />
-                  Thương hiệu trà sữa premium
+                  The premium milk tea brand
                 </span>
               </motion.div>
 
@@ -125,10 +125,10 @@ export default function Hero() {
                 variants={itemVariants}
                 className="font-display text-3xl sm:text-5xl lg:text-7xl font-bold text-gray-900 dark:text-gray-50 leading-[1.08] tracking-tight mb-6"
               >
-                Trà Sữa Tươi{" "}
+                Fresh Milk Tea{" "}
                 <span className="relative inline-block">
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 via-brand-600 to-brand-700">
-                    Mỗi Ngày
+                    Every Day
                   </span>
                   {/* Underline squiggle */}
                   <svg
@@ -157,9 +157,7 @@ export default function Hero() {
                 variants={itemVariants}
                 className="text-lg sm:text-xl text-gray-600 dark:text-gray-200 leading-relaxed mb-10 max-w-md"
               >
-                Được pha chế từ nguyên liệu tươi ngon nhất, mỗi ly trà sữa Iku
-                là một hành trình hương vị — đậm đà, thơm ngát, và luôn mới mẻ
-                mỗi ngày.
+                Brewed from the freshest ingredients, every cup of Drinma milk tea is a journey of flavor — rich, fragrant and always fresh.
               </motion.p>
 
               {/* CTA buttons */}
@@ -175,7 +173,7 @@ export default function Hero() {
                   href="/checkout"
                   className={buttonVariants({ variant: "outline", size: "lg", className: "rounded-full px-8 border-2 border-brand-300 dark:border-brand-600 text-brand-700 dark:text-brand-300 hover:bg-brand-50 dark:hover:bg-brand-900/40 hover:border-brand-400 hover:-translate-y-0.5 transition-all duration-200 text-base font-semibold bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm" })}
                 >
-                  Đặt Hàng Ngay
+                  Order Now
                 </Link>
               </motion.div>
 
@@ -226,7 +224,7 @@ export default function Hero() {
               <div className="relative w-full max-w-[260px] sm:max-w-md lg:max-w-lg aspect-square mx-auto">
                 <SafeImage
                   src="https://images.unsplash.com/photo-1558857563-b371033873b8?w=700&h=700&fit=crop"
-                  alt="Ly trà sữa Iku thơm ngon"
+                  alt="A delicious cup of Drinma milk tea"
                   fill
                   sizes="(max-width: 640px) 90vw, (max-width: 1024px) 50vw, 33vw"
                   className="rounded-[2.5rem] object-cover shadow-2xl shadow-brand-900/20"
@@ -273,7 +271,7 @@ export default function Hero() {
                     </div>
                     <span className="text-sm font-bold text-gray-800 dark:text-gray-50">4.9</span>
                   </div>
-                  <div className="text-xs text-gray-500 dark:text-gray-400 mt-0.5 text-center">10K+ đánh giá</div>
+                  <div className="text-xs text-gray-500 dark:text-gray-400 mt-0.5 text-center">10K+ reviews</div>
                 </motion.div>
 
                 {/* Floating badge — Fresh daily */}
@@ -284,7 +282,7 @@ export default function Hero() {
                 >
                   <div className="text-xs font-semibold leading-tight text-center">
                     <div className="text-lg mb-0.5"><svg className="w-5 h-5 text-white inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M6 3v7a6 6 0 0 0 6 6 6 6 0 0 0 6-6V3"/><path d="M4 3h16"/><path d="M12 16v5"/><path d="M8 21h8"/></svg></div>
-                    <div>Tươi mỗi ngày</div>
+                    <div>Fresh Every Day</div>
                   </div>
                 </motion.div>
               </div>

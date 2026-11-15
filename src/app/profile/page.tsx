@@ -27,7 +27,7 @@ export default function ProfilePage() {
               transition={{ delay: 0.1 }}
               className="text-2xl font-display font-bold text-gray-900 dark:text-gray-50 mb-1"
             >
-              Nguyễn Văn A
+              Nguyen Van A
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -47,19 +47,19 @@ export default function ProfilePage() {
             className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 shadow-sm overflow-hidden"
           >
             <div className="px-6 py-4 border-b border-gray-100 dark:border-gray-700 flex items-center justify-between">
-              <h2 className="font-semibold text-gray-900 dark:text-gray-50">Thông tin cá nhân</h2>
+              <h2 className="font-semibold text-gray-900 dark:text-gray-50">Personal information</h2>
               <button className="flex items-center gap-1.5 min-h-11 px-2 text-sm text-brand-600 dark:text-brand-300 hover:text-brand-700 dark:hover:text-brand-200 font-medium">
                 <Edit2 className="w-3.5 h-3.5" />
-                Chỉnh sửa
+                Edit
               </button>
             </div>
 
             <div className="divide-y divide-gray-50 dark:divide-gray-700">
               {[
-                { icon: User, label: "Họ tên", value: "Nguyễn Văn A" },
-                { icon: Phone, label: "Số điện thoại", value: "0901 234 567" },
+                { icon: User, label: "Full name", value: "Nguyen Van A" },
+                { icon: Phone, label: "Phone number", value: "0901 234 567" },
                 { icon: Mail, label: "Email", value: "nguyenvana@email.com" },
-                { icon: MapPin, label: "Địa chỉ", value: "123 Nguyễn Huệ, Q.1, TP.HCM" },
+                { icon: MapPin, label: "Address", value: "123 Nguyen Hue, District 1, Ho Chi Minh City" },
               ].map((field, i) => (
                 <motion.div
                   key={field.label}
@@ -86,12 +86,12 @@ export default function ProfilePage() {
             transition={{ delay: 0.3 }}
             className="mt-6 bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 shadow-sm p-6"
           >
-            <h2 className="font-semibold text-gray-900 dark:text-gray-50 mb-4">Thống kê</h2>
+            <h2 className="font-semibold text-gray-900 dark:text-gray-50 mb-4">Statistics</h2>
             <div className="grid grid-cols-3 gap-4">
               {[
-                { value: "28", label: "Đơn hàng" },
-                { value: "1.2M", label: "Tổng chi tiêu" },
-                { value: "Gold", label: "Hạng thành viên" },
+                { value: "28", label: "Order" },
+                { value: "1.2M", label: "Total spent" },
+                { value: "Gold", label: "Membership tier" },
               ].map((stat) => (
                 <div key={stat.label} className="text-center p-3 rounded-xl bg-cream-50 dark:bg-gray-900">
                   <p className="text-lg font-bold text-brand-600 dark:text-brand-400">{stat.value}</p>

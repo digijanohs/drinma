@@ -15,19 +15,19 @@ interface Order {
 }
 
 const orders: Order[] = [
-  { id: "IKU-2024-001", date: "15/05/2024", total: 125000, items: 3, status: "completed" },
-  { id: "IKU-2024-002", date: "14/05/2024", total: 89000, items: 2, status: "delivering" },
-  { id: "IKU-2024-003", date: "12/05/2024", total: 210000, items: 5, status: "completed" },
-  { id: "IKU-2024-004", date: "10/05/2024", total: 55000, items: 1, status: "cancelled" },
-  { id: "IKU-2024-005", date: "08/05/2024", total: 165000, items: 4, status: "completed" },
+  { id: "DRINMA-2024-001", date: "15/05/2024", total: 125000, items: 3, status: "completed" },
+  { id: "DRINMA-2024-002", date: "14/05/2024", total: 89000, items: 2, status: "delivering" },
+  { id: "DRINMA-2024-003", date: "12/05/2024", total: 210000, items: 5, status: "completed" },
+  { id: "DRINMA-2024-004", date: "10/05/2024", total: 55000, items: 1, status: "cancelled" },
+  { id: "DRINMA-2024-005", date: "08/05/2024", total: 165000, items: 4, status: "completed" },
 ];
 
 const statusConfig = {
-  pending: { label: "Chờ xác nhận", icon: Clock, color: "text-yellow-600 bg-yellow-50" },
-  preparing: { label: "Đang pha chế", icon: Package, color: "text-blue-600 bg-blue-50" },
-  delivering: { label: "Đang giao", icon: Truck, color: "text-purple-600 bg-purple-50" },
-  completed: { label: "Hoàn thành", icon: CheckCircle, color: "text-green-600 bg-green-50" },
-  cancelled: { label: "Đã hủy", icon: XCircle, color: "text-red-600 bg-red-50" },
+  pending: { label: "Awaiting confirmation", icon: Clock, color: "text-yellow-600 bg-yellow-50" },
+  preparing: { label: "Being prepared", icon: Package, color: "text-blue-600 bg-blue-50" },
+  delivering: { label: "Out for delivery", icon: Truck, color: "text-purple-600 bg-purple-50" },
+  completed: { label: "Completed", icon: CheckCircle, color: "text-green-600 bg-green-50" },
+  cancelled: { label: "Cancelled", icon: XCircle, color: "text-red-600 bg-red-50" },
 };
 
 export default function OrderHistoryPage() {
@@ -43,7 +43,7 @@ export default function OrderHistoryPage() {
               animate={{ opacity: 1, y: 0 }}
               className="text-4xl font-display font-bold text-gray-900 dark:text-gray-50 mb-4"
             >
-              Lịch sử đơn hàng
+              Order History
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -51,7 +51,7 @@ export default function OrderHistoryPage() {
               transition={{ delay: 0.1 }}
               className="text-gray-500 dark:text-gray-400 text-lg"
             >
-              Theo dõi tất cả đơn hàng của bạn
+              Track all your orders
             </motion.p>
           </div>
         </section>
@@ -76,7 +76,7 @@ export default function OrderHistoryPage() {
                       </div>
                       <div>
                         <h3 className="font-semibold text-gray-900 dark:text-gray-50 text-sm">{order.id}</h3>
-                        <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">{order.date} • {order.items} món</p>
+                        <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">{order.date} • {order.items} items</p>
                       </div>
                     </div>
                     <div className="text-right">

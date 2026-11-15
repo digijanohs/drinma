@@ -65,7 +65,7 @@ export default function RewardsPoints({ currentPoints = 820 }: RewardsPointsProp
       className="bg-white dark:bg-gray-800 rounded-2xl shadow-md p-6 max-w-sm w-full"
     >
       <h3 className="font-display font-bold text-gray-900 dark:text-white text-lg mb-6">
-        Điểm thưởng của bạn
+        Your reward points
       </h3>
 
       {/* Circular progress */}
@@ -102,7 +102,7 @@ export default function RewardsPoints({ currentPoints = 820 }: RewardsPointsProp
             <span className="text-2xl font-bold text-gray-900 dark:text-white tabular-nums">
               {animatedPoints.toLocaleString()}
             </span>
-            <span className="text-xs text-gray-400 dark:text-gray-500">điểm</span>
+            <span className="text-xs text-gray-400 dark:text-gray-500">points</span>
           </div>
         </div>
 
@@ -120,8 +120,8 @@ export default function RewardsPoints({ currentPoints = 820 }: RewardsPointsProp
       {nextTier && (
         <div className="mb-5">
           <div className="flex justify-between text-xs text-gray-500 dark:text-gray-400 mb-1.5">
-            <span>{currentPoints.toLocaleString()} điểm</span>
-            <span>{nextTier.minPoints.toLocaleString()} điểm</span>
+            <span>{currentPoints.toLocaleString()} points</span>
+            <span>{nextTier.minPoints.toLocaleString()} points</span>
           </div>
           <div className="h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
             <motion.div
@@ -133,11 +133,11 @@ export default function RewardsPoints({ currentPoints = 820 }: RewardsPointsProp
             />
           </div>
           <p className="text-xs text-gray-500 dark:text-gray-400 mt-1.5 text-center">
-            Còn{" "}
+            Only{" "}
             <span className="font-semibold text-gray-700 dark:text-gray-300">
               {(nextTier.minPoints - currentPoints).toLocaleString()}
             </span>{" "}
-            điểm để lên hạng{" "}
+            points to reach your next tier{" "}
             <span className="font-semibold" style={{ color: nextTier.color }}>
               {nextTier.name}
             </span>

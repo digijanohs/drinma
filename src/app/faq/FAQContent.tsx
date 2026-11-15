@@ -4,106 +4,106 @@ import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, Search, HelpCircle } from "lucide-react";
 
-const categories = ["Tất cả", "Đặt hàng", "Thanh toán", "Giao hàng", "Sản phẩm", "Khác"];
+const categories = ["All", "Order", "Checkout", "Delivery", "Products", "Other"];
 
 const faqs = [
   {
     id: 1,
-    category: "Đặt hàng",
-    question: "Tôi có thể đặt hàng trước bao lâu?",
+    category: "Order",
+    question: "How far in advance can I order?",
     answer:
-      "Bạn có thể đặt hàng trước tối đa 7 ngày. Đối với đơn hàng số lượng lớn (trên 20 ly), chúng tôi khuyến khích đặt trước ít nhất 24 giờ để đảm bảo chất lượng phục vụ tốt nhất.",
+      "You can order up to 7 days ahead. For large orders (over 20 cups), we recommend ordering at least 24 hours in advance so we can give you the best possible service.",
   },
   {
     id: 2,
-    category: "Đặt hàng",
-    question: "Tôi có thể thay đổi hoặc hủy đơn hàng không?",
+    category: "Order",
+    question: "Can I change or cancel my order?",
     answer:
-      "Bạn có thể thay đổi hoặc hủy đơn hàng trong vòng 15 phút sau khi đặt. Sau khoảng thời gian này, đơn hàng đã được chuyển sang bộ phận pha chế và không thể thay đổi. Vui lòng liên hệ hotline 1800-IKU để được hỗ trợ.",
+      "You can change or cancel your order within 15 minutes of placing it. After that, the order has already gone to our bar and can no longer be changed. For help, call our hotline at 1800-DRINMA.",
   },
   {
     id: 3,
-    category: "Đặt hàng",
-    question: "Tôi có thể tùy chỉnh đồ uống theo ý thích không?",
+    category: "Order",
+    question: "Can I customize my drink?",
     answer:
-      "Hoàn toàn có thể! Bạn có thể tùy chỉnh mức đường (0%, 30%, 50%, 70%, 100%), mức đá (không đá, ít đá, bình thường, nhiều đá), và thêm topping theo sở thích. Một số sản phẩm đặc biệt có thể có giới hạn tùy chỉnh để giữ nguyên hương vị đặc trưng.",
+      "Absolutely! You can adjust the sweetness (0%, 30%, 50%, 70%, 100%), the ice level (no ice, light ice, regular, extra ice) and add toppings as you like. A few signature drinks have limited options so their original flavor stays exactly right.",
   },
   {
     id: 4,
-    category: "Thanh toán",
-    question: "MilkTea Iku chấp nhận những phương thức thanh toán nào?",
+    category: "Checkout",
+    question: "Which payment methods does Drinma accept?",
     answer:
-      "Chúng tôi chấp nhận đa dạng phương thức thanh toán: tiền mặt (COD), chuyển khoản ngân hàng, ví điện tử MoMo, ZaloPay, VNPay, và thẻ tín dụng/ghi nợ Visa/Mastercard. Tất cả giao dịch trực tuyến đều được mã hóa bảo mật.",
+      "We accept a wide range of payment methods: cash on delivery (COD), bank transfer, the e-wallets MoMo, ZaloPay and VNPay, plus Visa/Mastercard credit and debit cards. Every online transaction is encrypted for security.",
   },
   {
     id: 5,
-    category: "Thanh toán",
-    question: "Tôi có thể sử dụng nhiều mã giảm giá cùng lúc không?",
+    category: "Checkout",
+    question: "Can I use more than one promo code at a time?",
     answer:
-      "Mỗi đơn hàng chỉ áp dụng được một mã giảm giá. Tuy nhiên, bạn vẫn có thể kết hợp mã giảm giá với điểm thưởng từ chương trình khách hàng thân thiết Iku Stars để tiết kiệm tối đa.",
+      "Only one promo code applies per order. You can still combine a code with reward points from our Drinma Stars loyalty program to save as much as possible.",
   },
   {
     id: 6,
-    category: "Thanh toán",
-    question: "Chương trình khách hàng thân thiết Iku Stars hoạt động như thế nào?",
+    category: "Checkout",
+    question: "How does the Drinma Stars loyalty program work?",
     answer:
-      "Với mỗi 10.000đ chi tiêu, bạn nhận được 1 Iku Star. Tích lũy đủ sao để đổi quà: 50 sao = giảm 10%, 100 sao = 1 ly miễn phí, 200 sao = combo đặc biệt. Điểm có hiệu lực trong 12 tháng kể từ ngày tích lũy.",
+      "For every 10.000đ you spend, you earn 1 Drinma Star. Collect stars and redeem them for rewards: 50 stars = 10% off, 100 stars = a free drink, 200 stars = a special combo. Points are valid for 12 months from the date you earn them.",
   },
   {
     id: 7,
-    category: "Giao hàng",
-    question: "Phạm vi giao hàng của MilkTea Iku là bao nhiêu?",
+    category: "Delivery",
+    question: "What is Drinma's delivery area?",
     answer:
-      "Chúng tôi giao hàng trong bán kính 5km từ mỗi chi nhánh. Phí giao hàng từ 15.000đ – 30.000đ tùy khoảng cách. Đơn hàng từ 150.000đ được miễn phí giao hàng trong bán kính 3km.",
+      "We deliver within a 5km radius of each store. Delivery fees range from 15.000đ – 30.000đ depending on distance. Orders from 150.000đ get free delivery within a 3km radius.",
   },
   {
     id: 8,
-    category: "Giao hàng",
-    question: "Thời gian giao hàng trung bình là bao lâu?",
+    category: "Delivery",
+    question: "How long does delivery usually take?",
     answer:
-      "Thời gian giao hàng trung bình từ 20–40 phút tùy khoảng cách và tình trạng giao thông. Trong giờ cao điểm (11h–13h và 17h–19h), thời gian có thể kéo dài hơn. Bạn sẽ nhận được thông báo theo dõi đơn hàng theo thời gian thực.",
+      "Delivery usually takes 20–40 minutes, depending on distance and traffic. At peak times (11h–13h and 17h–19h) it may take a little longer. You'll get real-time order tracking updates.",
   },
   {
     id: 9,
-    category: "Sản phẩm",
-    question: "Sản phẩm của Iku có chứa chất bảo quản không?",
+    category: "Products",
+    question: "Do Drinma products contain preservatives?",
     answer:
-      "Không. Tất cả sản phẩm của Iku được làm từ nguyên liệu tươi tự nhiên, không chứa chất bảo quản hay phẩm màu nhân tạo. Trân châu được nấu thủ công mỗi ngày, trà được pha mới mỗi 4 giờ để đảm bảo hương vị tươi ngon nhất.",
+      "No. All Drinma drinks are made with fresh, natural ingredients and contain no preservatives or artificial colors. Our boba is cooked by hand every day, and the tea is freshly brewed every 4 hours for the freshest taste.",
   },
   {
     id: 10,
-    category: "Sản phẩm",
-    question: "Sản phẩm nào phù hợp cho người dị ứng sữa hoặc lactose?",
+    category: "Products",
+    question: "Which drinks suit people with a milk allergy or lactose intolerance?",
     answer:
-      "Chúng tôi có dòng sản phẩm Iku Pure sử dụng sữa yến mạch và sữa hạnh nhân thay thế sữa bò. Các sản phẩm trà trái cây và trà xanh thuần túy cũng không chứa sữa. Vui lòng thông báo cho nhân viên về dị ứng của bạn khi đặt hàng.",
+      "Our Drinma Pure line uses oat milk and almond milk instead of cow's milk. Pure fruit teas and green teas are dairy-free as well. Please let our team know about your allergy when you order.",
   },
   {
     id: 11,
-    category: "Sản phẩm",
-    question: "Giờ mở cửa của các chi nhánh Iku là mấy giờ?",
+    category: "Products",
+    question: "What are Drinma's opening hours?",
     answer:
-      "Tất cả chi nhánh Iku mở cửa từ 7:00 – 22:00 hàng ngày, kể cả cuối tuần và ngày lễ. Riêng chi nhánh Quận 1 (Nguyễn Huệ) mở cửa đến 23:00 vào thứ Sáu và thứ Bảy.",
+      "All Drinma stores are open 7:00 – 22:00 every day, including weekends and holidays. Our District 1 store (Nguyen Hue) stays open until 23:00 on Fridays and Saturdays.",
   },
   {
     id: 12,
-    category: "Khác",
-    question: "Iku có bán thẻ quà tặng không?",
+    category: "Other",
+    question: "Does Drinma sell gift cards?",
     answer:
-      "Có! Thẻ quà tặng Iku Gift Card có mệnh giá từ 100.000đ đến 1.000.000đ, có thể mua trực tiếp tại cửa hàng hoặc đặt online. Thẻ không có hạn sử dụng và có thể dùng tại tất cả chi nhánh.",
+      "Yes! Drinma Gift Cards come in values from 100.000đ to 1.000.000đ and can be bought in-store or ordered online. They never expire and work at every location.",
   },
   {
     id: 13,
-    category: "Khác",
-    question: "Tôi có thể đặt hàng số lượng lớn cho sự kiện không?",
+    category: "Other",
+    question: "Can I place large orders for events?",
     answer:
-      "Chúng tôi rất vui được phục vụ các sự kiện doanh nghiệp, tiệc sinh nhật, hội nghị... Đơn hàng từ 50 ly trở lên được hưởng ưu đãi đặc biệt và có thể tùy chỉnh bao bì theo yêu cầu. Liên hệ email event@milkteaiku.vn để được tư vấn.",
+      "We love catering corporate events, birthday parties, conferences and more. Orders of 50 cups or more get special pricing and custom packaging on request. Email event@drinma.com and we'll help you plan.",
   },
   {
     id: 14,
-    category: "Khác",
-    question: "Chính sách hoàn trả và đổi hàng của Iku như thế nào?",
+    category: "Other",
+    question: "What is Drinma's return and exchange policy?",
     answer:
-      "Nếu sản phẩm không đúng yêu cầu hoặc có vấn đề về chất lượng, chúng tôi sẽ làm lại miễn phí hoặc hoàn tiền 100%. Vui lòng liên hệ trong vòng 30 phút kể từ khi nhận hàng và cung cấp ảnh chụp sản phẩm để được xử lý nhanh nhất.",
+      "If your drink isn't what you ordered or there's a quality issue, we'll remake it for free or refund you 100%. Just contact us within 30 minutes of receiving your order and send a photo of the drink so we can sort it out fast.",
   },
 ];
 
@@ -161,13 +161,13 @@ function FAQItem({
 }
 
 export default function FAQContent() {
-  const [activeCategory, setActiveCategory] = useState("Tất cả");
+  const [activeCategory, setActiveCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
 
   const filtered = useMemo(() => {
     return faqs.filter((faq) => {
       const matchesCategory =
-        activeCategory === "Tất cả" || faq.category === activeCategory;
+        activeCategory === "All" || faq.category === activeCategory;
       const q = searchQuery.toLowerCase();
       const matchesSearch =
         !q ||
@@ -188,7 +188,7 @@ export default function FAQContent() {
             transition={{ duration: 0.5 }}
             className="inline-block px-4 py-1.5 bg-brand-100 text-brand-700 rounded-full text-sm font-medium mb-6"
           >
-            Hỗ trợ khách hàng
+            Customer Support
           </motion.span>
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
@@ -196,8 +196,8 @@ export default function FAQContent() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-4xl md:text-5xl font-display font-bold text-gray-900 dark:text-gray-50 mb-6"
           >
-            Câu hỏi{" "}
-            <span className="text-brand-600">thường gặp</span>
+            Questions{" "}
+            <span className="text-brand-600">frequently asked</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -205,8 +205,7 @@ export default function FAQContent() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-10"
           >
-            Tìm câu trả lời nhanh cho mọi thắc mắc về đặt hàng, giao hàng,
-            thanh toán và sản phẩm của chúng tôi.
+            Find quick answers to any question about ordering, delivery, payment and our drinks.
           </motion.p>
 
           {/* Search */}
@@ -222,7 +221,7 @@ export default function FAQContent() {
             />
             <input
               type="text"
-              placeholder="Tìm kiếm câu hỏi..."
+              placeholder="Search questions..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full pl-11 pr-4 py-3.5 rounded-2xl border border-cream-200 dark:border-gray-600 bg-white dark:bg-gray-800 shadow-sm focus:outline-none focus:ring-2 focus:ring-brand-300 text-gray-700 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500"
@@ -271,12 +270,12 @@ export default function FAQContent() {
             >
               <HelpCircle size={48} className="mx-auto text-cream-300 mb-4" />
               <p className="text-gray-500 dark:text-gray-400 text-lg">
-                Không tìm thấy câu hỏi phù hợp.
+                No matching questions found.
               </p>
               <p className="text-gray-400 dark:text-gray-500 mt-2">
-                Hãy thử từ khóa khác hoặc{" "}
+                Try another keyword or{" "}
                 <a href="/contact" className="text-brand-600 hover:underline">
-                  liên hệ với chúng tôi
+                  contact us
                 </a>
                 .
               </p>
@@ -293,17 +292,16 @@ export default function FAQContent() {
           >
             <div className="text-4xl mb-4">💬</div>
             <h3 className="text-2xl font-display font-bold text-gray-900 dark:text-gray-50 mb-3">
-              Vẫn còn thắc mắc?
+              Still have questions?
             </h3>
             <p className="text-gray-600 dark:text-gray-300 mb-6">
-              Đội ngũ hỗ trợ của chúng tôi luôn sẵn sàng giải đáp mọi câu hỏi
-              của bạn.
+              Our support team is always happy to help with any question you have.
             </p>
             <a
               href="/contact"
               className="inline-block px-8 py-3 bg-brand-600 text-white rounded-full font-semibold hover:bg-brand-700 transition-colors shadow-md hover:shadow-lg"
             >
-              Liên hệ ngay
+              Contact us now
             </a>
           </motion.div>
         </div>

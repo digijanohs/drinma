@@ -16,10 +16,10 @@ export default function OfflinePage() {
           <WifiOff className="w-10 h-10 text-gray-500 dark:text-gray-400" />
         </div>
         <h1 className="text-2xl font-display font-bold text-gray-900 dark:text-gray-50 mb-3">
-          Không có kết nối mạng
+          No internet connection
         </h1>
         <p className="text-gray-600 dark:text-gray-300 mb-8">
-          Vui lòng kiểm tra kết nối internet và thử lại. Một số tính năng có thể không khả dụng khi offline.
+          Please check your internet connection and try again. Some features may be unavailable offline.
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <button
@@ -27,13 +27,13 @@ export default function OfflinePage() {
             className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand-600 text-white rounded-xl font-medium hover:bg-brand-700 transition-colors"
           >
             <RefreshCw className="w-4 h-4" />
-            Thử lại
+            Try again
           </button>
           <Link
             href="/"
             className="inline-flex items-center justify-center px-6 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-200 rounded-xl font-medium hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
           >
-            Về trang chủ
+            Back to home
           </Link>
         </div>
       </motion.div>
